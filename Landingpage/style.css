@@ -188,6 +188,7 @@ p {
     transform: translateY(-8px) rotate(-45deg);
   }
   .nav-Menu {
+    height: 35vh;
     position: fixed;
     left: -100%;
     top: 70px;
@@ -199,7 +200,9 @@ p {
   }
   .nav-items {
     margin: 16px 0;
+    color: white;
   }
+
   .nav-Menu.active {
     left: 0;
   }
@@ -262,7 +265,7 @@ p {
     height: 28vh;
   }
   .Subject-container {
-    height: 25vh;
+    height: 27vh;
     gap: 6px;
   }
   .Hero-Section {
