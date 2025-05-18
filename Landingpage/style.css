@@ -312,4 +312,8 @@ p {
   .Interactive h5 {
     font-size: 9px;
   }
+  .Interactive h5,
+  p {
+    padding: 5px 8px;
+  }
 }
