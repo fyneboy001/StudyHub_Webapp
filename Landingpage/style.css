@@ -456,7 +456,7 @@ p {
     width: 47%;
   }
   .bg-image {
-    width: 190px;
+    width: 170px;
     margin-top: 1.5rem;
   }
   .semi-content-section {
@@ -477,6 +477,6 @@ p {
     background-color: #e6f35b;
   }
   .Subject-section {
-    height: 54vh;
+    height: 60vh;
   }
 }
