@@ -128,7 +128,7 @@ body {
   padding-top: 3rem;
 }
 .Bridging-container {
-  height: 80px;
+  height: 110px;
   width: 100%;
   text-align: center;
 }
@@ -139,6 +139,40 @@ body {
   font-size: 30px;
   padding-top: 10px;
 }
+.Features-container {
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.Interactive {
+  height: 45vh;
+  width: 30%;
+  background-color: #f0fbff;
+  border-radius: 20px;
+  color: rgba(0, 28, 33, 0.6);
+}
+.inter-Icon {
+  height: 100px;
+  padding-left: 10px;
+  border-bottom-right-radius: 20px;
+  background-color: white;
+  transform: translateY(-4px);
+  translate: -4px;
+}
+.Interactive h5,
+p {
+  padding: 10px 30px;
+}
+.inter-learning {
+  rotate: -8deg;
+  background-color: #016072;
+  color: #f0fbff;
+}
+.Interactive h5 {
+  font-weight: bold;
+}
+
 /* Tablet Screen Responsive Styling */
 @media (max-width: 768px) {
   .hamburger {
@@ -187,6 +221,26 @@ body {
   .Hero-Section {
     height: 68vh;
   }
+  .Interactive {
+    height: 20vh;
+    width: 30%;
+  }
+  .inter-learning {
+    rotate: -4deg;
+  }
+  .Interactive p {
+    font-size: 10px;
+  }
+  .Interactive h5 {
+    font-size: 11px;
+  }
+  .Interactive h5,
+  p {
+    padding: 5px 15px;
+  }
+  .Features-container {
+    height: 22vh;
+  }
 }
 @media (max-width: 480px) {
   /* .Header {
@@ -220,5 +274,42 @@ body {
   html,
   body {
     overflow-x: hidden;
+  }
+  .Mobile-features-container {
+    display: flex;
+    width: 100%;
+  }
+  .Features-container {
+    height: 65vh;
+    display: block;
+    width: 100%;
+  }
+  .Bridging-container h3 {
+    font-size: 20px;
+  }
+  .Bridging-container {
+    padding-top: 20px;
+  }
+  .Interactive {
+    height: 18vh;
+    width: 95%;
+    margin-top: 10px;
+  }
+  .Interactive p {
+    font-size: 9px;
+  }
+  .inter-Icon {
+    height: 50px;
+    padding-left: 0px;
+    border-bottom-right-radius: 20px;
+    background-color: white;
+    transform: translateY(-2px);
+    translate: 0px;
+  }
+  .inter-learning {
+    rotate: 0deg;
+  }
+  .Interactive h5 {
+    font-size: 9px;
   }
 }
