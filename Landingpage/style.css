@@ -123,7 +123,7 @@ body {
   margin-left: 8px;
 } */
 .Features-section {
-  height: 100vh;
+  height: 130vh;
   width: 100%;
   padding-top: 3rem;
 }
@@ -171,6 +171,84 @@ p {
 }
 .Interactive h5 {
   font-weight: bold;
+}
+.Subject-section {
+  height: 100vh;
+  width: 100%;
+}
+.Subject-links {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  gap: 2rem;
+}
+.Subject-links a {
+  text-decoration: none;
+  color: rgba(0, 28, 33, 0.6);
+}
+.Subject-links a:hover {
+  color: black;
+  text-decoration: underline;
+}
+.hidden {
+  display: none;
+}
+.content-section {
+  height: 80vh;
+  width: 100%;
+  color: rgba(0, 28, 33, 0.6);
+  margin-top: 10px;
+}
+.semi-content-section {
+  height: 85vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.content-list {
+  height: 60vh;
+  width: 30%;
+  background-color: #f0fbff;
+  border-radius: 20px;
+}
+.fraction {
+  display: flex;
+  width: 100%;
+  height: 80px;
+  align-items: center;
+  font-size: 14px;
+  border-bottom: 1px solid black;
+  padding: 0 20px;
+}
+.bg-image {
+  margin-top: 3rem;
+}
+.level {
+  height: 35px;
+  width: 10rem;
+  margin-left: 3.5rem;
+  background-color: #e6f35b;
+  border-radius: 20px;
+}
+.fraction h5 {
+  font-weight: bold;
+  font-size: 15px;
+}
+.seemore-container {
+  margin-top: 1rem;
+  height: 40px;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+.see-more {
+  height: 30px;
+  width: 9rem;
+  background-color: #e6f35b;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
 }
 
 /* Tablet Screen Responsive Styling */
@@ -241,10 +319,49 @@ p {
   p {
     padding: 5px 15px;
   }
+  .Features-section {
+    height: 67vh;
+  }
   .Features-container {
     height: 22vh;
   }
 }
+.subject-chemistry {
+  display: none;
+}
+.dice {
+  display: none;
+}
+.content-list {
+  height: 35vh;
+  width: 45%;
+}
+.bg-image {
+  width: 310px;
+  margin-top: 3rem;
+}
+.semi-content-section {
+  height: 43vh;
+  margin-top: 10px;
+}
+.fraction {
+  height: 60px;
+  font-size: 14px;
+  padding: 0 15px;
+  justify-content: space-between;
+}
+.level {
+  flex-shrink: 0;
+  height: 26px;
+  width: 120px;
+  font-size: 10px;
+  margin-left: 0rem;
+  background-color: #e6f35b;
+}
+.Subject-section {
+  height: 65vh;
+}
+
 @media (max-width: 480px) {
   /* .Header {
     padding: 0px 10px;
@@ -269,7 +386,7 @@ p {
     gap: 6px;
   }
   .Hero-Section {
-    height: 56vh;
+    height: 63vh;
   }
   body {
     padding: 0 1rem;
@@ -281,6 +398,11 @@ p {
   .Mobile-features-container {
     display: flex;
     width: 100%;
+    height: 60vh;
+  }
+  .Features-section {
+    padding: 10px;
+    height: 75vh;
   }
   .Features-container {
     height: 65vh;
@@ -318,5 +440,43 @@ p {
   .Interactive h5,
   p {
     padding: 5px 8px;
+  }
+  .Subject-links {
+    gap: 10px;
+    font-size: 12px;
+  }
+  .subject-chemistry {
+    display: none;
+  }
+  .dice {
+    display: none;
+  }
+  .content-list {
+    height: 25vh;
+    width: 47%;
+  }
+  .bg-image {
+    width: 190px;
+    margin-top: 1.5rem;
+  }
+  .semi-content-section {
+    height: 30vh;
+  }
+  .fraction {
+    height: 60px;
+    font-size: 14px;
+    padding: 0 5px;
+    justify-content: space-between;
+  }
+  .level {
+    flex-shrink: 0;
+    height: 26px;
+    width: 90px;
+    font-size: 10px;
+    margin-left: 0rem;
+    background-color: #e6f35b;
+  }
+  .Subject-section {
+    height: 54vh;
   }
 }
