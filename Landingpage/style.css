@@ -193,7 +193,7 @@ body {
     padding: 0px 10px;
   } */
   .subjects {
-    width: 73px;
+    width: 65px;
   }
   /* .chem {
     margin-left: 8px;
@@ -208,10 +208,17 @@ body {
     height: 28vh;
   }
   .Subject-container {
-    height: 17vh;
-    gap: 5px;
+    height: 20vh;
+    gap: 8px;
   }
   .Hero-Section {
-    height: 53vh;
+    height: 56vh;
+  }
+  body {
+    padding: 0 1rem;
+  }
+  html,
+  body {
+    overflow-x: hidden;
   }
 }
