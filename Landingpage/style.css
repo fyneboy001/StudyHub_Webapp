@@ -6,6 +6,7 @@
 }
 body {
   padding: 0% 5%;
+  overflow-x: hidden;
 }
 .Hero-Section {
   height: 150vh;
@@ -175,6 +176,7 @@ p {
 .Subject-section {
   height: 100vh;
   width: 100%;
+  background-color: red;
 }
 .Subject-links {
   display: flex;
@@ -248,6 +250,127 @@ p {
   background-color: #e6f35b;
   border-radius: 20px;
   border: none;
+  cursor: pointer;
+}
+.Statistics-section {
+  height: 130vh;
+  width: 100%;
+  margin-top: 20rem;
+}
+.Statistics-note {
+  height: 90px;
+  width: 100%;
+  text-align: center;
+}
+.BannerImage {
+  height: 110px;
+  width: 79rem;
+  transform: translateX(-4rem);
+  max-width: none;
+}
+.statistic-container {
+  display: flex;
+  height: 70vh;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.text {
+  text-align: center;
+}
+.text h1 {
+  font-size: 10rem;
+  font-weight: bold;
+}
+/* .text p {
+} */
+.Lady {
+  translate: 13rem;
+}
+.man {
+  translate: -13rem;
+}
+.Image-display {
+  height: 70vh;
+  display: block;
+}
+.Image-display img {
+  display: block;
+  gap: 30px;
+  margin-bottom: 5rem;
+}
+.Statistics-getstarted {
+  display: flex;
+  justify-content: center;
+}
+.get-button {
+  width: 10rem;
+  font-weight: bold;
+}
+.Testimonial-Section {
+  height: 100vh;
+  width: 100%;
+}
+.Testimonial {
+  height: 90px;
+  width: 100%;
+  text-align: center;
+}
+.Testimonial h5 {
+  font-weight: bold;
+  color: #016072;
+}
+.Testimonial h3 {
+  font-size: 30px;
+}
+/* Carousel Styling */
+.carousel {
+  position: relative;
+}
+.carousel-item {
+  display: none;
+  height: 350px;
+  padding: 1em;
+}
+.carousel-item-selected {
+  display: flex;
+  justify-content: space-between;
+}
+.carousel-nav {
+  height: 50px;
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+}
+.carousel-button {
+  width: 30px;
+  height: 5px;
+  display: inline-block;
+  background-color: #f0fbff;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+.carousel-button-selected {
+  background-color: #016072;
+}
+/* .carousel {
+  position: relative;
+}
+.slide {
+  display: none;
+  height: 60vh;
+  width: 100%;
+  justify-content: space-between;
+  background-color: red;
+}
+.slide.actve {
+  display: flex;
+} */
+.transformed {
+  height: 50vh;
+  width: 30%;
+  background-color: #f0fbff;
   cursor: pointer;
 }
 
