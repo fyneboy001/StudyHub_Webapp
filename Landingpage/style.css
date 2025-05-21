@@ -734,7 +734,7 @@ footer {
     font-size: 20px;
   }
   .Accessible-content p {
-    font-size: 11px;
+    font-size: 10px;
   }
   .Accessible-content {
     height: 28vh;
@@ -863,7 +863,7 @@ footer {
   .Statistics-section {
     height: 85vh;
     width: 100%;
-    margin-top: 0rem;
+    margin-top: 60rem;
   }
   .statistic-container {
     height: 40vh;
