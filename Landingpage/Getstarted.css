@@ -64,6 +64,7 @@ main {
 }
 #no-arrow {
   appearance: none;
+  background-color: transparent;
 }
 #no-arrow::-ms-expand {
   display: none;
