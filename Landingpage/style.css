@@ -667,6 +667,14 @@ footer {
   .subjects {
     width: 67px;
   }
+  .nav-button {
+    display: block;
+    width: 100%;
+  }
+  .Login-btn {
+    background-color: transparent;
+    border: 1px solid white;
+  }
   /* .chem {
     margin-left: 8px;
   } */
@@ -861,7 +869,7 @@ footer {
     font-size: 20px;
   }
   .quotation {
-    width: 60px;
+    width: 40px;
   }
   .transformed {
     height: 23vh;
@@ -896,6 +904,7 @@ footer {
   /* FAQ Section Styling */
   .FAQ-Section {
     height: 80vh;
+    padding-top: 10px;
   }
   /* Start your journey section Styling */
   .Start-journey-section {
@@ -915,7 +924,7 @@ footer {
     font-size: 12px;
   }
   .journey-note p {
-    font-size: 8px;
+    font-size: 7px;
   }
   /* Footer Section Styling */
   .footer-first-container {
@@ -926,7 +935,7 @@ footer {
 
   .footer-hub {
     width: 350px;
-    margin-top: 15px;
+    margin-top: 10px;
     justify-self: center;
   }
   footer {
