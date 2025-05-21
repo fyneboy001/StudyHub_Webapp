@@ -236,7 +236,7 @@
         <a href="#"><li>Mathematics</li></a>
         <a href="#"><li>English Language</li></a>
         <a href="#"><li>History</li></a>
-        <a class="subject-chemistry" href="#"><li>Chemistry</li></a>
+        <a id="Chemistrylink" href="#"><li>Chemistry</li></a>
         <a href="#"><li>16+ Subjects</li></a>
       </ul>
       <div class="content-section" id="displaySection">
@@ -253,12 +253,7 @@
                 alt=""
                 width="350px"
               />
-              <img
-                class="chart"
-                src="./assets/Chart.png"
-                alt=""
-                width="100px"
-              />
+              <img class="chart" src="./assets/Chart.png" alt="" />
               <a href="#" class="Switch"
                 ><img src="./assets/Icons/Switch container.png" alt=""
               /></a>
@@ -274,17 +269,12 @@
                 alt=""
                 width="350px"
               />
-              <img
-                class="graph"
-                src="./assets/Graph.png"
-                alt=""
-                width="100px"
-              />
+              <img class="graph" src="./assets/Graph.png" alt="" />
               <a href="#" class="switch"
                 ><img src="./assets/Icons/Switch container.png" alt=""
               /></a>
             </div>
-            <div class="content-list dice">
+            <div class="content-list" id="dice">
               <div class="fraction">
                 <h5>Fractions</h5>
                 <p class="level">Secondary level</p>
@@ -295,8 +285,8 @@
                 alt=""
                 width="350px"
               />
-              <img src="./assets/Dice.png" alt="" />
-              <a href="#"
+              <img class="dice" src="./assets/Dice.png" alt="" />
+              <a href="#" class="sWitch"
                 ><img src="./assets/Icons/Switch container.png" alt=""
               /></a>
             </div>
@@ -365,7 +355,12 @@
         </div>
       </div>
       <div class="Statistics-getstarted">
-        <button class="get-button">Get Started</button>
+        <button
+          class="get-button"
+          onclick="window.location.href='Getstarted.html'"
+        >
+          Get Started
+        </button>
       </div>
     </section>
     <section class="Testimonial-Section">
@@ -541,7 +536,12 @@
           Learn without limits and become part of Nigeria's smartest <br />
           learning community!
         </p>
-        <button class="get-button start">Get Started</button>
+        <button
+          class="get-button start"
+          onclick="window.location.href='Getstarted.html'"
+        >
+          Get Started
+        </button>
       </div>
       <div>
         <img class="book" src="./assets/Tooltip.png" alt="" />

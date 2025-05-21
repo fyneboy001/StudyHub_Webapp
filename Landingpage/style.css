@@ -173,8 +173,33 @@ body {
   font-weight: bold;
 }
 .Subject-section {
-  height: 100vh;
+  height: 120vh;
   width: 100%;
+}
+.graph,
+.chart,
+.dice {
+  translate: 30px;
+  transform: translateY(-15rem);
+}
+.Switch img {
+  translate: 40px;
+  transform: translateY(-11rem);
+  width: 60px;
+}
+.switch img {
+  translate: 40px;
+  transform: translateY(-200px);
+  width: 60px;
+}
+.sWitch img {
+  translate: 75px;
+  transform: translateY(-230px);
+  width: 60px;
+}
+.graph,
+.chart {
+  width: 200px;
 }
 .Subject-links {
   display: flex;
@@ -202,6 +227,7 @@ body {
 .content {
   height: 90vh;
   width: 100%;
+  margin-top: 3rem;
 }
 .semi-content-section {
   height: 85vh;
@@ -209,6 +235,7 @@ body {
   display: flex;
   justify-content: space-between;
 }
+
 .content-list {
   height: 60vh;
   width: 30%;
@@ -239,7 +266,6 @@ body {
   font-size: 15px;
 }
 .seemore-container {
-  margin-top: 8rem;
   height: 40px;
   width: 100%;
   background-color: white;
@@ -257,7 +283,7 @@ body {
 .Statistics-section {
   height: 140vh;
   width: 100%;
-  margin-top: 20rem;
+  margin-top: 5rem;
 }
 .Statistics-note {
   height: 90px;
@@ -624,9 +650,7 @@ footer {
     height: 22vh;
   }
 }
-.subject-chemistry {
-  display: none;
-}
+
 /* .dice {
   display: none;
 }
@@ -639,8 +663,11 @@ footer {
   margin-top: 3rem;
 }
 .semi-content-section {
-  height: 43vh;
+  height: 85vh;
   margin-top: 10px;
+}
+.seemore-container {
+  margin-top: 0rem;
 }
 .fraction {
   height: 60px;
@@ -657,7 +684,32 @@ footer {
   background-color: #e6f35b;
 }
 .Subject-section {
-  height: 65vh;
+  height: 120vh;
+}
+.graph,
+.chart,
+.dice {
+  translate: 30px;
+  transform: translateY(-15rem);
+}
+.Switch img {
+  translate: 40px;
+  transform: translateY(-11rem);
+  width: 60px;
+}
+.switch img {
+  translate: 40px;
+  transform: translateY(-200px);
+  width: 60px;
+}
+.sWitch img {
+  translate: 75px;
+  transform: translateY(-230px);
+  width: 60px;
+}
+.graph,
+.chart {
+  width: 200px;
 }
 
 @media (max-width: 480px) {
@@ -751,12 +803,6 @@ footer {
     gap: 10px;
     font-size: 12px;
   }
-  .subject-chemistry {
-    display: none;
-  }
-  .dice {
-    display: none;
-  }
   .content-list {
     height: 25vh;
     width: 47%;
@@ -767,6 +813,12 @@ footer {
   }
   .semi-content-section {
     height: 36vh;
+  }
+  #Chemistrylink {
+    display: none;
+  }
+  #dice {
+    display: none;
   }
   .content {
     height: 40vh;
@@ -789,14 +841,17 @@ footer {
   .chart {
     translate: 30px;
     transform: translateY(-8rem);
+    width: 100px;
   }
   .Switch img {
     translate: 30px;
-    transform: translateY(-5.5rem);
+    transform: translateY(-5rem);
+    width: 40px;
   }
   .switch img {
     translate: 30px;
-    transform: translateY(-100px);
+    transform: translateY(-95px);
+    width: 40px;
   }
   .Subject-section {
     height: 55vh;
