@@ -65,6 +65,10 @@ main {
 #no-arrow {
   appearance: none;
   background-color: transparent;
+  pointer-events: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
 }
 #no-arrow::-ms-expand {
   display: none;
