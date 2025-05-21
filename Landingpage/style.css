@@ -297,7 +297,6 @@ body {
 .community {
   height: 40px;
   width: 50%;
-  background-color: red;
   transform: translateY(-3rem);
   text-align: center;
   align-content: center;
@@ -780,33 +779,164 @@ footer {
     background-color: #e6f35b;
   }
   .Subject-section {
+    height: 130vh;
+  }
+  /* Statistics Section Styling */
+  .Statistics-section {
+    height: 85vh;
+    width: 100%;
+    margin-top: 0rem;
+  }
+  .statistic-container {
+    height: 40vh;
+  }
+  .Statistics-note h3 {
+    font-size: 20px;
+  }
+  
+  }
+  .BannerImage {
+    height: 60px;
+    width: 27rem;
+    margin-top: 45px;
+    transform: translateX(-17px);
+    max-width: none;
+  }
+  
+  .note {
+    margin-top: 40px;
+  }
+  .text {
+    justify-items: center;
+  }
+  .text h1 {
+    font-size: 4rem;
+  }
+  .community {
+    height: 30px;
+    width: 55%;
+    font-size: 8px;
+    transform: translateY(-1.5rem);
+  }
+  .Lady {
+    translate: 4rem;
+  }
+  .man {
+    translate: -4rem;
+  }
+  .Image-display {
+    height: 25vh;
+  }
+  .Image-display img {
+    gap: 0px;
+    width: 50px;
+    margin-bottom: 2rem;
+  }
+  .get-button {
+    height: 30px;
+    width: 7rem;
+    font-size: 10px;
+  }
+  /* Testimonial Styling */
+  .Testimonial-Section {
     height: 60vh;
   }
+  #Peterkome {
+    display: none;
+  }
+  .Testimonial h3 {
+    font-size: 20px;
+  }
+  .quotation {
+    width: 70px;
+  }
+  .transformed {
+    height: 23vh;
+    width: 49%;
+    padding: 0 10px;
+  }
+  .transformed h5 {
+    font-size: 10px;
+  }
+  .transformed p {
+    font-size: 10px;
+  }
+  .identity-image {
+    height: 50px;
+  }
+  .Identity-container {
+    translate: -10px;
+    gap: 5px;
+    width: 90%;
+    height: 60px;
+    padding-left: 0px;
+  }
+  .Identity-container h6 {
+    font-size: 10px;
+  }
+  .rating {
+    width: 50px;
+  }
+  .Identity-container p {
+    padding: 1px 0px 0px 0px;
+  }
+  /* FAQ Section Styling */
+  .FAQ-Section {
+    height: 70vh;
+  }
   /* Start your journey section Styling */
+  .Start-journey-section {
+    height: 18vh;
+    padding: 0 10px;
+  }
+  .start {
+    margin-top: 1.5rem;
+    height: 30px;
+    width: 7rem;
+    font-size: 10px;
+  }
   .book {
-    height: 40px;
+    height: 60px;
   }
   .journey-note h2 {
-    font-size: 20px;
+    font-size: 12px;
+  }
+  .journey-note p {
+    font-size: 8px;
   }
   /* Footer Section Styling */
   .footer-first-container {
     display: flex;
     padding: 0 px;
+    height: 17vh;
   }
 
   .footer-hub {
-    width: 390px;
+    width: 350px;
     margin-top: 15px;
+    justify-self: center;
   }
   footer {
-    height: 57vh;
+    height: 32vh;
+  }
+  .footer-links h5 {
+    font-size: 10px;
   }
   .studylogo {
-    width: 100px;
+    width: 120px;
   }
   .footer-logo p,
   .company li {
-    font-size: 11px;
+    font-size: 9px;
+  }
+  .social-handle-links a img {
+    height: 17px;
+    margin-right: 5px;
+  }
+  .footer-logo {
+    width: 60%;
+  }
+  .footer-links {
+    width: 40%;
   }
 }
