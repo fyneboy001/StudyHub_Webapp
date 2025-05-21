@@ -860,10 +860,13 @@ footer {
   }
   /* Testimonial Styling */
   .Testimonial-Section {
-    height: 60vh;
+    height: 50vh;
   }
   .carousel {
     height: 30vh;
+  }
+  .carousel-nav {
+    padding: 0px 0;
   }
   #Peterkome {
     display: none;
