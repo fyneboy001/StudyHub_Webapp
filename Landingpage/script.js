@@ -83,3 +83,18 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
   items[0].classList.add("carousel-item-selected");
   buttons[0].classList.add("carousel-button-selected");
 });
+
+// The Accordion Styling
+function toggleFAQ(element) {
+  const isOpen = element.classList.contains("open");
+
+  if (isOpen) {
+    element.classList.remove("open");
+    element.classList.add("closed");
+    element.querySelector(".toggle-sign").textContent = "+";
+  } else {
+    element.classList.remove("closed");
+    element.classList.add("open");
+    element.querySelector(".toggle-sign").textContent = "×";
+  }
+}
