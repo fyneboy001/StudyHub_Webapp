@@ -46,7 +46,7 @@ main {
   font-size: 30px;
   padding-bottom: 5px;
 }
-form input,
+.input,
 .submit {
   height: 40px;
   width: 100%;
@@ -61,6 +61,12 @@ form input,
   font-weight: bold;
   margin-top: 40px;
   color: white;
+}
+#no-arrow {
+  appearance: none;
+}
+#no-arrow::-ms-expand {
+  display: none;
 }
 
 @media (max-width: 768px) {
