@@ -161,8 +161,7 @@ body {
   transform: translateY(-4px);
   translate: -4px;
 }
-.Interactive h5,
-.Interactive p {
+.Interactive h5 {
   padding: 10px 30px;
 }
 .inter-learning {
@@ -176,7 +175,6 @@ body {
 .Subject-section {
   height: 100vh;
   width: 100%;
-  background-color: red;
 }
 .Subject-links {
   display: flex;
@@ -200,12 +198,10 @@ body {
   width: 100%;
   color: rgba(0, 28, 33, 0.6);
   margin-top: 10px;
-  background-color: blue;
 }
 .content {
   height: 90vh;
   width: 100%;
-  background-color: black;
 }
 .semi-content-section {
   height: 85vh;
@@ -764,6 +760,9 @@ footer {
   .semi-content-section {
     height: 36vh;
   }
+  .content {
+    height: 40vh;
+  }
   .fraction {
     height: 60px;
     font-size: 14px;
@@ -778,8 +777,24 @@ footer {
     margin-left: 0rem;
     background-color: #e6f35b;
   }
+  .graph,
+  .chart {
+    translate: 30px;
+    transform: translateY(-8rem);
+  }
+  .Switch img {
+    translate: 30px;
+    transform: translateY(-5.5rem);
+  }
+  .switch img {
+    translate: 30px;
+    transform: translateY(-100px);
+  }
   .Subject-section {
-    height: 130vh;
+    height: 55vh;
+  }
+  .seemore-container {
+    margin-top: 0rem;
   }
   /* Statistics Section Styling */
   .Statistics-section {
@@ -793,8 +808,6 @@ footer {
   .Statistics-note h3 {
     font-size: 20px;
   }
-  
-  }
   .BannerImage {
     height: 60px;
     width: 27rem;
@@ -802,7 +815,7 @@ footer {
     transform: translateX(-17px);
     max-width: none;
   }
-  
+
   .note {
     margin-top: 40px;
   }
@@ -825,7 +838,7 @@ footer {
     translate: -4rem;
   }
   .Image-display {
-    height: 25vh;
+    height: 28vh;
   }
   .Image-display img {
     gap: 0px;
@@ -848,7 +861,7 @@ footer {
     font-size: 20px;
   }
   .quotation {
-    width: 70px;
+    width: 60px;
   }
   .transformed {
     height: 23vh;
@@ -882,12 +895,12 @@ footer {
   }
   /* FAQ Section Styling */
   .FAQ-Section {
-    height: 70vh;
+    height: 80vh;
   }
   /* Start your journey section Styling */
   .Start-journey-section {
     height: 18vh;
-    padding: 0 10px;
+    padding: 8px 10px;
   }
   .start {
     margin-top: 1.5rem;
@@ -929,9 +942,12 @@ footer {
   .company li {
     font-size: 9px;
   }
+  .footer-logo p {
+    margin-top: 4px;
+  }
   .social-handle-links a img {
     height: 17px;
-    margin-right: 5px;
+    margin-right: 0px;
   }
   .footer-logo {
     width: 60%;
