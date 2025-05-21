@@ -883,13 +883,13 @@ footer {
     font-size: 10px;
   }
   .identity-image {
-    height: 50px;
+    height: 30px;
   }
   .Identity-container {
     translate: -10px;
     gap: 5px;
     width: 90%;
-    height: 60px;
+    height: 50px;
     padding-left: 0px;
   }
   .Identity-container h6 {
