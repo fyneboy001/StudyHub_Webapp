@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0px;
   padding: 0px;
+  overflow: hidden;
 }
 main {
   display: flex;
@@ -92,5 +93,8 @@ form input,
   }
   .logo2 {
     width: 120px;
+  }
+  .second-main-container img {
+    translate: 17rem;
   }
 }
