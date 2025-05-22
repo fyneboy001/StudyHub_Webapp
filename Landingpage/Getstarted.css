@@ -50,8 +50,8 @@ main {
 .submit {
   height: 40px;
   width: 100%;
-  margin-bottom: 20px;
   text-align: center;
+  align-content: center;
   border-radius: 30px;
   border: 1px solid #1a808d;
   cursor: pointer;
@@ -62,7 +62,7 @@ main {
   margin-top: 40px;
   color: white;
 }
-#no-arrow {
+/* #no-arrow {
   appearance: none;
   background-color: transparent;
   pointer-events: none;
@@ -72,7 +72,7 @@ main {
 }
 #no-arrow::-ms-expand {
   display: none;
-}
+} */
 
 @media (max-width: 768px) {
   main {
