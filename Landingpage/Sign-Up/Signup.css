@@ -55,6 +55,7 @@ input,
   padding: 0 20px;
   border-radius: 30px;
   border: 1px solid #1a808d;
+  background-color: transparent;
 }
 /* .disabled {
   color: rgba(0, 28, 33, 0.6);
