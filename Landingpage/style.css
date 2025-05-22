@@ -120,9 +120,9 @@ body {
   align-items: flex-end;
   justify-items: center;
 }
-/* .ecos {
+.ecos {
   margin-left: 8px;
-} */
+}
 .Features-section {
   height: 130vh;
   width: 100%;
@@ -293,7 +293,7 @@ body {
 }
 .BannerImage {
   height: 110px;
-  width: 79rem;
+  width: 83rem;
   transform: translateX(-4rem);
   max-width: none;
 }
