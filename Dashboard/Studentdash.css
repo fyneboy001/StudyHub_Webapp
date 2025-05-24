@@ -1,0 +1,418 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  height: 220vh;
+  width: 100%;
+  display: flex;
+  color: rgba(0, 28, 33, 0.6);
+}
+.SideNav {
+  height: 220vh;
+  width: 20%;
+  background-color: white;
+  padding: 20px 30px;
+}
+.sideNav-logo {
+  padding-bottom: 30px;
+}
+.navlinks-container {
+  height: 20vh;
+  width: 100%;
+  margin-top: 10px;
+  color: rgba(0, 28, 33, 0.6);
+}
+.Home {
+  margin-top: 0px;
+}
+.Nav-links {
+  gap: 20px;
+  padding: 5px 10px;
+  height: 30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.Nav-links a {
+  text-decoration: none;
+  color: rgba(0, 28, 33, 0.6);
+  font-size: 13px;
+}
+.Nav-links a:hover {
+  color: #016072;
+}
+.Nav-links:hover {
+  background-color: #f0fbff;
+}
+.Nav-links img {
+  height: 19px;
+}
+.User-profile {
+  display: flex;
+  height: 15vh;
+  width: 100%;
+  gap: 20px;
+  align-items: center;
+}
+.User-profile img {
+  height: 50px;
+  width: 50px;
+}
+.User-profile h5 {
+  color: rgba(0, 28, 33, 0.6);
+  font-size: 15px;
+}
+.User-profile p {
+  color: #1a808d;
+  font-size: 12px;
+}
+.DashBoard {
+  height: 230vh;
+  width: 80%;
+  background-color: #ebeef0;
+  padding: 20px 20px;
+}
+.DashBoard-Header {
+  height: 7vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.DashBoard-Header h1 {
+  font-size: 20px;
+}
+.search-notification {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+}
+.DashBoard-Search {
+  height: 6vh;
+  width: 80%;
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 0px 20px;
+  gap: 10px;
+}
+.DashBoard-Search input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+.notification-button {
+  height: 6vh;
+  width: 6vh;
+  background-color: #f0fbff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.Welcome-section {
+  height: 50vh;
+  width: 100%;
+  padding-top: 40px;
+}
+.welcome-note {
+  line-height: 30px;
+}
+.Happening-cards {
+  height: 30vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+.cards {
+  height: 18vh;
+  width: 23%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border-radius: 20px;
+  padding: 10px 20px;
+}
+.cards h6 {
+  color: rgba(0, 28, 33, 0.6);
+  font-size: 13px;
+  padding-bottom: 5px;
+}
+.cards p {
+  color: rgba(0, 28, 33, 0.6);
+  font-size: 25px;
+  font-weight: bold;
+}
+.Progress-section {
+  height: 72vh;
+  width: 100%;
+  padding: 0 20px;
+}
+.view {
+  height: 7vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.view-button {
+  height: 5vh;
+  width: 7rem;
+  background-color: #1a808d;
+  color: #f0fbff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.learning-progress-cards-container {
+  height: 60vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.progress-cards {
+  height: 57vh;
+  width: 32%;
+  background-color: white;
+  border-radius: 10px;
+}
+.progress-cards img {
+  border-radius: 10px 10px 0 0;
+}
+.progress-bar-container {
+  width: 100%;
+  background-color: #f0fbff;
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.progress-bar {
+  height: 100%;
+  background-color: #1a808d;
+  width: 0%;
+  transition: width 0.3s ease-in-out;
+}
+/* .progress-bar-2 {
+  height: 100%;
+  background-color: #1a808d;
+  width: 0%;
+  transition: width 0.3s ease-in-out;
+} */
+.readings {
+  display: flex;
+  justify-content: space-between;
+}
+.bio,
+.ss1 {
+  height: 23px;
+  width: 4rem;
+  text-align: center;
+  background-color: #f0fbff;
+  border-radius: 10px;
+}
+.ss1 {
+  width: 3rem;
+}
+.cell-bio {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.subject-class {
+  display: flex;
+  gap: 10px;
+}
+.progress-card-content {
+  height: 22vh;
+  padding: 4px 10px;
+}
+.percentage-container {
+  padding: 8px 0;
+}
+.continue {
+  height: 30px;
+  width: 100%;
+  background-color: #f0fbff;
+  border: 1px solid #1a808d;
+  border-radius: 10px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.progress-card-content p {
+  font-size: 13px;
+  padding: 4px 0;
+}
+.Popular-lesson-section {
+  height: 50vh;
+  width: 100%;
+  padding: 0 20px;
+}
+.content {
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.Lesson-container {
+  width: 68%;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+}
+.card {
+  margin-top: 30px;
+}
+.lesson-card {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+}
+.Vector {
+  width: 80%;
+  padding-top: 20px;
+}
+.maths {
+  height: 23px;
+  width: 5.5rem;
+  text-align: center;
+  background-color: #f0fbff;
+  border-radius: 10px;
+}
+.learners-class {
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-between;
+}
+.learners {
+  display: flex;
+  width: 35%;
+  justify-content: space-between;
+}
+.lesson-card-content {
+  width: 100%;
+}
+.Daniel-Etim {
+  margin-top: 2rem;
+}
+.lesson-card-text {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+}
+.lesson-card-content p {
+  font-size: 13px;
+  padding: 4px 0;
+}
+.icon-container {
+  display: flex;
+  width: 20%;
+  height: 30px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.icon-container img {
+  height: 20px;
+  width: 20px;
+}
+.top-teachers {
+  background: white;
+  padding: 20px;
+  width: 30%;
+  border-radius: 20px;
+}
+.write-up {
+  display: flex;
+  padding: 10px 0;
+  justify-content: space-between;
+}
+.top {
+  margin-right: 7rem;
+}
+.teachers-rating {
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+.teacher-identity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.teacher-identity h5 {
+  font-size: 12px;
+}
+.teacher-identity p {
+  font-size: 11px;
+}
+.teacher-identity img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+/* Liked Styling */
+.rating-container {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.star {
+  font-size: 25px;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 1s ease;
+}
+
+.star.liked {
+  color: gold;
+}
+
+.info {
+  margin-top: 5px;
+  font-size: 15px;
+}
+/* Kebab Menu Styling */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background: #eee;
+  border: 1px solid #ccc;
+  padding: 8px;
+  margin-top: 5px;
+  min-width: 120px;
+}
+.dropdown-menu.show {
+  display: block;
+}
+.menu-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-right: 20px;
+}
+.dots-button {
+  cursor: pointer;
+  font-size: 24px;
+  background: none;
+  border: none;
+}
+/* .show {
+  display: block;
+} */

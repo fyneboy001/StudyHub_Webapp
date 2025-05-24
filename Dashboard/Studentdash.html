@@ -3,7 +3,421 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
+    <title>StudyHub.com/student/dashboard</title>
+    <link
+      rel="icon"
+      href="../Landingpage/assets/Favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="Studentdash.css" />
   </head>
-  <body></body>
+  <body>
+    <nav class="SideNav">
+      <img
+        class="sideNav-logo"
+        src="../Landingpage/assets/Logo.png"
+        alt="StudyHub Logo"
+        width="180px"
+      />
+      <div class="navlinks-container Home">
+        <h5>Home</h5>
+        <div class="Nav-links">
+          <img src="./assets/Icons/Frame.png" alt="" />
+          <a href="#">Dashboard</a>
+        </div>
+        <div class="Nav-links">
+          <img src="./assets/Icons/lessons.png" alt="" />
+          <a href="#">Lessons</a>
+        </div>
+        <div class="Nav-links">
+          <img src="./assets/Icons/quizes.png" alt="" />
+          <a href="#">Quizzes</a>
+        </div>
+      </div>
+      <div class="navlinks-container">
+        <h5>Resources</h5>
+        <div class="Nav-links">
+          <img src="./assets/Icons/textbook.png" alt="" />
+          <a href="#">Textbooks</a>
+        </div>
+        <div class="Nav-links">
+          <img src="./assets/Icons/download.png" alt="" />
+          <a href="#">Downloads</a>
+        </div>
+        <div class="Nav-links">
+          <img src="./assets/Icons/bookmarks.png" alt="" />
+          <a href="#">Bookmarks</a>
+        </div>
+      </div>
+      <div class="navlinks-container">
+        <h5>Community</h5>
+        <div class="Nav-links">
+          <img src="./assets/Icons/referral.png" alt="" />
+          <a href="#">Referrals</a>
+        </div>
+        <div class="Nav-links">
+          <img src="./assets/Icons/community.png" alt="" />
+          <a href="#">Community Hub</a>
+        </div>
+        <div class="Nav-links">
+          <img src="./assets/Icons/mentorship.png" alt="" />
+          <a href="#">Mentorship Portal</a>
+        </div>
+      </div>
+      <div class="navlinks-container">
+        <h5>Settings</h5>
+        <div class="Nav-links">
+          <img src="./assets/Icons/setting.png" alt="" />
+          <a href="#">Account Settings</a>
+        </div>
+        <div class="Nav-links help">
+          <img src="./assets/Icons/help.png" alt="" />
+          <a href="#">Help Center</a>
+        </div>
+      </div>
+      <div class="User-profile">
+        <img src="./assets/Icons/Userprofile.png" alt="" />
+        <div>
+          <h5>Emily Ikpe</h5>
+          <p>Student</p>
+        </div>
+      </div>
+    </nav>
+    <main class="DashBoard">
+      <section class="DashBoard-Header">
+        <h1>Dashboard</h1>
+        <div class="search-notification">
+          <div class="DashBoard-Search">
+            <img src="./assets/Icons/search.png" alt="Search Icon" />
+            <input type="text" placeholder="Search for lessons" />
+          </div>
+          <button class="notification-button">
+            <img
+              src="./assets/Icons/notification.png"
+              alt="Notification Icon"
+            />
+          </button>
+        </div>
+      </section>
+      <section class="Welcome-section">
+        <div class="welcome-note">
+          <h2>Welcome back, Emily!</h2>
+          <p>Here's what is happening with your learning journey today</p>
+        </div>
+        <div class="Happening-cards">
+          <div class="cards">
+            <div class="text-content">
+              <h6>Lessons in progress</h6>
+              <p>3</p>
+            </div>
+            <button class="notification-button">
+              <img src="./assets/Icons/progress.png" alt="" />
+            </button>
+          </div>
+          <div class="cards">
+            <div class="text-content">
+              <h6>Completed lessons</h6>
+              <p>56</p>
+            </div>
+            <button class="notification-button">
+              <img src="./assets/Icons/completed.png" alt="" />
+            </button>
+          </div>
+          <div class="cards">
+            <div class="text-content">
+              <h6>Completed quizzes</h6>
+              <p>30</p>
+            </div>
+            <button class="notification-button">
+              <img src="./assets/Icons/completedquizes.png" alt="" />
+            </button>
+          </div>
+          <div class="cards">
+            <div class="text-content">
+              <h6>Hours studied</h6>
+              <p>12.5</p>
+            </div>
+            <button class="notification-button">
+              <img src="./assets/Icons/Hourstudied.png" alt="" />
+            </button>
+          </div>
+        </div>
+      </section>
+      <section class="Progress-section">
+        <div class="view">
+          <h3>In progress</h3>
+          <button class="view-button">
+            view more
+            <img src="./assets/Icons/arrowdown.png" alt="" />
+          </button>
+        </div>
+        <div class="learning-progress-cards-container">
+          <div class="progress-cards">
+            <img src="./assets/Cell.png" alt="Cell images" width="299px" />
+            <div class="progress-card-content">
+              <div class="cell-bio">
+                <h5>Cell</h5>
+                <div class="subject-class">
+                  <p class="bio">Biology</p>
+                  <p class="ss1">S.S 1</p>
+                </div>
+              </div>
+              <p>
+                Cell theory, cell structure & functions, types of cell & more
+              </p>
+              <div class="percentage-container">
+                <div class="readings">
+                  <h5>Progress</h5>
+                  <p>75%</p>
+                </div>
+                <div class="progress-bar-container">
+                  <div class="progress-bar" style="width: 75%"></div>
+                </div>
+              </div>
+              <button class="continue">Continue learning</button>
+            </div>
+          </div>
+          <div class="progress-cards">
+            <img
+              src="./assets/Supporting-sys.png"
+              alt="Supporting System images"
+              width="298px"
+            />
+            <div class="progress-card-content">
+              <div class="cell-bio">
+                <h5>Cell</h5>
+                <div class="subject-class">
+                  <p class="bio">Biology</p>
+                  <p class="ss1">S.S 1</p>
+                </div>
+              </div>
+              <p>
+                Cell theory, cell structure & functions, types of cell & more
+              </p>
+              <div class="percentage-container">
+                <div class="readings">
+                  <h5>Progress</h5>
+                  <p>25%</p>
+                </div>
+                <div class="progress-bar-container">
+                  <div class="progress-bar" style="width: 25%"></div>
+                </div>
+              </div>
+              <button class="continue">Continue learning</button>
+            </div>
+          </div>
+          <div class="progress-cards">
+            <img src="./assets/Surd.png" alt="Surd images" width="298px" />
+            <div class="progress-card-content">
+              <div class="cell-bio">
+                <h5>Cell</h5>
+                <div class="subject-class">
+                  <p class="maths">Mathematics</p>
+                  <p class="ss1">S.S 1</p>
+                </div>
+              </div>
+              <p>
+                Cell theory, cell structure & functions, types of cell & more
+              </p>
+              <div class="percentage-container">
+                <div class="readings">
+                  <h5>Progress</h5>
+                  <p>10%</p>
+                </div>
+                <div class="progress-bar-container">
+                  <div class="progress-bar" style="width: 10%"></div>
+                </div>
+              </div>
+              <button class="continue">Continue learning</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="Popular-lesson-section">
+        <div class="write-up">
+          <h1>Popular lessons</h1>
+          <h1 class="top">Top Mentors</h1>
+        </div>
+        <div class="content">
+          <div class="Lesson-container">
+            <div class="lesson-card">
+              <img src="./assets/Scalars.png" alt="Scalars and Vectors Image" />
+              <div class="lesson-card-content">
+                <div class="lesson-card-text">
+                  <div class="Vector">
+                    <h4>Scalars & Vectors</h4>
+                    <p>
+                      Definitions and examples of Scalars and Vectors, <br />
+                      Vector Addition and Resolution, Triangle and <br />
+                      Parallelogram Law of Vector.
+                    </p>
+                  </div>
+                  <div class="icon-container">
+                    <img src="./assets/Icons/copy.png" alt="" />
+                    <div class="menu-wrapper">
+                      <button class="dots-button" onclick="toggleMenu(event)">
+                        ⋮
+                      </button>
+                      <div class="dropdown-menu">Menu 1</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="Daniel-Etim">
+                  <h5>Lesson by Daniel Etim</h5>
+                  <div class="subject-class learners-class">
+                    <div class="learners">
+                      <p class="bio">Physics</p>
+                      <p class="ss1">S.S 1</p>
+                    </div>
+                    <p class="maths">50 Learners</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="lesson-card card">
+              <img
+                src="./assets/trigonometry.png"
+                alt="Scalars and Vectors Image"
+              />
+              <div class="lesson-card-content">
+                <div class="lesson-card-text">
+                  <div class="Vector">
+                    <h4>Trigonometry</h4>
+                    <p>
+                      Sine, Cosine and Tangent of Angles, Trig. Ratios and their
+                      Applications, Angles of Elevation and Depression, Bearings
+                      and Navigation.
+                    </p>
+                  </div>
+                  <div class="icon-container">
+                    <img src="./assets/Icons/copy.png" alt="" />
+                    <div class="menu-wrapper">
+                      <button class="dots-button" onclick="toggleMenu(event)">
+                        ⋮
+                      </button>
+                      <div class="dropdown-menu">Menu 1</div>
+                    </div>
+                  </div>
+                </div>
+                <!-- <div id="menu" class="dropdown2">
+                  <a href="#">Item 1</a>
+                  <a href="#">Item 2</a>
+                  <a href="#">Item 3</a>
+                </div> -->
+                <div class="Daniel-Etim">
+                  <h5>Lesson by Olajide Abiodun</h5>
+                  <div class="subject-class learners-class">
+                    <div class="learners">
+                      <p class="maths">Mathematics</p>
+                      <p class="ss1">S.S 1</p>
+                    </div>
+                    <p class="maths">74 Learners</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="top-teachers">
+            <div class="teachers-rating">
+              <div class="teacher-identity">
+                <img src="./assets/Ruth.png" alt="" />
+                <div>
+                  <h5>Dr. Ruth Thompson</h5>
+                  <p>Biology</p>
+                </div>
+              </div>
+
+              <div class="rating-container">
+                <div class="rating">
+                  <span class="star">★</span>
+                  <span class="info">0.0</span>
+                </div>
+              </div>
+            </div>
+            <div class="teachers-rating">
+              <div class="teacher-identity">
+                <img src="./assets/Oluwatosin.png" alt="" />
+                <div>
+                  <h5>Dr. Oluwatosin John</h5>
+                  <p>Mental Health</p>
+                </div>
+              </div>
+
+              <div class="rating-container">
+                <div class="rating">
+                  <span class="star">★</span>
+                  <span class="info">0.0</span>
+                </div>
+              </div>
+            </div>
+            <div class="teachers-rating">
+              <div class="teacher-identity">
+                <img src="./assets/Obi.png" alt="" />
+                <div>
+                  <h5>Mr. Obi Kingsley</h5>
+                  <p>Agric. Science</p>
+                </div>
+              </div>
+
+              <div class="rating-container">
+                <div class="rating">
+                  <span class="star">★</span>
+                  <span class="info">0.0</span>
+                </div>
+              </div>
+            </div>
+            <div class="teachers-rating">
+              <div class="teacher-identity">
+                <img src="./assets/John.png" alt="" />
+                <div>
+                  <h5>Mr. John Obinna</h5>
+                  <p>Biology</p>
+                </div>
+              </div>
+
+              <div class="rating-container">
+                <div class="rating">
+                  <span class="star">★</span>
+                  <span class="info">0.0</span>
+                </div>
+              </div>
+            </div>
+            <div class="teachers-rating">
+              <div class="teacher-identity">
+                <img src="./assets/Adeyemi.png" alt="" />
+                <div>
+                  <h5>Mrs. Adeyemi Lisa</h5>
+                  <p>Counselling</p>
+                </div>
+              </div>
+
+              <div class="rating-container">
+                <div class="rating">
+                  <span class="star">★</span>
+                  <span class="info">0.0</span>
+                </div>
+              </div>
+            </div>
+            <div class="teachers-rating">
+              <div class="teacher-identity">
+                <img src="./assets/Aliyu.png" alt="" />
+                <div>
+                  <h5>Mr. Aliyu Ahmed</h5>
+                  <p>History</p>
+                </div>
+              </div>
+
+              <div class="rating-container">
+                <div class="rating">
+                  <span class="star">★</span>
+                  <span class="info">0.0</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
 </html>
