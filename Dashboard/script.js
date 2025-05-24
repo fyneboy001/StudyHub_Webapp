@@ -65,3 +65,12 @@ window.onclick = function (event) {
     }
   }
 };
+
+//Hamburger Menu Styling
+const hamburger = document.getElementById("hamburgerToggle");
+const sideNav = document.querySelector(".SideNav");
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  sideNav.classList.toggle("active");
+});

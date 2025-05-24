@@ -25,6 +25,29 @@ body {
   margin-top: 10px;
   color: rgba(0, 28, 33, 0.6);
 }
+/* Hamburger Styling */
+.hamburger-btn {
+  display: none; /* Hidden by default, shown on small screens */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  position: fixed;
+  top: 3rem;
+  left: 1rem;
+}
+
+.hamburger-btn .bar {
+  height: 3px;
+  width: 100%;
+  background-color: #333;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
 .Home {
   margin-top: 0px;
 }
@@ -306,6 +329,9 @@ body {
   width: 35%;
   justify-content: space-between;
 }
+.learn-maths {
+  width: 40%;
+}
 .lesson-card-content {
   width: 100%;
 }
@@ -367,6 +393,7 @@ body {
   width: 50px;
   border-radius: 50%;
 }
+
 /* Liked Styling */
 .rating-container {
   display: flex;
@@ -398,6 +425,7 @@ body {
   padding: 8px;
   margin-top: 5px;
   min-width: 120px;
+  cursor: pointer;
 }
 .dropdown-menu.show {
   display: block;
@@ -416,3 +444,52 @@ body {
 /* .show {
   display: block;
 } */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+  .SideNav,
+  .DashBoard {
+    width: 100%; /* Make both take full width */
+  }
+  .hamburger-btn {
+    display: flex;
+  }
+  .hamburger-btn.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger-btn.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger-btn.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  .SideNav {
+    position: fixed;
+    left: -250px; /* Hide by default */
+    top: 5rem;
+    height: 100vh;
+    width: 250px;
+    background-color: white;
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+
+  .SideNav.active {
+    left: 0;
+  }
+  .DashBoard-Header {
+    display: flex;
+  }
+  .search-notification {
+    width: 60%;
+    background-color: red;
+  }
+  .responsive-hamburger {
+    margin-left: 3rem;
+    padding-top: 4px; /* Optional spacing around the group */
+  }
+  .navlinks-container {
+    height: 12vh;
+  }
+}
