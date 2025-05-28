@@ -1,0 +1,205 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  height: 220vh;
+  width: 100%;
+  display: flex;
+  color: rgba(0, 28, 33, 0.6);
+}
+.SideNav {
+  height: 220vh;
+  width: 20%;
+  background-color: white;
+  padding: 20px 30px;
+}
+.sideNav-logo {
+  padding-bottom: 30px;
+}
+.navlinks-container {
+  height: 20vh;
+  width: 100%;
+  margin-top: 10px;
+  color: rgba(0, 28, 33, 0.6);
+}
+/* Hamburger Styling */
+.hamburger-btn {
+  display: none; /* Hidden by default, shown on small screens */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  position: fixed;
+  top: 3rem;
+  left: 1rem;
+}
+
+.hamburger-btn .bar {
+  height: 3px;
+  width: 100%;
+  background-color: #333;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+.Home {
+  margin-top: 0px;
+}
+.Nav-links {
+  gap: 20px;
+  padding: 5px 10px;
+  height: 30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.Nav-links a {
+  text-decoration: none;
+  color: rgba(0, 28, 33, 0.6);
+  font-size: 13px;
+}
+.Nav-links a:hover {
+  color: #016072;
+}
+.Nav-links:hover {
+  background-color: #f0fbff;
+}
+.Nav-links img {
+  height: 19px;
+}
+.User-profile {
+  display: flex;
+  height: 15vh;
+  width: 100%;
+  gap: 20px;
+  align-items: center;
+}
+.User-profile img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+.User-profile h5 {
+  color: rgba(0, 28, 33, 0.6);
+  font-size: 15px;
+}
+.User-profile p {
+  color: #1a808d;
+  font-size: 12px;
+}
+.DashBoard {
+  height: 230vh;
+  width: 80%;
+  background-color: #ebeef0;
+  padding: 20px 20px;
+}
+.DashBoard-Header {
+  height: 7vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.DashBoard-Header h1 {
+  font-size: 20px;
+}
+.search-notification {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+}
+.DashBoard-Search {
+  height: 6vh;
+  width: 80%;
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 0px 20px;
+  gap: 10px;
+}
+.DashBoard-Search input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+.notification-button {
+  height: 6vh;
+  width: 6vh;
+  background-color: #f0fbff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.video-section {
+  height: 500px;
+  width: 100%;
+  padding-top: 25px;
+}
+.video {
+  height: 480px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+  .SideNav,
+  .DashBoard {
+    width: 100%; /* Make both take full width */
+  }
+  .hamburger-btn {
+    display: flex;
+  }
+  .hamburger-btn.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger-btn.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger-btn.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  .SideNav {
+    position: fixed;
+    left: -250px; /* Hide by default */
+    top: 5rem;
+    height: 100vh;
+    width: 250px;
+    background-color: white;
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+
+  .SideNav.active {
+    left: 0;
+  }
+  .DashBoard-Header {
+    display: flex;
+  }
+  .search-notification {
+    width: 60%;
+    background-color: red;
+  }
+  .responsive-hamburger {
+    margin-left: 3rem;
+    padding-top: 4px; /* Optional spacing around the group */
+  }
+  .navlinks-container {
+    height: 12vh;
+  }
+}
