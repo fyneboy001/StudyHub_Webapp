@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StudyHub.com/student/dashboard</title>
+    <link rel="icon" href="../assets/Favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="community.css" />
+  </head>
+  <body>
+    <nav class="SideNav">
+      <img
+        class="sideNav-logo"
+        src="../assets/Logo.png"
+        alt="StudyHub Logo"
+        width="180px"
+      />
+      <div class="navlinks-container Home">
+        <h5>Home</h5>
+        <div class="Nav-links">
+          <img src="../StudentDashboard/assets/Icons/Frame.png" alt="" />
+          <a href="#" class="links">Dashboard</a>
+        </div>
+        <div class="Nav-links">
+          <img src="../StudentDashboard/assets/Icons/lessons.png" alt="" />
+          <a href="#" class="links">Lessons</a>
+        </div>
+        <div class="Nav-links">
+          <img src="../StudentDashboard/assets/Icons/quizes.png" alt="" />
+          <a href="#">Quizzes</a>
+        </div>
+      </div>
+      <div class="navlinks-container">
+        <h5>Resources</h5>
+        <div class="Nav-links">
+          <img src="../StudentDashboard/assets/Icons/textbook.png" alt="" />
+          <a href="#">Textbooks</a>
+        </div>
+        <div class="Nav-links">
+          <img src="../StudentDashboard/assets/Icons/download.png" alt="" />
+          <a href="#">Downloads</a>
+        </div>
+        <div class="Nav-links">
+          <img src="../StudentDashboard/assets/Icons/bookmarks.png" alt="" />
+          <a href="#">Bookmarks</a>
+        </div>
+      </div>
+      <div class="navlinks-container">
+        <h5>Community</h5>
+        <div class="Nav-links">
+          <img src="../StudentDashboard/assets/Icons/referral.png" alt="" />
+          <a href="#">Referrals</a>
+        </div>
+        <div class="Nav-links">
+          <img src="../StudentDashboard/assets/Icons/community.png" alt="" />
+          <a href="#">Community Hub</a>
+        </div>
+        <div class="Nav-links">
+          <img src="../StudentDashboard/assets/Icons/mentorship.png" alt="" />
+          <a href="#">Mentorship Portal</a>
+        </div>
+      </div>
+      <div class="navlinks-container">
+        <h5>Settings</h5>
+        <div class="Nav-links">
+          <img src="../StudentDashboard/assets/Icons/setting.png" alt="" />
+          <a href="#">Account Settings</a>
+        </div>
+        <div class="Nav-links help">
+          <img src="../StudentDashboard/assets/Icons/help.png" alt="" />
+          <a href="#">Help Center</a>
+        </div>
+      </div>
+      <div class="User-profile">
+        <img src="./assets/Derin.png" alt="" />
+        <div>
+          <h5>Derin Abudu</h5>
+          <p>Teacher</p>
+        </div>
+      </div>
+    </nav>
+    <!-- Hamburger Button -->
+
+    <main class="DashBoard">
+      <section class="DashBoard-Header">
+        <div class="responsive-hamburger">
+          <button
+            class="hamburger-btn"
+            id="hamburgerToggle"
+            aria-label="Toggle Menu"
+          >
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+          <h1>Dashboard</h1>
+        </div>
+
+        <div class="search-notification">
+          <div class="DashBoard-Search">
+            <img
+              src="../StudentDashboard/assets/Icons/search.png"
+              alt="Search Icon"
+            />
+            <input type="text" placeholder="Search for lessons" />
+          </div>
+          <button class="notification-button">
+            <img
+              src="../StudentDashboard/assets/Icons/notification.png"
+              alt="Notification Icon"
+            />
+          </button>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
