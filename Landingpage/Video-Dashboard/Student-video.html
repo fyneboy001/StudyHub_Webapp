@@ -164,6 +164,43 @@
               <span>Practice Exercise</span>
             </a>
           </div>
+          <div class="comment-section">
+      <div class="header-container">
+        <h5>DISCUSSION</h5>
+        <button
+          id="toggleButton"
+          class="toggle-btn"
+          aria-expanded="true"
+          aria-label="Close comment section"
+        >
+          <div class="icon" id="toggleIcon">
+            <div style="font-size: 1rem">ⓧ</div>
+          </div>
+          <span class="text">Close</span>
+        </button>
+      </div>
+
+      <div id="commentContent" class="content-wrapper expanded">
+        <div class="comment-input">
+          <div class="profile">
+            <img id="userProfileImage" src="" alt="User Profile" />
+            <strong id="userRealName"></strong>
+          </div>
+          <textarea
+            id="commentText"
+            placeholder="Write your comment..."
+          ></textarea>
+          <button class="post" onclick="postComment()">Comment</button>
+        </div>
+
+        <div class="comments-scroll-wrapper">
+  <div class="comments" id="commentsContainer">
+    <!-- Comments will appear here -->
+  </div>
+</div>
+      </div>
+    </div>
+          </div>
         </div>
         <div class="module-container">
           <div class="lesson-module">
@@ -172,8 +209,8 @@
           </div>
           <!-- Navigation Buttons -->
           <div class="navigation">
-            <button onclick="prevLesson()">Previous</button>
-            <button onclick="nextLesson()">Next</button>
+            <button class="previousbtn" onclick="prevLesson()">Previous</button>
+            <button class="nextbtn" onclick="nextLesson()">Next</button>
           </div>
         </div>
       </section>
