@@ -19,11 +19,13 @@
         <h5>Home</h5>
         <div class="Nav-links">
           <img src="../StudentDashboard/assets/Icons/Frame.png" alt="" />
-          <a href="#" class="links">Dashboard</a>
+          <a href="../StudentDashboard/Studentdash.html" class="links"
+            >Dashboard</a
+          >
         </div>
         <div class="Nav-links">
           <img src="../StudentDashboard/assets/Icons/lessons.png" alt="" />
-          <a href="#" class="links">Lessons</a>
+          <a href="../Lessons/lessons.html" class="links">Lessons</a>
         </div>
         <div class="Nav-links">
           <img src="../StudentDashboard/assets/Icons/quizes.png" alt="" />
@@ -53,11 +55,11 @@
         </div>
         <div class="Nav-links">
           <img src="../StudentDashboard/assets/Icons/community.png" alt="" />
-          <a href="#">Community Hub</a>
+          <a href="../Communityhub/community.html">Community Hub</a>
         </div>
         <div class="Nav-links">
           <img src="../StudentDashboard/assets/Icons/mentorship.png" alt="" />
-          <a href="#">Mentorship Portal</a>
+          <a href="../MentorshipPortal/mentorship.html">Mentorship Portal</a>
         </div>
       </div>
       <div class="navlinks-container">
@@ -116,6 +118,63 @@
         <video controls autoplay class="video">
           <source src="./assets/cellvideo.mp4" type="video/mp4" />
         </video>
+        <div class="video-details">
+          <div>
+            <h1>Cell</h1>
+            <ul>
+              <li class="bio">Biology</li>
+              <li>SS 1</li>
+              <li>10 mins</li>
+            </ul>
+          </div>
+          <div class="video-buttons">
+            <button>
+              <img src="./assets/Icons/whitedownload.png" alt="" />
+              Download
+            </button>
+            <button>
+              <img src="./assets/Icons/whitebookmark.png" alt="" />
+              Bookmark
+            </button>
+          </div>
+        </div>
+      </section>
+      <section class="description-section">
+        <div class="video-description">
+          <div class="User-profile">
+            <img src="../TeacherDashboard/assets/Chioma.png" alt="" />
+            <div>
+              <h5>Mrs. Chioma Uchechukwu</h5>
+              <p>B.Ed, B.Sc, M.Sc</p>
+            </div>
+          </div>
+          <div class="lesson-resources">
+            <h2>Lesson resources</h2>
+            <a href="#" class="resource-link">
+              <img src="./assets/icons/textbook.png" alt="" />
+              <span>Lesson Textbook - Textbook.pdf</span>
+            </a>
+
+            <a href="#" class="resource-link">
+              <img src="./assets/icons/note.png" alt="" />
+              <span>Lesson Notes - Cell.pdf</span>
+            </a>
+            <a href="#" class="resource-link">
+              <img src="./assets/icons/exercise.png" alt="" />
+              <span>Practice Exercise</span>
+            </a>
+          </div>
+        </div>
+        <div class="lesson-module">
+          <h1>Lesson Module</h1>
+          <div id="lessons"></div>
+
+          <!-- Navigation Buttons -->
+          <div class="navigation">
+            <button onclick="prevLesson()">Previous</button>
+            <button onclick="nextLesson()">Next</button>
+          </div>
+        </div>
       </section>
     </main>
     <script src="script.js"></script>

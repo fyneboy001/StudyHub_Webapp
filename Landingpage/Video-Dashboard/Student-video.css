@@ -144,16 +144,108 @@ body {
   cursor: pointer;
 }
 .video-section {
-  height: 500px;
+  height: 580px;
   width: 100%;
   padding-top: 25px;
 }
+
 .video {
   height: 480px;
   width: 100%;
   object-fit: cover;
   border-radius: 15px;
 }
+.video-details {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.video-details ul {
+  display: flex;
+  gap: 25px;
+  margin-top: 5px;
+}
+.bio {
+  list-style: none;
+}
+.video-buttons {
+  display: flex;
+  gap: 20px;
+}
+.video-buttons button {
+  height: 30px;
+  width: 120px;
+  border-radius: 7px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #1a808d;
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0 10px;
+}
+.lesson-resources {
+  height: 180px;
+  width: 70%;
+  background-color: white;
+  padding: 20px 30px;
+  border-radius: 15px;
+}
+.lesson-resources a {
+  text-decoration: none;
+  display: block;
+  margin-top: 12px;
+  align-content: center;
+  color: rgba(0, 28, 33, 0.6);
+}
+.resource-link img,
+.resource-link span {
+  display: inline-block;
+  vertical-align: middle;
+}
+.description-section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+}
+.lesson-module {
+  background-color: white;
+  height: 300px;
+}
+
+/* Lesson Module checkbox styling */
+.lesson {
+  display: none;
+}
+.lesson.active {
+  display: block;
+}
+.content {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+.circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: blue;
+  margin-right: 10px;
+}
+.checkbox {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+}
+.navigation {
+  margin-top: 30px;
+}
+
 @media (max-width: 768px) {
   body {
     flex-direction: column;

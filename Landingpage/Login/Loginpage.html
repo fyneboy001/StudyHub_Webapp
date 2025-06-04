@@ -3,14 +3,73 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>StudyHub.com/signup</title>
+    <link rel="stylesheet" href="loginpage.css" />
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon" />
   </head>
   <body>
-    <h1>This is the Login page</h1>
-    <button
-      onclick="window.location.href = '../StudentDashboard/Studentdash.html'"
-    >
-      Go to Dashboard
-    </button>
+    <main>
+      <div class="first-main-container">
+        <!-- <img src="./assets/innovativeimg.png" alt="" width="250px" /> -->
+        <img
+          class="logo2"
+          src="../assets/Logo2.png"
+          alt="StudyHub Logo"
+          width="250px"
+        />
+        <h2>Innovative e-learning at your fingertips</h2>
+      </div>
+      <div class="second-main-container">
+        <img src="../assets/Icons/Backarrow.png" alt="" />
+        <form>
+          <div class="welcome">
+            <h3>Welcome to StudyHub</h3>
+            <h2>Login to your Account</h2>
+          </div>
+          <label for="title">Email Address</label>
+          <div>
+            <img src="" alt="" />
+            <input
+              type="text"
+              name="email"
+              id="email"
+              placeholder="Enter your email"
+            />
+          </div>
+          <label for="title">Password</label>
+          <span><a href="##">Forgot password?</a></span>
+          <div>
+            <img src="" alt="" />
+            <input
+              type="text"
+              name="email"
+              id="email"
+              placeholder="Enter your password"
+            />
+            <img src="" alt="" />
+          </div>
+        </form>
+        <button
+          onclick="window.location.href='../StudentDashboard/Studentdash.html'"
+          class="submit"
+        >
+          Login
+        </button>
+        <div class="or">
+          <p>or</p>
+        </div>
+
+        <div class="google-button input">
+          <img
+            src="https://developers.google.com/identity/images/g-logo.png"
+            alt="Google Logo"
+          />
+          Login with Google
+        </div>
+        <p>
+          Don't have an account yet? <a href="../Sign-Up/Signup.html">Signup</a>
+        </p>
+      </div>
+    </main>
   </body>
 </html>
