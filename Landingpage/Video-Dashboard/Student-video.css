@@ -190,7 +190,7 @@ body {
 }
 .lesson-resources {
   height: 180px;
-  width: 70%;
+  width: 100%;
   background-color: white;
   padding: 20px 30px;
   border-radius: 15px;
@@ -211,15 +211,29 @@ body {
   height: 100vh;
   width: 100%;
   display: flex;
+  justify-content: space-between;
+}
+.video-description {
+  height: 90vh;
+  width: 65%;
+}
+.module-container {
+  height: 90vh;
+  width: 33%;
 }
 .lesson-module {
   background-color: white;
-  height: 300px;
+  height: 360px;
+  width: 100%;
+  padding: 20px 30px;
+  border-radius: 15px;
 }
 
 /* Lesson Module checkbox styling */
 .lesson {
   display: none;
+  font-size: 12px;
+  margin-top: 20px;
 }
 .lesson.active {
   display: block;
@@ -234,13 +248,31 @@ body {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: blue;
+  background: #016072;
   margin-right: 10px;
 }
 .checkbox {
   width: 18px;
   height: 18px;
   margin-right: 10px;
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: #f0fbff;
+  border: 2px solid #016072;
+  border-radius: 50%; /* use square if you prefer, or keep 50% for circle */
+  cursor: default;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #016072;
+  font-weight: bold;
+}
+
+.checkbox:checked::after {
+  content: "✔";
+  position: absolute;
 }
 .navigation {
   margin-top: 30px;

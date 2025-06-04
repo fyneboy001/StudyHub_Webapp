@@ -2,20 +2,20 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Lesson 1 - Content 1</title>
+    <title>Lesson 1 - Content 2</title>
   </head>
   <body>
-    <h1>Lesson 1 - Content 1</h1>
-    <p>This is the content for Lesson 1, Content 1.</p>
+    <h1>Lesson 1 - Content 2</h1>
+    <p>This is the content for Lesson 1, Content 2.</p>
     <button onclick="completeAndReturn()">Complete Content</button>
 
     <script>
-      const lesson = 0;
-      const content = 0;
+      const lesson = 0; // Lesson 1 (zero-based)
+      const content = 1; // Content 2 (zero-based)
 
       function completeAndReturn() {
         localStorage.setItem(`lesson-${lesson}-content-${content}`, "true");
-        window.location.href = "Student-video.html";
+        window.location.href = "../Student-video.html"; // Your main page URL
       }
     </script>
   </body>

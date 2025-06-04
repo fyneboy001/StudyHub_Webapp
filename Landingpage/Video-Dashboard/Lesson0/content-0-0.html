@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lesson 1 - Content 1</title>
+  </head>
+  <body>
+    <h1>Lesson 1 - Content 1</h1>
+    <p>This is the content for Lesson 1, Content 1.</p>
+    <button onclick="completeAndReturn()">Complete Content</button>
+
+    <script>
+      const lesson = 0; // Lesson 1 (zero-based)
+      const content = 0; // Content 1 (zero-based)
+
+      function completeAndReturn() {
+        localStorage.setItem(`lesson-${lesson}-content-${content}`, "true");
+        window.location.href = "../Student-video.html";
+      }
+    </script>
+  </body>
+</html>
