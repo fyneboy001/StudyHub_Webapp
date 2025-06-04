@@ -187,7 +187,7 @@ function createCommentElement(comment, parentId = null) {
         <strong>${comment.realName}</strong> <small>${comment.timestamp}</small>
       </div>
       <p>${comment.text}</p>
-      <div style="display: flex; gap: 10px; align-items: center;">
+      <div style="display: flex; gap: 10px; align-items: center; margin-top: 8px;">
         <button onclick="showReplyInput(${comment.id}, ${parentId})" style="background: transparent; border: none; outline: none; cursor: pointer;">Reply</button>
         <button onclick="likeComment(${comment.id}, ${parentId})" style="background: transparent; border: none; outline: none; cursor: pointer;">
           <img src="./assets/Icons/thumbsup.png" alt="Thumbs up icon for liking this comment" style="width: 16px; height: 16px; vertical-align: middle;" />
