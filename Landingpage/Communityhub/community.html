@@ -74,10 +74,14 @@
         </div>
       </div>
       <div class="User-profile">
-        <img src="./assets/Derin.png" alt="" />
+        <img
+          id="ProfileImage"
+          src="../StudentDashboard/assets/Icons/Userprofile.png"
+          alt=""
+        />
         <div>
-          <h5>Derin Abudu</h5>
-          <p>Teacher</p>
+          <h5 id="Username">Emily Ikpe</h5>
+          <p id="useridentity">S.S 1</p>
         </div>
       </div>
     </nav>
@@ -95,7 +99,7 @@
             <span class="bar"></span>
             <span class="bar"></span>
           </button>
-          <h1>Dashboard</h1>
+          <h1>Community Hub</h1>
         </div>
 
         <div class="search-notification">
@@ -112,6 +116,212 @@
               alt="Notification Icon"
             />
           </button>
+        </div>
+      </section>
+
+      <!-- Post Section -->
+      <section class="Post-section">
+        <!-- <div class="blog-container"> -->
+        <!-- Create New Post -->
+        <div class="create-box">
+          <div class="create-header">
+            <img
+              src="../StudentDashboard/assets/Icons/Userprofile.png"
+              alt="User"
+            />
+            <textarea
+              id="postText"
+              placeholder="Share your thoughts..."
+            ></textarea>
+          </div>
+          <div class="footer-bar">
+            <div class="left">
+              <span><img src="./assets/icons/media.png" alt="" /></span>
+              <span><img src="./assets/icons/messages.png" alt="" /></span>
+            </div>
+            <button class="post-button" onclick="createPost()">Post</button>
+          </div>
+        </div>
+
+        <div class="news-feed-container">
+          <div class="feed">
+            <div class="filter-button-container">
+              <h3>News Feed</h3>
+              <button>
+                Filter
+                <img
+                  src="../StudentDashboard/assets/Icons/arrowdown.png"
+                  alt=""
+                />
+              </button>
+            </div>
+            <!-- Post Feed -->
+            <div class="post-feed" id="postFeed">
+              <div class="post-top">
+                <div class="post-meta">
+                  <img src="./assets/emmanuel.png" alt="User" />
+                  <div class="meta-info">
+                    <div class="meta-header">
+                      <span class="name">Emmanuel Edet</span>
+                      <span class="time"></span>
+                    </div>
+                    <span class="class">S.S 2</span>
+                  </div>
+                </div>
+                <div class="post-tags">
+                  <span class="tag">Chemistry</span>
+                  <span class="tag">Feedback</span>
+                  <span class="kebab">⋮</span>
+                </div>
+              </div>
+              <div class="post-message">
+                Just completed the lesson on Hydrocarbons by teacher Derin
+                Abudu! I don’t know if you guys also watch hers, but it was
+                really easy for me to follow. It can be found here. Anyone else
+                taking this lesson? Or which ones do you prefer on the topic?
+              </div>
+              <div class="post-actions" id="static-post">
+                <span onclick="likePost(this)"
+                  ><img src="./assets/icons/like.png" alt="Like Icon" />
+                  <span class="like-count">0</span></span
+                >
+                <span onclick="toggleCommentBox(this)"
+                  ><img src="./assets/icons/comment.png" alt="Comment Icon" />
+                  <span class="comment-count">0</span></span
+                >
+                <span
+                  ><img src="./assets/icons/share.png" alt="Share Icon"
+                /></span>
+              </div>
+
+              <!-- second static post -->
+              <div class="post-top">
+                <div class="post-meta">
+                  <img src="./assets/Olayinka.png" alt="User" />
+                  <div class="meta-info">
+                    <div class="meta-header">
+                      <span class="name">Fumilayo Olanyinka</span>
+                      <span class="time"></span>
+                    </div>
+                    <span class="class">S.S 1</span>
+                  </div>
+                </div>
+                <div class="post-tags">
+                  <span class="tag">Biology</span>
+                  <span class="tag">Feedback</span>
+                  <span class="kebab">⋮</span>
+                </div>
+              </div>
+              <div class="post-message">
+                <p>
+                  Can someone break down the process of photosynthesis in an
+                  easy-to-understand way? I’m struggling to grasp how the
+                  light-dependent reactions work and what exactly happens during
+                  this stage. Any simple explanation would really help!
+                </p>
+                <div class="post-images">
+                  <img src="./assets/sunlight.png" alt="" />
+                  <img src="./assets/photosynthesis.png" alt="" />
+                </div>
+              </div>
+              <div class="post-actions" id="static-post">
+                <span onclick="likePost(this)"
+                  ><img src="./assets/icons/like.png" alt="Like Icon" />
+                  <span class="like-count">0</span></span
+                >
+                <span onclick="toggleCommentBox(this)"
+                  ><img src="./assets/icons/comment.png" alt="Comment Icon" />
+                  <span class="comment-count">0</span></span
+                >
+                <span
+                  ><img src="./assets/icons/share.png" alt="Share Icon"
+                /></span>
+              </div>
+
+              <!-- third static post -->
+              <div class="post-top static-post">
+                <div class="post-meta">
+                  <img src="./assets/ogechukwu.png" alt="User" />
+                  <div class="meta-info">
+                    <div class="meta-header">
+                      <span class="name">ogechukwu Monday</span>
+                      <span class="time"></span>
+                    </div>
+                    <span class="class">S.S 3</span>
+                  </div>
+                </div>
+                <div class="post-tags">
+                  <span class="tag">Mathematics</span>
+                  <span class="tag">Question</span>
+                  <span class="kebab">⋮</span>
+                </div>
+              </div>
+              <div class="post-message">
+                <p>
+                  I’ve been trying to understand trigonometry for my WAEC prep,
+                  but I’m stuck—can someone explain how to solve sin(θ) = 0.5
+                  for all angles between 0° and 360°, and then use that to find
+                  tan(θ) without a calculator? Some video lessons helped, but I
+                  need detailed steps. Thanks.
+                </p>
+              </div>
+              <div class="post-actions" id="static-post">
+                <span onclick="likePost(this)"
+                  ><img src="./assets/icons/like.png" alt="Like Icon" />
+                  <span class="like-count">0</span></span
+                >
+                <span onclick="toggleCommentBox(this)"
+                  ><img src="./assets/icons/comment.png" alt="Comment Icon" />
+                  <span class="comment-count">0</span></span
+                >
+                <span
+                  ><img src="./assets/icons/share.png" alt="Share Icon"
+                /></span>
+              </div>
+              <div class="seemore">
+                <button onclick="window.location.href='./morepost.html'">
+                  See more posts
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="trending">
+            <h3>Trending Discussions</h3>
+            <div class="trending-discussion">
+              <div>
+                <div class="hydro">
+                  <h4>Hydrocarbon</h4>
+                  <p>150 Posts</p>
+                </div>
+                <div class="hydro">
+                  <h4>WAEC</h4>
+                  <p>323 Posts</p>
+                </div>
+                <div class="hydro">
+                  <h4>Jamb</h4>
+                  <p>100 Posts</p>
+                </div>
+                <div class="hydro">
+                  <h4>Thermodynamics</h4>
+                  <p>96 Posts</p>
+                </div>
+                <div class="hydro">
+                  <h4>Industrialization</h4>
+                  <p>88 Posts</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Direct messages container -->
+            <div class="direct">
+              <h3>Direct message</h3>
+              <div class="direct-message">
+                <img src="./assets/directmessage.png" alt="" />
+                <p>No message yet</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>

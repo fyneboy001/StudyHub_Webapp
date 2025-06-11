@@ -74,10 +74,10 @@
         </div>
       </div>
       <div class="User-profile">
-        <img src="./assets/Derin.png" alt="" />
+        <img src="../StudentDashboard/assets/Icons/Userprofile.png" alt="" />
         <div>
-          <h5>Derin Abudu</h5>
-          <p>Teacher</p>
+          <h5>Emily Ikpe</h5>
+          <p>Student</p>
         </div>
       </div>
     </nav>
@@ -95,7 +95,7 @@
             <span class="bar"></span>
             <span class="bar"></span>
           </button>
-          <h1>Dashboard</h1>
+          <h1>Mentorship Portal</h1>
         </div>
 
         <div class="search-notification">
@@ -114,36 +114,27 @@
           </button>
         </div>
       </section>
-      <section>
-        <h1>Hello, Emily</h1>
+      <section class="welcome-section">
+        <h3>Hello, Emily</h3>
         <p>
           Connect with accomplished mentors to get guidance on your learning
           journey
         </p>
-        <div>
+        <div class="browse-category">
           <h3>Browse by Category</h3>
-          <div>
+          <div class="filter">
             <p>Filter:</p>
             <button>
               <span>Biology</span>
-              <img
-                src="../StudentDashboard/assets/Icons/arrowdown.png"
-                alt=""
-              />
+              <img src="./assets/Icon/arrowdown.png" alt="" />
             </button>
             <button>
               <span>Rating</span>
-              <img
-                src="../StudentDashboard/assets/Icons/arrowdown.png"
-                alt=""
-              />
+              <img src="./assets/Icon/arrowdown.png" alt="" />
             </button>
             <button>
               <span>Avialability</span>
-              <img
-                src="../StudentDashboard/assets/Icons/arrowdown.png"
-                alt=""
-              />
+              <img src="./assets/Icon/arrowdown.png" alt="" />
             </button>
           </div>
           <p></p>
@@ -163,7 +154,7 @@
                   <!-- Star Rating 1 -->
                   <div class="star-container">
                     <div class="rating-container"></div>
-                    <div class="rating-value">0.00</div>
+                    <div class="rating-value">0.0</div>
                   </div>
                 </div>
               </div>
@@ -172,7 +163,7 @@
             <div class="transformed">
               <div class="Identity-container">
                 <div>
-                  <img class="identity-image" src="./assets/ruth.png" alt="" />
+                  <img class="identity-image" src="./assets/john.png" alt="" />
                 </div>
                 <div>
                   <h6>Raymond Emeka</h6>
@@ -189,7 +180,7 @@
             <div class="transformed">
               <div class="Identity-container">
                 <div>
-                  <img class="identity-image" src="./assets/ruth.png" alt="" />
+                  <img class="identity-image" src="./assets/amaka.png" alt="" />
                 </div>
                 <div>
                   <h6>Raymond Emeka</h6>
@@ -206,6 +197,78 @@
           </div>
           <div class="carousel-item">Content 2</div>
           <div class="carousel-item">Content 3</div>
+        </div>
+      </section>
+      <section class="Active-section">
+        <h2>Active Sessions</h2>
+        <div class="chat-container">
+          <!-- Sidebar -->
+          <div class="sidebar">
+            <div class="search">
+              <input type="text" placeholder="Search or start new chat" />
+            </div>
+            <div class="chat-list">
+              <div
+                class="chat-item active"
+                onclick="selectChat(this, 'Mrs. Mary Udoh', './assets/Mary.png')"
+              >
+                <img src="./assets/Mary.png" alt="Mrs. Mary Udoh" />
+                <div class="chat-details">
+                  <div class="top">
+                    <span>Mrs. Mary Udoh</span>
+                    <span class="chat-time" data-timestamp=""></span>
+                  </div>
+                  <div class="bottom">
+                    Of course! Let's break it down for your...
+                  </div>
+                </div>
+              </div>
+              <div
+                class="chat-item"
+                onclick="selectChat(this, 'Mr. David Ekong', './assets/David.png')"
+              >
+                <img src="./assets/David.png" alt="Mr. David Ekong" />
+                <div class="chat-details">
+                  <div class="top">
+                    <span>Mr. David Ekong</span>
+                    <span class="chat-time" data-timestamp=""></span>
+                  </div>
+                  <div class="bottom">
+                    The next session is scheduled for Mon...
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chat Window -->
+          <div class="chat-window">
+            <div class="chat-header">
+              <div class="chat-header-left">
+                <img src="./assets/Mary.png" id="chat-profile" alt="Profile" />
+                <span id="chat-name">Mrs. Mary Udoh</span>
+              </div>
+              <div class="chat-header-right">
+                <img src="./assets/Icon/telephone.png" alt="" />
+                <img src="./assets/Icon/kebabmenu.png" alt="" />
+              </div>
+            </div>
+
+            <div class="chat-body" id="chat-body">
+              <!-- Messages will go here -->
+            </div>
+
+            <div class="chat-input">
+              <input
+                type="text"
+                id="messageInput"
+                placeholder="Type a message..."
+              />
+              <button onclick="sendMessage()">
+                <img src="./assets/Icon/send.png" alt="" />
+              </button>
+            </div>
+          </div>
         </div>
       </section>
     </main>

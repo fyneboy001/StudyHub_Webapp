@@ -5,13 +5,14 @@
   font-family: "Poppins", sans-serif;
 }
 body {
-  height: 220vh;
+  height: 200vh;
   width: 100%;
   display: flex;
   color: rgba(0, 28, 33, 0.6);
+  overflow-x: hidden;
 }
 .SideNav {
-  height: 220vh;
+  height: 200vh;
   width: 20%;
   background-color: white;
   padding: 20px 30px;
@@ -95,7 +96,7 @@ body {
   font-size: 12px;
 }
 .DashBoard {
-  height: 230vh;
+  height: 315vh;
   width: 80%;
   background-color: #ebeef0;
   padding: 20px 20px;
@@ -142,6 +143,370 @@ body {
   border: none;
   outline: none;
   cursor: pointer;
+}
+
+.welcome-section {
+  height: 75vh;
+  padding-top: 3rem;
+}
+/* Carousel Styling */
+.carousel {
+  position: relative;
+  height: 50vh;
+  margin-top: 40px;
+}
+.carousel-item {
+  display: none;
+  height: 240px;
+}
+.carousel-item-selected {
+  display: flex;
+  justify-content: space-between;
+}
+.carousel-nav {
+  height: 50px;
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+}
+.carousel-button {
+  width: 30px;
+  height: 5px;
+  display: inline-block;
+  background-color: #f0fbff;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+.carousel-button-selected {
+  background-color: #016072;
+}
+/* .transformed {
+  height: 30vh;
+  width: 32%;
+  background-color: white;
+  border-radius: 20px;
+  padding: 10px 20px;
+  color: rgba(0, 28, 33, 0.6);
+} */
+/* .Identity-container {
+  height: 120px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.Identity-container h6 {
+  font-size: 16px;
+} */
+/* .Identity-container p {
+  font-size: 12px;
+  margin-bottom: 8px;
+} */
+
+/* lesson card styling */
+.Lesson-container {
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  border-radius: 10px;
+}
+.card {
+  position: absolute;
+  width: 80%;
+  translate: 42rem;
+}
+.lesson-card {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+  padding: 20px;
+  height: 230px;
+  background-color: white;
+  justify-content: space-between;
+  border-radius: 20px;
+}
+.vector-card {
+  width: 66%;
+}
+.Vector {
+  width: 80%;
+  padding-top: 20px;
+}
+.maths {
+  height: 23px;
+  width: 5.5rem;
+  text-align: center;
+  background-color: #f0fbff;
+  border-radius: 10px;
+}
+.learners-class {
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-between;
+}
+.lesson-card img {
+  height: 180px;
+  width: 180px;
+}
+.learners {
+  display: flex;
+  width: 35%;
+  justify-content: space-between;
+}
+.learn-maths {
+  width: 40%;
+}
+.lesson-card-content {
+  width: 100%;
+}
+.Daniel-Etim {
+  margin-top: 2rem;
+}
+.lesson-card-text {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+}
+.lesson-card-content p {
+  font-size: 13px;
+  padding: 4px 0;
+}
+.icon-container {
+  display: flex;
+  width: 20%;
+  height: 30px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.icon-container img {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+.bio,
+.ss1 {
+  height: 23px;
+  width: 5rem;
+  text-align: center;
+  background-color: #f0fbff;
+  border-radius: 10px;
+}
+.ss1 {
+  width: 3.5rem;
+}
+/* Kebab Menu Styling */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background: #eee;
+  border: 1px solid #ccc;
+  padding: 8px;
+  margin-top: 5px;
+  min-width: 120px;
+  cursor: pointer;
+}
+.dropdown-menu.show {
+  display: block;
+}
+.menu-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-right: 20px;
+}
+.dots-button {
+  cursor: pointer;
+  font-size: 24px;
+  background: none;
+  border: none;
+}
+
+.Popular-teachers-sections {
+  height: 50vh;
+  width: 100%;
+}
+.teachers {
+  margin-top: 10px;
+}
+.teacher-details-card {
+  display: flex;
+  gap: 15px;
+  padding: 15px;
+  height: 200px;
+  width: 43%;
+  background-color: white;
+  border-radius: 20px;
+}
+.teacher-details-card h3,
+p,
+.active-learners span {
+  font-size: 13px;
+}
+.active-learners {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 10px;
+}
+.active-learners span {
+  height: 30px;
+  width: 5rem;
+  background-color: #f0fbff;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+}
+#number {
+  width: 6rem;
+}
+.note {
+  padding: 15px 0;
+}
+.name-and-subject {
+  padding-top: 10px;
+}
+
+.teacher-details-card img,
+.overflow-card img {
+  height: 100px;
+  width: 100px;
+}
+.Effionglearners span {
+  font-size: 13px;
+  height: 30px;
+  width: 6rem;
+  background-color: #f0fbff;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+.Effiong-learners {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 10px;
+}
+.okon {
+  margin-bottom: 10px;
+}
+#SS3 {
+  width: 3.5rem;
+}
+.teacher-container {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+}
+.overflow-card {
+  position: absolute;
+  display: flex;
+  gap: 20px;
+  padding: 15px;
+  height: 200px;
+  background-color: white;
+  border-radius: 20px;
+  translate: 55rem;
+}
+.All-lessons-section {
+  height: 170vh;
+  width: 100%;
+}
+.custom-checkbox {
+  position: relative;
+  width: 15px;
+  height: 15px;
+  border: 2px solid #1a808d;
+  appearance: none; /* Remove default checkbox style */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 5px;
+}
+
+.custom-checkbox:checked {
+  background-color: #1a808d;
+}
+.All-lessons-container {
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+.filter-container {
+  height: 90vh;
+  width: 30%;
+  padding: 20px 30px;
+  background-color: white;
+  border-radius: 20px;
+}
+.filter-container h5 {
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+.sub-filters {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+.sub-filters h5 {
+  font-size: 13px;
+  margin-bottom: 3px;
+}
+.filter-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-list label {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* spacing between checkbox and text */
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+.subjects-container {
+  height: 90vh;
+  width: 65%;
+  display: block;
+}
+.scalar-text {
+  width: 80%;
+  padding-top: 5px;
+}
+.Agric-card {
+  display: flex;
+  gap: 15px;
+  padding: 20px;
+  height: 200px;
+  width: 100%;
+  background-color: white;
+  justify-content: space-between;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+.Agric-card img {
+  height: 150px;
+  width: 150px;
+}
+.copyicon {
+  height: 20px !important;
+  width: 20px !important;
+}
+
+.iconcopy-container {
+  display: flex;
+  height: 30px;
+  width: 25%;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 @media (max-width: 768px) {
