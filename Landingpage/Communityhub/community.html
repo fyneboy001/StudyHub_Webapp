@@ -88,7 +88,7 @@
     <!-- Hamburger Button -->
 
     <main class="DashBoard">
-      <section class="DashBoard-Header">
+      <section class="DashBoard-Header" id="DashBoard-Header">
         <div class="responsive-hamburger">
           <button
             class="hamburger-btn"
@@ -102,13 +102,28 @@
           <h1>Community Hub</h1>
         </div>
 
-        <div class="search-notification">
-          <div class="DashBoard-Search">
+        <div class="search-notification" id="search-notification">
+          <!-- <div class="DashBoard-Search">
             <img
               src="../StudentDashboard/assets/Icons/search.png"
               alt="Search Icon"
             />
             <input type="text" placeholder="Search for lessons" />
+          </div> -->
+          <div class="dashboard-search desktop-only">
+            <img
+              src="../StudentDashboard/assets/Icons/search.png"
+              alt="Search Icon"
+            />
+            <input type="text" placeholder="Search on desktop..." />
+          </div>
+          <div class="dashboard-search mobile-only" id="searchnone">
+            <img
+              id="mobileSearchToggle"
+              src="../StudentDashboard/assets/Icons/search.png"
+              alt="Search Icon"
+            />
+            <input type="text" id="mobileSearchInput" placeholder="Search..." />
           </div>
           <button class="notification-button">
             <img

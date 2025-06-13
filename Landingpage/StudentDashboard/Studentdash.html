@@ -19,7 +19,9 @@
         <h5>Home</h5>
         <div class="Nav-links">
           <img src="./assets/Icons/Frame.png" alt="" />
-          <a href="../StudentDashboard/Studentdash.html" class="links">Dashboard</a>
+          <a href="../StudentDashboard/Studentdash.html" class="links"
+            >Dashboard</a
+          >
         </div>
         <div class="Nav-links">
           <img src="./assets/Icons/lessons.png" alt="" />
@@ -97,9 +99,20 @@
         </div>
 
         <div class="search-notification">
-          <div class="DashBoard-Search">
-            <img src="./assets/Icons/search.png" alt="Search Icon" />
-            <input type="text" placeholder="Search for lessons" />
+          <div class="dashboard-search desktop-only">
+            <img
+              src="../StudentDashboard/assets/Icons/search.png"
+              alt="Search Icon"
+            />
+            <input type="text" placeholder="Search on desktop..." />
+          </div>
+          <div class="dashboard-search mobile-only" id="searchnone">
+            <img
+              id="mobileSearchToggle"
+              src="../StudentDashboard/assets/Icons/search.png"
+              alt="Search Icon"
+            />
+            <input type="text" id="mobileSearchInput" placeholder="Search..." />
           </div>
           <button class="notification-button">
             <img
@@ -152,6 +165,50 @@
             </button>
           </div>
         </div>
+
+        <!-- Happening Cards mobile -->
+        <div class="Happening-cards display-mobile">
+          <div class="cards-container">
+            <div class="cards">
+              <div class="text-content">
+                <h6>Lessons in progress</h6>
+                <p>3</p>
+              </div>
+              <button class="notification-button">
+                <img src="./assets/Icons/progress.png" alt="" />
+              </button>
+            </div>
+            <div class="cards">
+              <div class="text-content">
+                <h6>Completed lessons</h6>
+                <p>56</p>
+              </div>
+              <button class="notification-button">
+                <img src="./assets/Icons/completed.png" alt="" />
+              </button>
+            </div>
+          </div>
+          <div class="cards-container">
+            <div class="cards">
+              <div class="text-content">
+                <h6>Completed quizzes</h6>
+                <p>30</p>
+              </div>
+              <button class="notification-button">
+                <img src="./assets/Icons/completedquizes.png" alt="" />
+              </button>
+            </div>
+            <div class="cards">
+              <div class="text-content">
+                <h6>Hours studied</h6>
+                <p>12.5</p>
+              </div>
+              <button class="notification-button">
+                <img src="./assets/Icons/Hourstudied.png" alt="" />
+              </button>
+            </div>
+          </div>
+        </div>
       </section>
       <section class="Progress-section">
         <div class="view">
@@ -163,7 +220,9 @@
         </div>
         <div class="learning-progress-cards-container">
           <div class="progress-cards">
-            <a href="../Video-Dashboard/Student-video.html"><img src="./assets/Cell.png" alt="Cell images" width="299px" /></a>
+            <a href="../Video-Dashboard/Student-video.html"
+              ><img src="./assets/Cell.png" alt="Cell images" width="299px"
+            /></a>
             <div class="progress-card-content">
               <div class="cell-bio">
                 <h5>Cell</h5>
@@ -195,14 +254,15 @@
             />
             <div class="progress-card-content">
               <div class="cell-bio">
-                <h5>Cell</h5>
+                <h5>Supporting Sys.1</h5>
                 <div class="subject-class">
                   <p class="bio">Biology</p>
                   <p class="ss1">S.S 1</p>
                 </div>
               </div>
               <p>
-                Cell theory, cell structure & functions, types of cell & more
+                Supporting tissues in plants (collenchyma, sclerenchyma,
+                parenchyma, xylem, phloem)
               </p>
               <div class="percentage-container">
                 <div class="readings">
@@ -216,19 +276,17 @@
               <button class="continue">Continue learning</button>
             </div>
           </div>
-          <div class="progress-cards">
+          <div class="progress-cards" id="Surds">
             <img src="./assets/Surd.png" alt="Surd images" width="298px" />
             <div class="progress-card-content">
               <div class="cell-bio">
-                <h5>Cell</h5>
+                <h5>Surds</h5>
                 <div class="subject-class">
                   <p class="maths">Mathematics</p>
                   <p class="ss1">S.S 1</p>
                 </div>
               </div>
-              <p>
-                Cell theory, cell structure & functions, types of cell & more
-              </p>
+              <p>Simplification of Surds, Rationalization of Surds</p>
               <div class="percentage-container">
                 <div class="readings">
                   <h5>Progress</h5>

@@ -67,3 +67,27 @@ window.onclick = function (event) {
     }
   }
 };
+
+// Toggle Search Input styling
+// Search input toggle
+document.addEventListener("DOMContentLoaded", function () {
+  const mobileSearchToggle = document.getElementById("mobileSearchToggle");
+  const mobileSearchContainer = document.querySelector(
+    ".dashboard-search.mobile-only"
+  );
+
+  mobileSearchToggle?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    mobileSearchContainer.classList.toggle("active");
+    const input = document.getElementById("mobileSearchInput");
+    if (mobileSearchContainer.classList.contains("active")) {
+      input.focus();
+    }
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!mobileSearchContainer.contains(e.target)) {
+      mobileSearchContainer.classList.remove("active");
+    }
+  });
+});

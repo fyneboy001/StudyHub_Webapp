@@ -1,137 +1,219 @@
 * {
   box-sizing: border-box;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
 }
 
 main {
   display: flex;
-  height: 100vh;
+  flex-direction: row;
   width: 100%;
-  padding: 10px;
-  font-family: sans-serif;
-}
-.first-main-container {
   height: 100vh;
+}
+
+.first-main-container {
   width: 50%;
+  height: 100%;
   background-image: url("../assets/innovativeimg.png");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding: 20px 40px;
+  background-size: cover;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+
 .first-main-container h2 {
-  margin-top: 23rem;
   color: #e6f35b;
-  font-size: 50px;
+  font-size: 3rem;
+  margin-top: auto;
 }
+
+.logo2 {
+  width: 200px;
+}
+
 .second-main-container {
-  height: 100vh;
   width: 50%;
-  padding: 0rem 8rem;
+  height: 100%;
+  padding: 2rem 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
+
 .second-main-container img {
-  translate: 20rem;
+  align-self: flex-end;
+  margin-bottom: 1rem;
 }
+
 .welcome {
   text-align: left;
-  padding-bottom: 20px;
+  margin-bottom: 1.5rem;
 }
+
 .welcome h3 {
   color: #1a808d;
-  padding-bottom: 20px;
+  margin-bottom: 1rem;
 }
+
 .welcome h2 {
   color: #001c21;
-  font-size: 30px;
-  padding-bottom: 5px;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
+
+.password-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem 0 0.2rem;
+}
+
+.password-label label {
+  font-weight: 500;
+}
+
+.password-label a {
+  font-size: 0.9rem;
+  color: #1a808d;
+  text-decoration: none;
+}
+
+.password-label a:hover {
+  text-decoration: underline;
+}
+
+label {
+  display: block;
+  margin: 0.5rem 0 0.2rem;
+  font-weight: 500;
+}
+
 input,
 .input,
 .submit {
-  height: 30px;
+  height: 2.5rem;
   width: 100%;
-  margin-bottom: 15px;
-  padding: 0 20px;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
   border-radius: 30px;
   border: 1px solid #1a808d;
   background-color: transparent;
 }
+
 button {
   cursor: pointer;
 }
-/* .disabled {
-  color: rgba(0, 28, 33, 0.6);
-} */
-.name {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-}
-#name {
-  width: 49%;
-}
+
 .submit {
   background-color: #016072;
   font-weight: bold;
-  margin-top: 5rem;
+  margin-top: 10rem;
   color: white;
 }
+
 .or {
-  display: flex;
-  width: 100%;
-  justify-content: center;
+  text-align: center;
+  margin: 1rem 0;
 }
-/* .google-button {
-} */
+
+.google-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 2.5rem;
+  border-radius: 30px;
+  border: 1px solid #1a808d;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
 .google-button img {
   width: 18px;
   height: 18px;
 }
-/* #no-arrow {
-  appearance: none;
-  background-color: transparent;
-  pointer-events: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  cursor: pointer;
-}
-#no-arrow::-ms-expand {
-  display: none;
-} */
 
-@media (max-width: 768px) {
+/* ============= RESPONSIVE STYLES ============= */
+
+/* Tablets (width ≤ 992px) */
+@media (max-width: 1024px) {
   main {
-    height: 70vh;
-    box-sizing: border-box;
+    flex-direction: column;
+    height: auto;
   }
+
   .first-main-container {
-    height: 70vh;
+    width: 100%;
+    height: 40vh;
+    padding: 1.5rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .first-main-container h2 {
+    font-size: 2rem;
+    margin-top: auto;
+  }
+
+  .second-main-container {
+    width: 100%;
+    padding: 2rem;
+  }
+
+  .second-main-container img {
+    align-self: flex-end;
+    margin-bottom: 1rem;
   }
 }
 
-@media (max-width: 480px) {
-  main {
-    display: block;
-    height: 80vh;
-    box-sizing: border-box;
-  }
+/* Mobile (width ≤ 768px) */
+@media (max-width: 768px) {
   .first-main-container {
     display: none;
   }
+
   .second-main-container {
     width: 100%;
-    height: 80vh;
-    padding: 2rem 2rem;
+    height: 100vh;
+    padding: 2rem;
+    justify-content: center;
   }
-  .first-main-container h2 {
-    font-size: 20px;
-    margin-top: 11rem;
+
+  .welcome h2 {
+    font-size: 1.5rem;
   }
+
+  .welcome h3 {
+    font-size: 1.2rem;
+  }
+
   .logo2 {
-    width: 120px;
+    width: 140px;
   }
-  .second-main-container img {
-    translate: 17rem;
+}
+
+/* Small Devices (≤ 480px) */
+@media (max-width: 480px) {
+  .second-main-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .submit {
+    margin-top: 1.5rem;
+  }
+
+  .google-button {
+    font-size: 0.9rem;
   }
 }

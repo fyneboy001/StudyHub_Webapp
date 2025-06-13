@@ -4,23 +4,51 @@
   padding: 0;
   font-family: "Poppins", sans-serif;
 }
+
+html,
 body {
-  height: 220vh;
   width: 100%;
+  overflow-x: hidden;
+  height: auto;
+  min-height: 90vh;
+  margin: 0;
+  padding: 0;
+}
+
+body {
   display: flex;
   color: rgba(0, 28, 33, 0.6);
+  flex-wrap: nowrap;
 }
+
+/* Layout containers */
 .SideNav {
-  height: 220vh;
-  width: 20%;
+  flex: 0 0 20%;
+  height: 100%; /* Match body height */
   background-color: white;
-  padding: 20px 30px;
+  padding: 20px 25px;
+}
+
+.DashBoard {
+  flex: 1;
+  height: 100%; /* Match body height */
+  padding: 20px;
+  overflow-x: hidden;
+  background-color: #ebeef0;
+}
+/* Responsive image handling */
+img,
+.post-images img {
+  max-width: 100%;
+  height: auto;
+  /* display: block; */
+  object-fit: cover;
 }
 .sideNav-logo {
   padding-bottom: 30px;
 }
 .navlinks-container {
-  height: 20vh;
+  height: 120px;
   width: 100%;
   margin-top: 10px;
   color: rgba(0, 28, 33, 0.6);
@@ -47,6 +75,15 @@ body {
   background-color: #333;
   border-radius: 10px;
   transition: 0.3s ease;
+}
+.hamburger-btn.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger-btn.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-btn.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 .Home {
   margin-top: 0px;
@@ -94,12 +131,12 @@ body {
   color: #1a808d;
   font-size: 12px;
 }
-.DashBoard {
+/* .DashBoard {
   height: 250vh;
   width: 80%;
   background-color: #ebeef0;
   padding: 20px 20px;
-}
+} */
 .DashBoard-Header {
   height: 7vh;
   width: 100%;
@@ -115,7 +152,7 @@ body {
   display: flex;
   justify-content: space-between;
 }
-.DashBoard-Search {
+.dashboard-search {
   height: 6vh;
   width: 80%;
   background-color: white;
@@ -125,12 +162,56 @@ body {
   padding: 0px 20px;
   gap: 10px;
 }
-.DashBoard-Search input {
+.dashboard-search input {
   height: 100%;
   width: 100%;
   border: none;
   outline: none;
 }
+
+/* Mobile search input toggle */
+.dashboard-search.mobile-only {
+  display: none; /* Hidden by default on larger screens */
+  height: 40px;
+  width: 40px;
+  background-color: #f0fbff;
+  border-radius: 30px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: width 0.3s ease, background-color 0.3s ease;
+  padding: 0 10px;
+  gap: 10px;
+}
+
+.dashboard-search.mobile-only img {
+  height: 16px;
+  width: 16px;
+}
+
+/* Hide input by default */
+.dashboard-search.mobile-only input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  display: none;
+  background-color: transparent;
+  color: black;
+}
+
+/* On active, expand and show input */
+.dashboard-search.mobile-only.active {
+  width: 80%;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.dashboard-search.mobile-only.active input {
+  display: block;
+}
+/* end of it */
+
 .notification-button {
   height: 6vh;
   width: 6vh;
@@ -458,52 +539,111 @@ button.post {
   border-left: 2px solid #ddd;
 } */
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   body {
     flex-direction: column;
+    height: auto;
   }
-  .SideNav,
-  .DashBoard {
-    width: 100%; /* Make both take full width */
-  }
-  .hamburger-btn {
-    display: flex;
-  }
-  .hamburger-btn.active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-  .hamburger-btn.active .bar:nth-child(2) {
-    opacity: 0;
-  }
-  .hamburger-btn.active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
+
   .SideNav {
+    width: 100%;
+    height: auto;
+    display: none;
     position: fixed;
-    left: -250px; /* Hide by default */
-    top: 5rem;
-    height: 100vh;
-    width: 250px;
-    background-color: white;
-    transition: left 0.3s ease;
+    top: 0;
+    left: 0;
     z-index: 1000;
+    background-color: #fff;
+    overflow-y: auto;
+    padding-top: 0px;
+  }
+  .sideNav-logo {
+    margin-left: 2rem;
   }
 
   .SideNav.active {
-    left: 0;
+    display: block;
   }
-  .DashBoard-Header {
+
+  .hamburger-btn {
     display: flex;
   }
+
+  .DashBoard {
+    width: 100%;
+    padding-top: 5rem;
+  }
+
+  .DashBoard-Header {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 20px;
+    align-items: center;
+    height: 40px;
+  }
+  .DashBoard-Header h1 {
+    margin-left: 2.5rem;
+    margin-bottom: 10px;
+  }
+  .SideNav,
+  .DashBoard {
+    padding-top: 27px;
+  }
+
   .search-notification {
+    width: 70%;
+    justify-content: right;
+    gap: 10px;
+  }
+
+  .DashBoard-Search {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  #DashBoard-Header {
+    flex-direction: row;
+  }
+  .dashboard-search.mobile-only {
+    display: flex;
+  }
+  #searchnone {
+    display: flex;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+  #search-notification {
     width: 60%;
-    background-color: red;
+    height: 40px;
+    justify-content: right;
+    gap: 10px;
   }
-  .responsive-hamburger {
-    margin-left: 3rem;
-    padding-top: 4px; /* Optional spacing around the group */
+  .notification-button {
+    height: 40px;
+    width: 40px;
   }
-  .navlinks-container {
-    height: 12vh;
+  .module-container {
+    display: none;
+  }
+  .video-description {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .DashBoard-Search input::placeholder {
+    font-size: 12px;
+  }
+  .User-profile h5,
+  .User-profile p,
+  .Nav-links a {
+    font-size: 12px;
+  }
+  .DashBoard-Header h1 {
+    font-size: 12px;
   }
 }

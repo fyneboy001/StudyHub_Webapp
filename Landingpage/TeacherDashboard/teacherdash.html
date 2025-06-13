@@ -97,12 +97,20 @@
         </div>
 
         <div class="search-notification">
-          <div class="DashBoard-Search">
+          <div class="dashboard-search desktop-only">
             <img
               src="../StudentDashboard/assets/Icons/search.png"
               alt="Search Icon"
             />
-            <input type="text" placeholder="Search for lessons" />
+            <input type="text" placeholder="Search on desktop..." />
+          </div>
+          <div class="dashboard-search mobile-only" id="searchnone">
+            <img
+              id="mobileSearchToggle"
+              src="../StudentDashboard/assets/Icons/search.png"
+              alt="Search Icon"
+            />
+            <input type="text" id="mobileSearchInput" placeholder="Search..." />
           </div>
           <button class="notification-button">
             <img
@@ -156,6 +164,54 @@
                 alt=""
               />
             </button>
+          </div>
+        </div>
+
+        <!-- Happening Cards for Mobile -->
+        <div class="Happening-cards display-mobile">
+          <div class="cards-container">
+            <div class="cards">
+              <div class="text-content">
+                <h6>Lessons Uploaded</h6>
+                <p>35</p>
+              </div>
+              <button class="notification-button">
+                <img src="./assets/Icons/lessonuploaded.png" alt="" />
+              </button>
+            </div>
+            <div class="cards">
+              <div class="text-content">
+                <h6>Total learners enrolled</h6>
+                <p>453</p>
+              </div>
+              <button class="notification-button">
+                <img src="./assets/Icons/totallearners.png" alt="" />
+              </button>
+            </div>
+          </div>
+
+          <div class="cards-container">
+            <div class="cards">
+              <div class="text-content">
+                <h6>Avg learner's progress</h6>
+                <p>76%</p>
+              </div>
+              <button class="notification-button">
+                <img src="./assets/Icons/learnersprogress.png" alt="" />
+              </button>
+            </div>
+            <div class="cards">
+              <div class="text-content">
+                <h6>Lesson views (hours)</h6>
+                <p>520</p>
+              </div>
+              <button class="notification-button">
+                <img
+                  src="../StudentDashboard/assets/Icons/Hourstudied.png"
+                  alt=""
+                />
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -224,7 +280,7 @@
               </div>
             </div>
           </div>
-          <div class="progress-cards">
+          <div class="progress-cards" id="periodic-table">
             <img
               src="./assets/periodictable.png"
               alt="Surd images"

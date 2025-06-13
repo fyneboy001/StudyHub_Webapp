@@ -10,65 +10,55 @@
   <body>
     <main>
       <div class="first-main-container">
-        <!-- <img src="./assets/innovativeimg.png" alt="" width="250px" /> -->
         <img
           class="logo2"
           src="../assets/Logo2.png"
           alt="StudyHub Logo"
-          width="250px"
+          width="200"
         />
         <h2>Innovative e-learning at your fingertips</h2>
       </div>
+
       <div class="second-main-container">
-        <img src="../assets/Icons/Backarrow.png" alt="" />
+        <img src="../assets/Icons/Backarrow.png" alt="Back Arrow" />
         <form>
           <div class="welcome">
             <h3>Welcome to StudyHub</h3>
             <h2>Select Your Category</h2>
           </div>
-          <!-- Input Elements -->
+
           <div class="name">
-            <input type="text" name="name" id="name" placeholder="First name" />
-            <input type="text" name="name" id="name" placeholder="Last name" />
+            <input type="text" placeholder="First name" />
+            <input type="text" placeholder="Last name" />
           </div>
 
-          <select class="input" name="text">
-            <option value="" disabled selected class="disabled">
-              Select Grade/class
-            </option>
-            <option value="text">Creche</option>
-            <option value="text">Nursary</option>
-            <option value="text">Primary</option>
-            <option value="text">Secondary</option>
-            <option value="text">University</option>
+          <select>
+            <option value="" disabled selected>Select Grade/class</option>
+            <option value="creche">Creche</option>
+            <option value="nursary">Nursary</option>
+            <option value="primary">Primary</option>
+            <option value="secondary">Secondary</option>
+            <option value="university">University</option>
           </select>
-          <br />
-          <input type="email" name="email" id="" placeholder="Email" />
-          <br />
-          <input
-            type="number"
-            name="phone-number"
-            id=""
-            placeholder="Phone number"
-          />
-          <br />
-          <input type="password" name="" id="" placeholder="Create password" />
-          <br />
-          <input type="password" name="" id="" placeholder="Confirm password" />
-          <br />
-          <button action="submit" class="submit">Sign Up</button>
-        </form>
-        <div class="or">
-          <p>or</p>
-        </div>
 
-        <div class="google-button input">
+          <input type="email" placeholder="Email" />
+          <input type="number" placeholder="Phone number" />
+          <input type="password" placeholder="Create password" />
+          <input type="password" placeholder="Confirm password" />
+
+          <button type="submit" class="submit">Sign Up</button>
+        </form>
+
+        <div class="or"><p>or</p></div>
+
+        <div class="google-button">
           <img
             src="https://developers.google.com/identity/images/g-logo.png"
             alt="Google Logo"
           />
           Sign Up with Google
         </div>
+
         <p>Already have an Account? <a href="../Loginpage.html">Login</a></p>
       </div>
     </main>
