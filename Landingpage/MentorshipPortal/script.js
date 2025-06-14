@@ -212,3 +212,24 @@ document.addEventListener("click", (e) => {
     mobileSearchContainer.classList.remove("active");
   }
 });
+
+// Chatbox hamburger
+const hamburgerBtn = document.getElementById("hamburgerTog");
+const sidebar = document.querySelector(".sidebar");
+
+hamburgerBtn.addEventListener("click", () => {
+  hamburgerBtn.classList.toggle("active");
+  sidebar.classList.toggle("active");
+});
+
+// Optional: close sidebar if you click outside it
+document.addEventListener("click", (e) => {
+  if (
+    !sidebar.contains(e.target) &&
+    !hamburgerBtn.contains(e.target) &&
+    sidebar.classList.contains("active")
+  ) {
+    sidebar.classList.remove("active");
+    hamburgerBtn.classList.remove("active");
+  }
+});

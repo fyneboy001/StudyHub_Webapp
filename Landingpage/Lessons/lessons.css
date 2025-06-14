@@ -676,6 +676,26 @@ p,
     height: 40px;
     width: 40px;
   }
+  #trig-card,
+  .filter-container,
+  #okon-card,
+  .overflow-card {
+    display: none;
+  }
+  .subjects-container,
+  .lesson-card,
+  .teacher-details-card {
+    width: 100%;
+  }
+  .All-lessons-section {
+    height: 100vh;
+  }
+  .carousel {
+    height: 33vh;
+  }
+  .welcome-section {
+    height: 50vh;
+  }
 }
 
 @media (max-width: 480px) {

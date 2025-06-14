@@ -98,3 +98,26 @@ function toggleFAQ(element) {
     element.querySelector(".toggle-sign").textContent = "×";
   }
 }
+
+// Subject link Toggle
+document.addEventListener("DOMContentLoaded", () => {
+  const tabs = document.querySelectorAll(".Subject-links li");
+  const contents = document.querySelectorAll(".content");
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      // Remove active class from all tabs
+      tabs.forEach((t) => t.classList.remove("active"));
+      // Hide all content blocks
+      contents.forEach((c) => c.classList.add("hidden"));
+
+      // Activate the clicked tab
+      tab.classList.add("active");
+      const targetId = tab.getAttribute("data-target");
+      const targetContent = document.getElementById(targetId);
+      if (targetContent) {
+        targetContent.classList.remove("hidden");
+      }
+    });
+  });
+});

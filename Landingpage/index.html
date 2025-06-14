@@ -53,77 +53,78 @@
           - <br />
           learn anytime, anywhere and in your preferred language.
         </p>
-        <button
-          class="get-button"
-          onclick="window.location.href='./GetStarted/Getstarted.html'"
-        >
-          Get Started
-        </button>
-        <br />
-        <button
-          class="view-button"
-          onclick="window.location.href='Testimonial.html'"
-        >
-          View Testimonials
-        </button>
+        <div class="button-container">
+          <button
+            class="get-button"
+            onclick="window.location.href='./GetStarted/Getstarted.html'"
+          >
+            Get Started
+          </button>
+          <button
+            class="view-button"
+            onclick="window.location.href='Testimonial.html'"
+          >
+            View Testimonials
+          </button>
+        </div>
       </div>
       <div class="Subject-container">
-        <div>
+        <div class="sub">
           <img
             class="subjects"
             src="./assets/Physics.png"
             alt="Physics Image"
-            width="220px"
+            width="100%"
           />
         </div>
-        <div class="ecos subjects">
+        <div class="sub">
           <img
             class="subjects"
             src="./assets/Economics.png"
             alt="Economics Image"
-            width="225px"
+            width="100%"
           />
           <img
             class="subjects"
             src="./assets/History.png"
             alt="History Image"
-            width="220px"
+            width="100%"
           />
         </div>
-        <div class="bio">
+        <div class="sub">
           <img
             class="subjects"
             src="./assets/Biology.png"
             alt="Biology Image"
-            width="220px"
+            width="100%"
           />
           <img
             class="subjects"
             src="./assets/Mathematics.png"
             alt="Mathematics Image"
-            width="225px"
+            width="100%"
           />
         </div>
-        <div class="bio chem">
+        <div class="sub">
           <img
             class="subjects"
             src="./assets/English.png"
             alt="English Image"
-            width="220px"
+            width="100%"
           />
           <img
             class="subjects"
             src="./assets/Agriculture.png"
             alt="Agriculture Image"
-            width="220px"
+            width="100%"
           />
         </div>
-        <div class="bio chem">
+        <div class="sub">
           <img
             class="subjects"
             src="./assets/Chemistry.png"
             alt="Chemistry Image"
-            width="220px"
+            width="100%"
           />
         </div>
       </div>
@@ -235,13 +236,15 @@
           your Grade Level
         </h3>
       </div>
+
       <ul class="Subject-links">
-        <a href="#"><li>Mathematics</li></a>
-        <a href="#"><li>English Language</li></a>
-        <a href="#"><li>History</li></a>
-        <a id="Chemistrylink" href="#"><li>Chemistry</li></a>
-        <a href="#"><li>16+ Subjects</li></a>
+        <li data-target="content1" class="active">Mathematics</li>
+        <li data-target="content2">English Language</li>
+        <li data-target="content3">History</li>
+        <li data-target="content4">Chemistry</li>
+        <li data-target="content5">16+ Subjects</li>
       </ul>
+
       <div class="content-section" id="displaySection">
         <div class="content" id="content1">
           <div class="semi-content-section">
@@ -250,51 +253,14 @@
                 <h5>Fractions</h5>
                 <p class="level">Secondary level</p>
               </div>
-              <img
-                class="bg-image"
-                src="./assets/Background.png"
-                alt=""
-                width="350px"
-              />
+              <img class="bg-image" src="./assets/Background.png" alt="" />
               <img class="chart" src="./assets/Chart.png" alt="" />
-              <a href="#" class="Switch"
-                ><img src="./assets/Icons/Switch container.png" alt=""
-              /></a>
+              <a href="#" class="Switch">
+                <img src="./assets/Icons/Switch container.png" alt="" />
+              </a>
             </div>
-            <div class="content-list">
-              <div class="fraction">
-                <h5>Fractions</h5>
-                <p class="level">Secondary level</p>
-              </div>
-              <img
-                class="bg-image"
-                src="./assets/Background.png"
-                alt=""
-                width="350px"
-              />
-              <img class="graph" src="./assets/Graph.png" alt="" />
-              <a href="#" class="switch"
-                ><img src="./assets/Icons/Switch container.png" alt=""
-              /></a>
-            </div>
-            <div class="content-list" id="dice">
-              <div class="fraction">
-                <h5>Fractions</h5>
-                <p class="level">Secondary level</p>
-              </div>
-              <img
-                class="bg-image"
-                src="./assets/Background.png"
-                alt=""
-                width="350px"
-              />
-              <img class="dice" src="./assets/Dice.png" alt="" />
-              <a href="#" class="sWitch"
-                ><img src="./assets/Icons/Switch container.png" alt=""
-              /></a>
-            </div>
+            <!-- Additional content-list blocks can go here -->
           </div>
-
           <div class="seemore-container">
             <button
               class="see-more"
@@ -304,21 +270,43 @@
             </button>
           </div>
         </div>
+
         <div class="content hidden" id="content2">
           <h1>This is English content to be shown</h1>
-          <button class="see-more" onclick="seeMore('./mathematics.html')">
+          <button
+            class="see-more"
+            onclick="window.location.href='./english.html'"
+          >
             See More
           </button>
         </div>
+
         <div class="content hidden" id="content3">
           <h1>This is History content to be shown</h1>
-          <button class="see-more" onclick="seeMore('./mathematics.html')">
+          <button
+            class="see-more"
+            onclick="window.location.href='./history.html'"
+          >
             See More
           </button>
         </div>
-        <div class="content hidden" id="content3">
+
+        <div class="content hidden" id="content4">
           <h1>This is Chemistry content to be shown</h1>
-          <button class="see-more" onclick="seeMore('./mathematics.html')">
+          <button
+            class="see-more"
+            onclick="window.location.href='./chemistry.html'"
+          >
+            See More
+          </button>
+        </div>
+
+        <div class="content hidden" id="content5">
+          <h1>Explore additional subjects here.</h1>
+          <button
+            class="see-more"
+            onclick="window.location.href='./subjects.html'"
+          >
             See More
           </button>
         </div>
@@ -383,7 +371,7 @@
               class="quotation"
               src="./assets/Icons/Quotationicon.png"
               alt=""
-              width="85px"
+              width="150px"
             />
             <h5>Transformed my study routine</h5>
             <p>
@@ -411,7 +399,7 @@
               class="quotation"
               src="./assets/Icons/Quotationicon.png"
               alt=""
-              width="85px"
+              width="150px"
             />
             <h5>Transformed my study routine</h5>
             <p>
@@ -435,7 +423,7 @@
             </div>
           </div>
           <div class="transformed" id="Peterkome">
-            <img src="./assets/Icons/Quotationicon.png" alt="" width="85px" />
+            <img src="./assets/Icons/Quotationicon.png" alt="" width="150px" />
             <h5>Transformed my study routine</h5>
             <p>
               StudyHub transformed my study routine! the video lessons and
@@ -550,60 +538,62 @@
         <img class="book" src="./assets/Tooltip.png" alt="" />
       </div>
     </section>
-    <footer>
-      <div class="footer-first-container">
-        <div class="footer-logo">
-          <img
-            class="studylogo"
-            src="./assets/Logo.png"
-            alt="StudyHub logo"
-            width="250px"
-          />
-          <p>
-            Break free from learning barriers. Unlock your <br />
-            potential with StudyHub - learn anytime, <br />
-            anywhere and in your preferred language.
-          </p>
-        </div>
-        <div class="footer-links">
-          <div class="company">
-            <h5>Company</h5>
-            <ul class="menu">
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Contact</a></li>
-              <li><a href="#">Careers</a></li>
-              <li><a href="#">Press</a></li>
-              <li><a href="#">FAQ</a></li>
-            </ul>
+    <div class="footer-wrapper">
+      <footer>
+        <div class="footer-first-container">
+          <div class="footer-logo">
+            <img
+              class="studylogo"
+              src="./assets/Logo.png"
+              alt="StudyHub logo"
+              width="250px"
+            />
+            <p>
+              Break free from learning barriers. Unlock your <br />
+              potential with StudyHub - learn anytime, <br />
+              anywhere and in your preferred language.
+            </p>
           </div>
-          <div class="company">
-            <h5>Legal</h5>
-            <ul class="menu">
-              <li><a href="#">Terms of Service</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Cookie Policy</a></li>
-            </ul>
-            <div class="social-handle-links">
-              <a href="#"
-                ><img src="./assets/Icons/FacebookIcon.png" alt=""
-              /></a>
-              <a href="#"
-                ><img src="./assets/Icons/InstagramIcon.png" alt=""
-              /></a>
-              <a href="#"
-                ><img src="./assets/Icons/YoutubeIcon.png" alt=""
-              /></a>
+          <div class="footer-links">
+            <div class="company">
+              <h5>Company</h5>
+              <ul class="menu">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Press</a></li>
+                <li><a href="#">FAQ</a></li>
+              </ul>
+            </div>
+            <div class="company">
+              <h5>Legal</h5>
+              <ul class="menu">
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Cookie Policy</a></li>
+              </ul>
+              <div class="social-handle-links">
+                <a href="#"
+                  ><img src="./assets/Icons/FacebookIcon.png" alt=""
+                /></a>
+                <a href="#"
+                  ><img src="./assets/Icons/InstagramIcon.png" alt=""
+                /></a>
+                <a href="#"
+                  ><img src="./assets/Icons/YoutubeIcon.png" alt=""
+                /></a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <img
-        class="footer-hub"
-        src="./assets/StudyHub.png"
-        alt="StudyHub Logo"
-        width="1100px"
-      />
-    </footer>
+        <img
+          class="footer-hub"
+          src="./assets/StudyHub.png"
+          alt="StudyHub Logo"
+          width="1100px"
+        />
+      </footer>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>

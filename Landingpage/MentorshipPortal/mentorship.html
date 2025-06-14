@@ -137,8 +137,15 @@
         </p>
         <div class="browse-category">
           <h3>Browse by Category</h3>
+          <div class="mobile-browse">
+            <h2>Browse by Category</h2>
+            <button>
+              Filter
+              <img src="./assets/Icon/arrowdown.png" alt="" />
+            </button>
+          </div>
           <div class="filter">
-            <p>Filter:</p>
+            <p class="styled-filter">Filter:</p>
             <button>
               <span>Biology</span>
               <img src="./assets/Icon/arrowdown.png" alt="" />
@@ -192,7 +199,7 @@
               </div>
               <button class="message-mentorbtn">Message</button>
             </div>
-            <div class="transformed">
+            <div class="transformed" id="Amaka">
               <div class="Identity-container">
                 <div>
                   <img class="identity-image" src="./assets/amaka.png" alt="" />
@@ -217,6 +224,17 @@
       <section class="Active-section">
         <h2>Active Sessions</h2>
         <div class="chat-container">
+          <!-- Hamburger for mobile -->
+          <button
+            class="hamburger-button"
+            id="hamburgerTog"
+            aria-label="Toggle Sidebar"
+          >
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+
           <!-- Sidebar -->
           <div class="sidebar">
             <div class="search">
@@ -229,7 +247,7 @@
               >
                 <img src="./assets/Mary.png" alt="Mrs. Mary Udoh" />
                 <div class="chat-details">
-                  <div class="top">
+                  <div class="top" id="top">
                     <span>Mrs. Mary Udoh</span>
                     <span class="chat-time" data-timestamp=""></span>
                   </div>

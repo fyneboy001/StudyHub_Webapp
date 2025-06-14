@@ -48,7 +48,7 @@ img,
   padding-bottom: 30px;
 }
 .navlinks-container {
-  height: 20vh;
+  height: 120px;
   width: 100%;
   margin-top: 10px;
   color: rgba(0, 28, 33, 0.6);
@@ -289,7 +289,7 @@ img,
   background-color: #016072;
 }
 .transformed {
-  height: 30vh;
+  height: 20vh;
   width: 32%;
   background-color: white;
   border-radius: 20px;
@@ -320,6 +320,9 @@ img,
   outline: none;
 }
 
+.mobile-browse {
+  display: none;
+}
 /* Star rating styling */
 .star-container {
   display: flex;
@@ -623,6 +626,9 @@ img,
   .DashBoard-Search {
     width: 100%;
   }
+  /* .transformed {
+    height: 210px;
+  } */
 }
 
 @media (max-width: 768px) {
@@ -649,6 +655,123 @@ img,
     height: 40px;
     width: 40px;
   }
+  #Amaka {
+    display: none;
+  }
+  .hamburger-btn {
+    display: flex;
+    position: relative;
+  }
+
+  /* chatbox hamburger */
+  .hamburger-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 1.5rem;
+    left: 1rem;
+    z-index: 1001;
+  }
+
+  .hamburger-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #333;
+    border-radius: 5px;
+    transition: 0.3s ease;
+  }
+
+  .hamburger-button.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger-button.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger-button.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 1000;
+    transition: left 0.3s ease-in-out;
+    padding: 20px;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  /* .chat-window {
+    width: 100%;
+    margin-left: 0;
+  } */
+  .chat-window {
+    width: 100%;
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* ensures it grows to fill vertical space */
+  }
+  .chat-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .chat-body {
+    flex-grow: 1;
+  }
+
+  .chat-container {
+    flex-direction: column;
+    position: relative;
+  }
+  .chat-header-left {
+    margin-left: 3rem;
+  }
+  .transformed {
+    width: 48%;
+    height: 200px;
+  }
+  .filter,
+  .browse-category h3 {
+    display: none;
+  }
+  .mobile-browse {
+    display: flex;
+    justify-content: space-between;
+  }
+  .mobile-browse button {
+    height: 40px;
+    width: 7rem;
+    background-color: #f0fbff;
+    display: flex;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 15px;
+  }
+  .welcome-section {
+    height: 60vh;
+    margin-top: 2rem;
+  }
+  .browse-category {
+    height: 90px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -663,4 +786,8 @@ img,
   .DashBoard-Header h1 {
     font-size: 12px;
   }
+  /* .transformed img {
+    width: 150px;
+    height: 150px;
+  } */
 }
