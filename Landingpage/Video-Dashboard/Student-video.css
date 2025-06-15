@@ -632,6 +632,12 @@ button.post {
   .video-description {
     width: 100%;
   }
+  .video-span {
+    display: none;
+  }
+  .video-buttons button {
+    width: 50px;
+  }
 }
 
 @media (max-width: 480px) {
