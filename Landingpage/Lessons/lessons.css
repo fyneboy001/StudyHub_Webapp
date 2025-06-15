@@ -694,8 +694,7 @@ p,
     height: 33vh;
   }
   .welcome-section {
-    height: auto;
-    background-color: red;
+    height: 55vh;
   }
   .Vector {
     padding-top: 3px;
@@ -707,10 +706,6 @@ p,
   .Daniel-Etim {
     margin-top: 1rem;
   }
-  .lesson-card img {
-    height: 100px;
-    width: 100px;
-  }
   .icon-container {
     width: 20%;
   }
@@ -718,41 +713,18 @@ p,
     height: 30px;
     width: 30px;
   }
-  .cell-bio .support {
-    font-size: 11px;
-  }
-  .cell-bio .subject-class {
-    gap: 0px;
-  }
-  #subject {
-    margin-right: 10px;
-  }
-  .bio,
-  .ss1 {
-    width: 3rem;
-  }
-  .ss1 {
-    margin-left: 5px;
-  }
-  .learn-maths {
-    width: 50%;
-  }
-  /* #math {
-    margin-right: 15px;
-  } */
-
-  #math {
-    translate: -15px;
+  .learners {
+    width: 45%;
+    gap: 5px;
   }
   .lesson-card {
-    gap: 8px;
+    gap: 10px;
   }
   .Lesson-container {
     height: 30vh;
   }
   .carousel-item {
     height: auto;
-    background-color: blue;
   }
 }
 
