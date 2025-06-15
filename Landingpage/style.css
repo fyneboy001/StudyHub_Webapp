@@ -1172,6 +1172,9 @@ footer {
   .transformed p {
     font-size: 10px;
   }
+  .carousel-item {
+    height: 40vh;
+  }
   .identity-image {
     height: 30px;
     width: 30px;
