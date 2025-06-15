@@ -577,8 +577,8 @@ p,
   width: 150px;
 }
 .copyicon {
-  height: 20px !important;
-  width: 20px !important;
+  height: 30px !important;
+  width: 30px !important;
 }
 
 .iconcopy-container {
@@ -705,7 +705,7 @@ p,
     height: 100px;
   }
   .Daniel-Etim {
-    margin-top: 1rem;
+    margin-top: 20px;
   }
   .icon-container {
     width: 20%;
@@ -713,6 +713,9 @@ p,
   .icon-container img {
     height: 30px;
     width: 30px;
+  }
+  .Agric-card {
+    padding: 15px 8px;
   }
   #subject {
     margin-right: 10px;
