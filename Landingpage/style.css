@@ -314,28 +314,38 @@ html {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-  margin: 20px 0;
   padding: 0;
   gap: 15px;
+  justify-content: center;
 }
 
 .Subject-links li {
   padding: 10px 20px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
   cursor: pointer;
   transition: 0.3s;
+  outline: none;
+  border: none;
 }
 
 .Subject-links li.active,
 .Subject-links li:hover {
-  background-color: #1d4ed8;
-  color: white;
-  border-color: #1d4ed8;
+  color: #001c21;
+  text-decoration: underline;
 }
 
 .content-section {
   margin-top: 30px;
+}
+.bg-image {
+  width: 100%;
+  height: 450px;
+  margin-top: 3rem;
+}
+.semi-content-section {
+  height: 55vh;
+  margin-top: 10px;
+  display: flex;
+  gap: 45px;
 }
 
 .content {
@@ -345,24 +355,79 @@ html {
 .hidden {
   display: none;
 }
+/* .Switch {
+  transform: translateY(50px);
+} */
 
+/* Edith here */
+.graph,
+.chart,
+.dice {
+  translate: 60px;
+  transform: translateY(-20rem);
+  z-index: 1000;
+  height: 200px;
+  width: 200px;
+}
+.Switch img {
+  translate: 180%;
+  transform: translateY(-13rem);
+  width: 80px;
+}
+/* .switch img {
+  translate: 8rem;
+  transform: translateY(-210px);
+  width: 80px;
+}
+.sWitch img {
+  translate: 30;
+  transform: translateY(-145px);
+  width: 80px;
+} */
+.graph,
+.chart {
+  width: 200px;
+}
+/* end here */
 .content-list {
   border: 1px solid #eee;
   border-radius: 8px;
-  padding: 16px;
   margin-bottom: 20px;
   position: relative;
-  background-color: #f9f9f9;
+  height: 41vh;
+  background-color: #f0fbff;
 }
 
 .fraction h5 {
   margin: 0;
   font-size: 18px;
+  height: 30px;
+  width: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+}
+.fraction {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
 }
 
 .fraction .level {
   font-size: 14px;
   color: #777;
+  height: 30px;
+  width: 8rem;
+  background-color: #e6f35b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  outline: none;
+  border: none;
 }
 
 .seemore-container {
@@ -371,12 +436,17 @@ html {
 }
 
 .see-more {
-  background-color: #1d4ed8;
-  color: white;
+  background-color: #e6f35b;
+  color: #001c21;
   padding: 10px 25px;
   border: none;
-  border-radius: 6px;
+  width: 10rem;
+  height: 40px;
+  border-radius: 20px;
   cursor: pointer;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
 }
 
 .Statistics-section {
@@ -788,76 +858,27 @@ footer {
   .Features-container {
     height: 22vh;
   }
+  .bg-image {
+    height: 350px;
+  }
+  .content-list {
+    height: 30vh;
+  }
+  .graph,
+  .chart,
+  .dice {
+    translate: 40px;
+    transform: translateY(-18rem);
+  }
+  .Switch img {
+    translate: 5rem;
+    transform: translateY(-12rem);
+  }
+  #dice {
+    display: none;
+  }
 }
 
-/* .dice {
-  display: none;
-}
-.content-list {
-  height: 35vh;
-  width: 45%;
-} */
-.bg-image {
-  width: 250px;
-  height: 250px;
-  margin-top: 3rem;
-}
-.semi-content-section {
-  height: 85vh;
-  margin-top: 10px;
-}
-.seemore-container {
-  margin-top: 0rem;
-}
-.fraction {
-  height: 60px;
-  font-size: 14px;
-  padding: 0 15px;
-  justify-content: space-between;
-}
-.level {
-  flex-shrink: 0;
-  height: 26px;
-  width: 120px;
-  font-size: 10px;
-  margin-left: 0rem;
-  background-color: #e6f35b;
-}
-.Subject-section {
-  height: auto;
-}
-
-.graph,
-.chart,
-.dice {
-  translate: 30px;
-  transform: translateY(-12rem);
-  z-index: 1000;
-  height: 150px;
-  width: 150px;
-}
-.Switch img {
-  translate: 12rem;
-  transform: translateY(-13rem);
-  width: 60px;
-}
-.switch img {
-  translate: 12rem;
-  transform: translateY(-210px);
-  width: 60px;
-}
-.sWitch img {
-  translate: 40px;
-  transform: translateY(-145px);
-  width: 60px;
-}
-.graph,
-.chart {
-  width: 200px;
-}
-.content-list {
-  height: 350px;
-}
 @media (max-width: 768px) {
   /* .Header {
     padding: 0px 10px;
@@ -949,30 +970,30 @@ footer {
     padding: 3px 5px;
   }
   .Subject-links {
-    gap: 10px;
+    gap: 5px;
     font-size: 12px;
   }
-  .content-list {
+  /* .content-list {
     height: 25vh;
     width: 47%;
-  }
-  .bg-image {
+  } */
+  /* .bg-image {
     width: 170px;
     margin-top: 1.5rem;
-  }
-  .semi-content-section {
+  } */
+  /* .semi-content-section {
     height: 36vh;
-  }
-  #Chemistrylink {
+  } */
+  #chemistrylink {
     display: none;
   }
-  #dice {
+  /* #dice {
     display: none;
-  }
-  .content {
+  } */
+  /* .content {
     height: 40vh;
-  }
-  .fraction {
+  } */
+  /* .fraction {
     height: 60px;
     font-size: 14px;
     padding: 0 5px;
@@ -985,23 +1006,34 @@ footer {
     font-size: 10px;
     margin-left: 0rem;
     background-color: #e6f35b;
+  } */
+  .fraction h5 {
+    font-size: 15px;
+  }
+  .fraction .level {
+    font-size: 12px;
+    height: 30px;
+    width: 6rem;
+  }
+  .fraction {
+    padding: 10px 0;
+  }
+  .bg-image {
+    height: 250px;
+    width: 100%;
   }
   .graph,
   .chart {
-    translate: 30px;
-    transform: translateY(-8rem);
-    width: 100px;
+    translate: 10px;
+    transform: translateY(-13rem);
+    width: 180px;
   }
   .Switch img {
-    translate: 30px;
-    transform: translateY(-5rem);
-    width: 40px;
+    translate: 12rem;
+    transform: translateY(-16rem);
+    width: 60px;
   }
-  .switch img {
-    translate: 30px;
-    transform: translateY(-95px);
-    width: 40px;
-  }
+
   .Subject-section {
     height: auto;
   }
