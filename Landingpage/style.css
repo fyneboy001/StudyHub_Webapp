@@ -443,6 +443,8 @@ html {
   border: none;
   width: 10rem;
   height: 40px;
+  z-index: 9999;
+  position: relative;
   border-radius: 20px;
   cursor: pointer;
   /* display: flex;
