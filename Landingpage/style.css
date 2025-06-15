@@ -1239,6 +1239,8 @@ footer {
   }
   .semi-content-section {
     gap: 10px;
+    height: 280px;
+    background-color: red;
   }
   .fraction h5 {
     width: auto;
