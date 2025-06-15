@@ -698,8 +698,11 @@ img,
   .cell-bio .support {
     font-size: 11px;
   }
-  .subject-class {
-    gap: 1px;
+  .cell-bio .subject-class {
+    gap: 0px;
+  }
+  #subject {
+    margin-right: 10px;
   }
   .bio,
   .ss1 {
@@ -711,10 +714,11 @@ img,
   .learn-maths {
     width: 50%;
   }
+  /* #math {
+    margin-right: 15px;
+  } */
+  #trig-icon,
   #math {
-    margin-right: 10px;
-  }
-  #trig-icon {
     margin-right: 15px;
   }
   .lesson-card {
