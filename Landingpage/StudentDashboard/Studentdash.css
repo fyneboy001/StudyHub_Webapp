@@ -699,7 +699,7 @@ img,
     font-size: 11px;
   }
   .subject-class {
-    gap: 3px;
+    gap: 1px;
   }
   .bio,
   .ss1 {
@@ -710,6 +710,9 @@ img,
   }
   .learn-maths {
     width: 50%;
+  }
+  #math {
+    margin-right: 10px;
   }
   #trig-icon {
     margin-right: 15px;
