@@ -766,53 +766,15 @@ footer {
   margin-top: 3rem;
   display: block;
 }
+/* @media (max-width: 1450) {
+  .Subject-container {
+    height: 70vh;
+    background-color: red;
+  }
+} */
 
 /* Tablet Screen Responsive Styling */
-@media (max-width: 1450px) {
-  .hamburger {
-    display: block;
-  }
-  .hamburger.active .bar:nth-child(2) {
-    opacity: 0;
-  }
-  .hamburger.active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-  .hamburger.active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
-  .nav-Menu {
-    height: auto;
-    width: 100%;
-    position: fixed;
-    left: -100%;
-    top: 0;
-    gap: 0;
-    flex-direction: column;
-    background-color: rgb(185, 182, 182);
-    text-align: center;
-    transition: 0.3s;
-  }
-  /* .nav-Menu {
-    width: 100%;
-    height: auto;
-    display: none;
-    position: fixed;
-    top: 0;
-    left: -100%;
-    z-index: 1000;
-    background-color: black;
-    overflow-y: auto;
-    padding-top: 0px;
-  } */
-  .nav-items {
-    margin: 16px 0;
-    color: white;
-  }
-
-  .nav-Menu.active {
-    left: 0;
-  }
+@media (max-width: 1024px) {
   .Accessible-content {
     height: auto;
     width: 100%;
@@ -924,6 +886,50 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  .nav-Menu {
+    height: auto;
+    width: 100%;
+    position: fixed;
+    left: -100%;
+    top: 0;
+    gap: 0;
+    flex-direction: column;
+    background-color: rgb(185, 182, 182);
+    text-align: center;
+    transition: 0.3s;
+  }
+  /* .nav-Menu {
+    width: 100%;
+    height: auto;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    z-index: 1000;
+    background-color: black;
+    overflow-y: auto;
+    padding-top: 0px;
+  } */
+  .nav-items {
+    margin: 16px 0;
+    color: white;
+  }
+
+  .nav-Menu.active {
+    left: 0;
+  }
   /* .Header {
     padding: 0px 10px;
   } */
