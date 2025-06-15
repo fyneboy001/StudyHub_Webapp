@@ -652,7 +652,6 @@ img,
   .progress-cards {
     width: 48%;
     height: 33vh;
-    background-color: red;
   }
   .Progress-section {
     height: 40vh;
@@ -660,6 +659,7 @@ img,
   }
   .learning-progress-cards-container {
     height: 30vh;
+    margin-top: 15px;
   }
   .top-teachers,
   .top {
@@ -704,6 +704,12 @@ img,
   .bio,
   .ss1 {
     width: 3rem;
+  }
+  .ss1 {
+    margin-left: 5px;
+  }
+  .learn-maths {
+    width: 50%;
   }
   #trig-icon {
     margin-right: 10px;
