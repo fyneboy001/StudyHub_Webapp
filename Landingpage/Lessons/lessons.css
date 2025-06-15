@@ -756,6 +756,9 @@ p,
   .All-lessons-container {
     height: 150vh;
   }
+  .active-learners span {
+    width: 4rem;
+  }
 }
 
 @media (max-width: 480px) {
