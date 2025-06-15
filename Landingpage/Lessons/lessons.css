@@ -490,7 +490,7 @@ p,
   translate: 55rem;
 }
 .All-lessons-section {
-  height: 170vh;
+  height: auto;
   width: 100%;
 }
 .custom-checkbox {
@@ -556,6 +556,7 @@ p,
   height: 90vh;
   width: 65%;
   display: block;
+  background-color: black;
 }
 .scalar-text {
   width: 80%;
@@ -714,7 +715,8 @@ p,
     height: 30px;
     width: 30px;
   }
-  .Agric-card {
+  .Agric-card,
+  .lesson-card {
     padding: 15px 8px;
   }
   #subject {
@@ -736,6 +738,12 @@ p,
   }
   .carousel-item {
     height: auto;
+  }
+  .subjects-container {
+    height: 100vh;
+  }
+  .Agric-card {
+    height: 250px;
   }
 }
 
