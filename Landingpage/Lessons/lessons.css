@@ -694,7 +694,7 @@ p,
     height: 33vh;
   }
   .welcome-section {
-    height: 55vh;
+    height: 60vh;
   }
   .Vector {
     padding-top: 3px;
@@ -713,9 +713,14 @@ p,
     height: 30px;
     width: 30px;
   }
-  .learners {
+  #subject {
+    margin-right: 10px;
+  }
+  .learn-maths {
     width: 45%;
-    gap: 5px;
+  }
+  #math {
+    translate: -15px;
   }
   .lesson-card {
     gap: 10px;
