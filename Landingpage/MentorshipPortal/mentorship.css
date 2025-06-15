@@ -388,6 +388,9 @@ img,
   display: flex;
   background-color: white;
 }
+.chat-body {
+  background-color: red;
+}
 .sidebar {
   width: 30%;
   border-right: 1px solid #ddd;
@@ -501,7 +504,7 @@ img,
   flex-grow: 1;
   padding: 20px;
   overflow-y: auto;
-  background: url("https://i.imgur.com/7k12EPD.png");
+  background: white;
   display: flex;
   flex-direction: column;
 }
