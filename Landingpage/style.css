@@ -123,7 +123,8 @@ html {
   cursor: pointer;
 }
 .Subject-container {
-  height: auto;
+  height: 60vh;
+  background-color: red;
   width: 100%;
   display: flex;
   align-items: flex-end;
