@@ -745,6 +745,9 @@ p,
   .Agric-card {
     height: 250px;
   }
+  .All-lessons-section {
+    height: 120vh;
+  }
 }
 
 @media (max-width: 480px) {
