@@ -717,7 +717,9 @@ img,
   /* #math {
     margin-right: 15px;
   } */
-  #trig-icon,
+  #trig-icon {
+    margin-right: 15px;
+  }
   #math {
     margin-right: 15px;
   }
