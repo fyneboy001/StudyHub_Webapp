@@ -395,6 +395,7 @@ html {
   margin-bottom: 20px;
   position: relative;
   height: 41vh;
+  width: 50%;
   background-color: #f0fbff;
 }
 
@@ -1210,4 +1211,41 @@ footer {
 }
 
 @media (max-width: 480px) {
+  .Subject-links {
+    gap: 2px;
+  }
+  .Subject-links li {
+    padding: 10px 5px;
+  }
+  .bg-image {
+    height: 150px;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .graph,
+  .chart {
+    translate: 10px;
+    transform: translateY(-8rem);
+    width: 100px;
+    height: 100px;
+  }
+  .content-list {
+    height: 150px;
+  }
+  .Switch img {
+    translate: 1.5rem;
+    transform: translateY(-6.5rem);
+    width: 30px;
+  }
+  .semi-content-section {
+    gap: 10px;
+  }
+  .fraction h5 {
+    width: auto;
+    font-size: 11px;
+  }
+  .fraction .level {
+    font-size: 11px;
+    width: 6rem;
+  }
 }
