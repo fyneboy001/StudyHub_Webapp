@@ -696,6 +696,24 @@ p,
   .welcome-section {
     height: 50vh;
   }
+  .Vector {
+    padding-top: 3px;
+  }
+  .lesson-card img {
+    width: 100px;
+    height: 100px;
+  }
+  .Daniel-Etim {
+    margin-top: 1rem;
+  }
+  .icon-container {
+    width: 25%;
+    background-color: blue;
+  }
+  .icon-container img {
+    height: 30px;
+    width: 30px;
+  }
 }
 
 @media (max-width: 480px) {
