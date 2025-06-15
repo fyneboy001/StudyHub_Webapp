@@ -636,8 +636,8 @@ button.post {
     display: none;
   }
   .video-buttons button {
-    width: 50px;
-    padding: 0px;
+    width: 80px;
+    padding: 0px 0px;
   }
 }
 
