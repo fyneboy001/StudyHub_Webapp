@@ -414,7 +414,6 @@ img,
   margin-top: 10px;
   justify-content: space-between;
   width: 100%;
-  background-color: purple;
 }
 .learners {
   display: flex;
@@ -722,10 +721,10 @@ img,
     margin-right: 15px;
   } */
   #trig-icon {
-    translate: -10px;
+    translate: -12px;
   }
   #math {
-    translate: -10px;
+    translate: -15px;
   }
   .lesson-card {
     gap: 8px;
