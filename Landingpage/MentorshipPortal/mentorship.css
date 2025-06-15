@@ -742,8 +742,18 @@ img,
     margin-left: 3rem;
   }
   .transformed {
-    width: 48%;
+    width: 50%;
     height: 200px;
+  }
+  .carousel-item {
+    background-color: red;
+    padding: 0px;
+    gap: 5px;
+  }
+  .transformed img {
+    position: relative;
+    height: 80px;
+    width: 200px;
   }
   .filter,
   .browse-category h3 {
