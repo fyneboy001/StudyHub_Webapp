@@ -699,7 +699,8 @@ p,
   .Vector {
     padding-top: 3px;
   }
-  .lesson-card img {
+  .lesson-card img,
+  .Agric-card img {
     width: 100px;
     height: 100px;
   }
@@ -716,11 +717,13 @@ p,
   #subject {
     margin-right: 10px;
   }
-  .learn-maths {
-    width: 45%;
+  .learners {
+    background-color: red;
+    width: 50%;
   }
-  #math {
-    translate: -15px;
+  .menu-wrapper {
+    background-color: blue;
+    width: 250%;
   }
   .lesson-card {
     gap: 10px;
