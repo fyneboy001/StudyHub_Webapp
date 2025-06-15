@@ -637,10 +637,7 @@ button.post {
   }
   .video-buttons button {
     width: 50px;
-  }
-  .video-buttons img {
-    width: 50px;
-    height: 50px;
+    padding: 0px;
   }
 }
 
