@@ -406,11 +406,15 @@ img,
   text-align: center;
   background-color: #f0fbff;
   border-radius: 10px;
+
+  background-color: blue;
 }
 .learners-class {
   display: flex;
   margin-top: 10px;
   justify-content: space-between;
+  width: 100%;
+  background-color: purple;
 }
 .learners {
   display: flex;
@@ -718,11 +722,9 @@ img,
     margin-right: 15px;
   } */
   #trig-icon {
-    background-color: red;
     translate: -10px;
   }
   #math {
-    background-color: red;
     translate: -10px;
   }
   .lesson-card {
