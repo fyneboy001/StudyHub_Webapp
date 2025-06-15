@@ -123,7 +123,7 @@ html {
   cursor: pointer;
 }
 .Subject-container {
-  height: 60vh;
+  height: 65vh;
   width: 100%;
   display: flex;
   align-items: flex-end;
@@ -766,7 +766,7 @@ footer {
 }
 
 /* Tablet Screen Responsive Styling */
-@media (max-width: 1200px) {
+@media (max-width: 1450px) {
   .hamburger {
     display: block;
   }
@@ -815,10 +815,14 @@ footer {
     height: auto;
     width: 100%;
   }
-  .Subject-container {
-    height: auto;
+  /* .Subject-container {
+    height: 100vh;
+    background-color: red;
     width: 100%;
     gap: 10px;
+  } */
+  .Subject-container {
+    height: 70vh;
   }
   .Hero-Section {
     height: auto;
@@ -832,12 +836,12 @@ footer {
     background-color: blue;
   } */
   .Interactive {
-    height: 20vh;
-    width: 30%;
+    height: 30vh;
+    width: 25%;
   }
   .inter-Icon {
-    height: 70px;
-    width: 70px;
+    height: 80px;
+    width: 80px;
   }
   .inter-learning {
     rotate: -4deg;
@@ -854,30 +858,67 @@ footer {
     margin-bottom: 0px;
   }
   .Features-section {
-    height: 67vh;
+    height: auto;
   }
   .Features-container {
-    height: 22vh;
+    height: 35vh;
+    justify-content: center;
+    gap: 30px;
   }
   .bg-image {
-    height: 350px;
+    height: 300px;
   }
   .content-list {
     height: 30vh;
+  }
+  .semi-content-section {
+    height: 90vh;
   }
   .graph,
   .chart,
   .dice {
     translate: 40px;
-    transform: translateY(-18rem);
+    transform: translateY(-13rem);
+    width: 150px;
+    height: 150px;
   }
   .Switch img {
-    translate: 5rem;
-    transform: translateY(-12rem);
+    translate: 4rem;
+    transform: translateY(-10rem);
+    width: 50px;
   }
-  #dice {
+  .Image-display {
+    padding: 0px;
+  }
+  .Image-display img {
+    margin-bottom: 4rem;
+  }
+  .statistic-container {
+    margin-top: 40px;
+  }
+  .Statistics-section {
+    height: auto;
+  }
+  .Testimonial-Section {
+    padding-top: 3rem;
+  }
+  .quotation {
+    height: 70px;
+    width: 70px;
+  }
+  .transformed {
+    height: 45vh;
+  }
+  .identity-image {
+    width: 50px;
+    height: 50px;
+  }
+  .Identity-container {
+    height: 82px;
+  }
+  /* #dice {
     display: none;
-  }
+  } */
 }
 
 @media (max-width: 768px) {
@@ -973,6 +1014,9 @@ footer {
   .Subject-links {
     gap: 5px;
     font-size: 12px;
+  }
+  #dice {
+    display: none;
   }
   /* .content-list {
     height: 25vh;
