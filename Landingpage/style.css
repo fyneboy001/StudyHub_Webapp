@@ -895,12 +895,11 @@ footer {
   .Hero-Section {
     height: auto;
   }
-  body {
-    padding: 0 1rem;
-  }
+
   html,
   body {
     overflow-x: hidden;
+    padding: 0% 2%;
   }
   .Mobile-features-container {
     display: flex;
