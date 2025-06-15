@@ -765,20 +765,20 @@ footer {
     width: 30%;
   }
   .inter-Icon {
-    height: 100px;
-    width: 100px;
+    height: 70px;
+    width: 70px;
   }
   .inter-learning {
     rotate: -4deg;
   }
   .Interactive p {
     font-size: 10px;
+    padding: 10px 15px;
   }
   .Interactive h5 {
     font-size: 11px;
   }
-  .Interactive h5,
-  p {
+  .Interactive h5 {
     padding: 0 15px;
     margin-bottom: 0px;
   }
@@ -942,10 +942,11 @@ footer {
     rotate: 0deg;
   }
   .Interactive h5 {
-    font-size: 9px;
+    font-size: 10px;
+    padding: 5px 8px;
   }
-  .Interactive h5,
-  p {
+  .Interactive p {
+    font-size: 10px;
     padding: 5px 8px;
   }
   .Subject-links {
