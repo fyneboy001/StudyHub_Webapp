@@ -617,7 +617,8 @@ img,
     width: 40px;
   }
   .Welcome-section {
-    height: 35vh;
+    height: auto;
+    background-color: red;
   }
   .Happening-cards {
     display: none;
@@ -677,8 +678,8 @@ img,
     font-size: 11px;
   }
   .lesson-card img {
-    height: 150px;
-    width: 150px;
+    height: 100px;
+    width: 100px;
   }
   .icon-container {
     width: 20%;
