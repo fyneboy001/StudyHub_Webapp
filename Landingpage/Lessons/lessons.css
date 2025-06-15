@@ -751,13 +751,16 @@ p,
     gap: 10px;
   }
   .active-learners {
-    gap: 5px;
+    gap: 4px;
   }
   .All-lessons-container {
     height: 150vh;
   }
   .active-learners span {
     width: 4rem;
+  }
+  #number {
+    width: 5rem;
   }
 }
 
