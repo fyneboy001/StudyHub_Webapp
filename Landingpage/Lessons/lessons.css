@@ -556,7 +556,6 @@ p,
   height: 90vh;
   width: 65%;
   display: block;
-  background-color: black;
 }
 .scalar-text {
   width: 80%;
@@ -723,11 +722,9 @@ p,
     margin-right: 10px;
   }
   .learners {
-    background-color: red;
     width: 50%;
   }
   .menu-wrapper {
-    background-color: blue;
     width: 250%;
   }
   .lesson-card,
@@ -741,7 +738,7 @@ p,
     height: auto;
   }
   .subjects-container {
-    height: 130vh;
+    height: 140vh;
   }
   .Agric-card {
     height: 250px;
@@ -757,8 +754,7 @@ p,
     gap: 5px;
   }
   .All-lessons-container {
-    height: 140vh;
-    background-color: aqua;
+    height: 150vh;
   }
 }
 
