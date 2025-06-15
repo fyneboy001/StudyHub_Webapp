@@ -719,9 +719,11 @@ img,
   } */
   #trig-icon {
     background-color: red;
+    translate: -10px;
   }
   #math {
     background-color: red;
+    translate: -10px;
   }
   .lesson-card {
     gap: 8px;
