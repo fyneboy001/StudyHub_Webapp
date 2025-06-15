@@ -124,7 +124,6 @@ html {
 }
 .Subject-container {
   height: 60vh;
-  background-color: red;
   width: 100%;
   display: flex;
   align-items: flex-end;
@@ -890,13 +889,11 @@ footer {
     height: 28vh;
   }
   .Subject-container {
-    height: 30vh;
-    background-color: purple;
+    height: 25vh;
     gap: 6px;
   }
   .Hero-Section {
     height: auto;
-    background-color: blue;
   }
   body {
     padding: 0 1rem;
