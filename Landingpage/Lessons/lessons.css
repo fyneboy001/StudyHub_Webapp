@@ -730,7 +730,8 @@ p,
     background-color: blue;
     width: 250%;
   }
-  .lesson-card {
+  .lesson-card,
+  .Agric-card {
     gap: 10px;
   }
   .Lesson-container {
@@ -740,13 +741,24 @@ p,
     height: auto;
   }
   .subjects-container {
-    height: 100vh;
+    height: 130vh;
   }
   .Agric-card {
     height: 250px;
   }
   .All-lessons-section {
-    height: 120vh;
+    height: auto;
+  }
+  .teacher-details-card {
+    padding: 15px 8px;
+    gap: 10px;
+  }
+  .active-learners {
+    gap: 5px;
+  }
+  .All-lessons-container {
+    height: 140vh;
+    background-color: aqua;
   }
 }
 
