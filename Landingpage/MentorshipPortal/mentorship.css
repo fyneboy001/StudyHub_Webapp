@@ -749,7 +749,6 @@ img,
     height: 200px;
   }
   .carousel-item {
-    background-color: red;
     padding: 0px;
     gap: 5px;
   }
