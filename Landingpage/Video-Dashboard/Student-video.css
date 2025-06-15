@@ -632,10 +632,11 @@ button.post {
   .video-description {
     width: 100%;
   }
-  .video-spa {
+  .video-span {
     display: none;
   }
   .video-buttons button {
+    width: 50px;
     padding: 0px 0px;
   }
 }
