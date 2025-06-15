@@ -679,7 +679,7 @@ img,
   }
   .learn-maths,
   .learners {
-    width: 35%;
+    width: 40%;
   }
   .progress-card-content p {
     font-size: 11px;
@@ -712,7 +712,10 @@ img,
     width: 50%;
   }
   #trig-icon {
-    margin-right: 10px;
+    margin-right: 15px;
+  }
+  .lesson-card {
+    gap: 8px;
   }
 }
 
