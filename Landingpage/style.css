@@ -11,10 +11,13 @@ html {
   overflow-x: hidden;
 }
 
+/* Base styles - Desktop First Approach */
 .Hero-Section {
-  height: 150vh;
+  min-height: 100vh;
   width: 100%;
   background-color: red;
+  display: flex;
+  flex-direction: column;
 }
 
 .Header {
@@ -24,6 +27,7 @@ html {
   border-radius: 30px;
   background-color: #f0fbff;
   padding: 0px 20px;
+  flex-shrink: 0;
 }
 
 .Logo {
@@ -35,6 +39,7 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 100%;
 }
 
 .nav-link {
@@ -105,24 +110,25 @@ html {
 }
 
 .Accessible-content {
-  height: 40vh;
+  flex: 1;
   width: 100%;
   text-align: center;
-  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 0;
 }
 
 .Accessible-content h2 {
   font-size: clamp(2rem, 5vw, 3.75rem);
   font-weight: bold;
-  padding-top: 3rem;
-  line-height: 1.2;
+  margin-bottom: 1rem;
 }
 
 .Accessible-content p {
-  padding-top: 10px;
   font-size: clamp(1rem, 2vw, 1.25rem);
   color: rgba(0, 28, 33, 0.6);
-  line-height: 1.4;
+  margin-bottom: 2rem;
 }
 
 .button-container {
@@ -131,38 +137,40 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
-  margin-top: 2rem;
+  gap: 1rem;
 }
 
 .get-button {
   width: clamp(8rem, 20vw, 12rem);
-  margin-top: 1rem;
+  margin: 0;
 }
 
 .view-button {
   height: 40px;
-  width: clamp(9rem, 25vw, 12rem);
+  width: clamp(8rem, 25vw, 11rem);
   border: 0.5px solid #1a808d;
   background-color: rgba(217, 217, 217, 0.1);
-  margin-top: 10px;
   border-radius: 30px;
   cursor: pointer;
 }
 
 .Subject-container {
-  height: 95vh;
+  height: clamp(300px, 40vh, 500px);
   width: 100%;
   background-color: #016072;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  padding: 0 1rem;
+  gap: clamp(0.5rem, 2vw, 1rem);
+  padding: 1rem;
+  flex-shrink: 0;
 }
 
 .sub {
   width: 19%;
-  min-width: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .sub img {
@@ -180,61 +188,59 @@ html {
   min-height: 160px;
   width: 100%;
   text-align: center;
-  padding: 0 1rem;
+  margin-bottom: 2rem;
 }
 
 .Bridging-container h5 {
   color: #016072;
   font-size: clamp(1rem, 2.5vw, 1.25rem);
+  margin-bottom: 0.5rem;
 }
 
 .Bridging-container h3 {
   font-size: clamp(1.5rem, 4vw, 2.5rem);
-  padding-top: 10px;
-  line-height: 1.3;
 }
 
 .Mobile-features-container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  width: 100%;
 }
 
 .Features-container {
+  min-height: 400px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  gap: 1.5rem;
+  gap: 2rem;
   margin-bottom: 2rem;
 }
 
 .Interactive {
-  height: auto;
   min-height: 300px;
-  width: 100%;
-  max-width: 350px;
+  width: 30%;
   position: relative;
   background-color: #f0fbff;
   border-radius: 20px;
   color: rgba(0, 28, 33, 0.6);
   padding: 1rem;
-  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .inter-Icon {
-  height: clamp(80px, 12vw, 140px);
-  width: auto;
+  height: clamp(80px, 15vw, 140px);
+  width: clamp(80px, 15vw, 140px);
   padding-left: 10px;
   border-bottom-right-radius: 20px;
   background-color: white;
   transform: translateY(-4px);
   translate: -4px;
+  object-fit: contain;
 }
 
 .Interactive h5 {
-  font-size: clamp(1rem, 2.5vw, 1.5rem);
-  padding: 1rem 0 0.5rem 0;
+  font-size: clamp(0.875rem, 2vw, 1.5rem);
   font-weight: bold;
-  line-height: 1.2;
+  margin: 1rem 0 0.5rem 0;
 }
 
 .inter-learning {
@@ -244,12 +250,14 @@ html {
 }
 
 .Interactive p {
-  font-size: clamp(0.8rem, 1.8vw, 1.2rem);
+  font-size: clamp(0.75rem, 1.5vw, 1.375rem);
   line-height: 1.4;
+  flex: 1;
 }
 
 .Subject-section {
-  padding: 40px 2%;
+  min-height: 100vh;
+  padding: 3rem 0;
   font-family: "Poppins", sans-serif;
 }
 
@@ -258,18 +266,18 @@ html {
   flex-wrap: wrap;
   list-style: none;
   padding: 0;
-  gap: 15px;
+  gap: clamp(0.5rem, 2vw, 1rem);
   justify-content: center;
   margin: 2rem 0;
 }
 
 .Subject-links li {
-  padding: 10px 20px;
+  padding: clamp(0.5rem, 2vw, 1rem) clamp(1rem, 3vw, 1.5rem);
   cursor: pointer;
   transition: 0.3s;
   outline: none;
   border: none;
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
 }
 
 .Subject-links li.active,
@@ -279,15 +287,22 @@ html {
 }
 
 .content-section {
-  margin-top: 30px;
+  margin-top: 2rem;
+}
+
+.bg-image {
+  width: 100%;
+  height: clamp(200px, 30vw, 450px);
+  object-fit: cover;
+  margin-top: 1rem;
 }
 
 .semi-content-section {
+  min-height: 400px;
+  margin-top: 1rem;
   display: flex;
-  gap: 2rem;
+  gap: clamp(1rem, 3vw, 2.8125rem);
   flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 2rem;
 }
 
 .content {
@@ -298,61 +313,51 @@ html {
   display: none;
 }
 
-.content-list {
-  border: 1px solid #eee;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  position: relative;
-  height: 350px;
-  width: 100%;
-  max-width: 300px;
-  min-width: 250px;
-  background-color: #f0fbff;
-  flex: 1;
-}
-
-.bg-image {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  margin-top: 1rem;
-}
-
-.chart,
 .graph,
+.chart,
 .dice {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: clamp(100px, 15vw, 200px);
-  height: auto;
-  z-index: 10;
-}
-
-.Switch {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: 20;
+  z-index: 1000;
+  height: clamp(100px, 20vw, 200px);
+  width: clamp(100px, 20vw, 200px);
+  object-fit: contain;
 }
 
 .Switch img {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
   width: clamp(40px, 8vw, 80px);
   height: auto;
+}
+
+.content-list {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  position: relative;
+  min-height: 300px;
+  width: calc(50% - 1rem);
+  background-color: #f0fbff;
+  overflow: hidden;
 }
 
 .fraction {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  padding: 1rem;
+  position: relative;
+  z-index: 10;
 }
 
 .fraction h5 {
   margin: 0;
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-size: clamp(0.875rem, 2vw, 1.125rem);
   height: 30px;
-  padding: 0 1rem;
+  width: 8rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -362,10 +367,10 @@ html {
 }
 
 .fraction .level {
-  font-size: clamp(0.8rem, 1.8vw, 1rem);
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
   color: #777;
   height: 30px;
-  padding: 0 1rem;
+  width: 8rem;
   background-color: #e6f35b;
   display: flex;
   align-items: center;
@@ -377,25 +382,25 @@ html {
 
 .seemore-container {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 2rem;
 }
 
 .see-more {
   background-color: #e6f35b;
   color: #001c21;
-  padding: 10px 25px;
+  padding: 0.75rem 1.5rem;
   border: none;
-  width: clamp(8rem, 20vw, 12rem);
+  width: clamp(8rem, 20vw, 10rem);
   height: 40px;
   border-radius: 20px;
   cursor: pointer;
-  font-size: clamp(0.9rem, 2vw, 1rem);
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
 }
 
 .Statistics-section {
   min-height: 100vh;
   width: 100%;
-  margin-top: 5rem;
+  margin-top: 3rem;
   padding: 2rem 0;
 }
 
@@ -403,54 +408,56 @@ html {
   min-height: 90px;
   width: 100%;
   text-align: center;
-  margin: 50px 0;
-  padding: 0 1rem;
+  margin: 2rem 0;
 }
 
 .Statistics-note h5 {
   font-weight: bold;
   color: #016072;
-  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  margin-bottom: 0.5rem;
 }
 
 .Statistics-note h3 {
-  font-size: clamp(1.5rem, 4vw, 2rem);
-  line-height: 1.3;
-  margin-top: 1rem;
+  font-size: clamp(1.5rem, 4vw, 1.875rem);
 }
 
 .BannerImage {
   width: 100%;
+  max-width: 112rem;
   height: auto;
-  max-width: 100%;
-  object-fit: cover;
+  margin: 0 auto;
+  display: block;
 }
 
 .statistic-container {
   display: flex;
-  min-height: 60vh;
+  min-height: 400px;
   width: 100%;
   align-items: center;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 2rem;
+  justify-content: space-between;
   margin: 2rem 0;
+  flex-wrap: wrap;
 }
 
 .text {
   text-align: center;
-  order: 2;
+  flex: 1;
+  min-width: 200px;
 }
 
 .text h1 {
   font-size: clamp(4rem, 12vw, 10rem);
   font-weight: bold;
   color: #016072;
+  margin-bottom: 1rem;
 }
 
 .community {
   height: 40px;
-  padding: 0 1rem;
+  width: clamp(200px, 50%, 400px);
+  margin: 0 auto;
+  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -458,27 +465,19 @@ html {
   background-color: rgba(217, 217, 217, 0.1);
   border: 0.5px solid #f0fbff;
   backdrop-filter: blur(5px);
-  margin-top: 1rem;
-  font-size: clamp(0.8rem, 2vw, 1rem);
 }
 
 .Image-display {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
   align-items: center;
-}
-
-.Image-display:first-child {
-  order: 1;
-}
-
-.Image-display:last-child {
-  order: 3;
+  gap: 1rem;
+  flex: 1;
+  min-width: 150px;
 }
 
 .Image-display img {
-  width: clamp(60px, 8vw, 100px);
+  width: clamp(50px, 8vw, 100px);
   height: auto;
 }
 
@@ -495,21 +494,21 @@ html {
 }
 
 .Testimonial {
+  min-height: 90px;
+  width: 100%;
   text-align: center;
-  padding: 0 1rem;
   margin-bottom: 2rem;
 }
 
 .Testimonial h5 {
   font-weight: bold;
   color: #016072;
-  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  margin-bottom: 0.5rem;
 }
 
 .Testimonial h3 {
-  font-size: clamp(1.5rem, 4vw, 2rem);
-  line-height: 1.3;
-  margin-top: 1rem;
+  font-size: clamp(1.5rem, 4vw, 1.875rem);
 }
 
 .carousel {
@@ -519,12 +518,13 @@ html {
 
 .carousel-item {
   display: none;
-  padding: 1em;
+  min-height: 400px;
+  padding: 1rem;
 }
 
 .carousel-item-selected {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   gap: 2rem;
   flex-wrap: wrap;
 }
@@ -532,7 +532,7 @@ html {
 .carousel-nav {
   height: 50px;
   width: 100%;
-  padding: 20px 0;
+  padding: 1rem 0;
   text-align: center;
 }
 
@@ -551,36 +551,34 @@ html {
 }
 
 .transformed {
-  height: auto;
-  min-height: 350px;
-  width: 100%;
-  max-width: 300px;
+  min-height: 300px;
+  width: calc(33.333% - 1rem);
+  min-width: 280px;
   background-color: #f0fbff;
   border-radius: 20px;
   padding: 1.5rem;
   color: rgba(0, 28, 33, 0.6);
-  flex: 1;
   display: flex;
   flex-direction: column;
 }
 
 .quotation {
-  width: clamp(60px, 10vw, 100px);
+  width: clamp(60px, 15vw, 150px);
   height: auto;
   margin-bottom: 1rem;
 }
 
 .transformed h5 {
   font-weight: bold;
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-size: clamp(0.875rem, 2vw, 1rem);
   margin-bottom: 1rem;
 }
 
 .transformed p {
-  font-size: clamp(0.9rem, 2vw, 1rem);
-  line-height: 1.4;
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+  line-height: 1.5;
+  flex: 1;
   margin-bottom: 1rem;
-  flex-grow: 1;
 }
 
 .Identity-container {
@@ -588,31 +586,30 @@ html {
   align-items: center;
   gap: 1rem;
   padding: 1rem;
+  border-top-right-radius: 30px;
   background-color: white;
-  border-radius: 15px;
-  margin-top: auto;
+  margin: -1rem -1.5rem -1.5rem -1.5rem;
 }
 
 .identity-image {
-  width: clamp(50px, 8vw, 80px);
-  height: clamp(50px, 8vw, 80px);
+  width: clamp(40px, 8vw, 100px);
+  height: clamp(40px, 8vw, 100px);
   border-radius: 50%;
   object-fit: cover;
 }
 
 .Identity-container h6 {
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-size: clamp(0.75rem, 1.5vw, 1rem);
   margin-bottom: 0.25rem;
 }
 
 .Identity-container p {
-  font-size: clamp(0.8rem, 1.8vw, 0.9rem);
-  color: #666;
+  font-size: clamp(0.625rem, 1.2vw, 0.875rem);
   margin-bottom: 0.5rem;
 }
 
 .rating {
-  width: clamp(60px, 12vw, 100px);
+  width: clamp(60px, 15vw, 100px);
   height: auto;
 }
 
@@ -623,16 +620,14 @@ html {
 }
 
 .faq-container {
+  min-height: 400px;
   width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 1rem;
 }
 
 .faq {
-  width: 100%;
-  margin: 20px 0;
-  padding: 15px;
+  width: clamp(300px, 90%, 80%);
+  margin: 1rem auto;
+  padding: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -654,15 +649,15 @@ html {
   justify-content: space-between;
   align-items: center;
   color: rgba(0, 28, 33, 0.6);
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-size: clamp(0.875rem, 2vw, 1rem);
 }
 
 .faq .answer {
-  margin-top: 10px;
+  margin-top: 1rem;
   display: none;
   color: rgba(0, 28, 33, 0.6);
-  font-size: clamp(0.9rem, 2vw, 1rem);
-  line-height: 1.4;
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+  line-height: 1.5;
 }
 
 .faq.open .answer {
@@ -670,12 +665,12 @@ html {
 }
 
 .toggle-sign {
-  font-size: 20px;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
   font-weight: bold;
 }
 
 .Start-journey-section {
-  min-height: 50vh;
+  min-height: 300px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -689,26 +684,29 @@ html {
 
 .journey-note {
   flex: 1;
-  min-width: 300px;
+  min-width: 250px;
   text-align: center;
   color: white;
 }
 
 .journey-note h2 {
-  font-size: clamp(1.2rem, 3vw, 1.8rem);
-  padding-bottom: 1rem;
-  line-height: 1.3;
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  margin-bottom: 1rem;
 }
 
 .journey-note p {
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
-  line-height: 1.4;
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
   margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.start {
+  margin: 0;
 }
 
 .book {
-  width: clamp(60px, 10vw, 120px);
-  height: auto;
+  height: clamp(60px, 15vw, 120px);
+  width: auto;
 }
 
 .footer-wrapper {
@@ -717,12 +715,12 @@ html {
   width: calc(100% + 10%);
   background-color: #001c21;
   padding: 4% 5%;
-  margin-top: 5rem;
+  margin-top: 3rem;
 }
 
 footer {
   width: 100%;
-  height: auto;
+  min-height: 300px;
   position: relative;
   color: #f4f4f6;
 }
@@ -734,22 +732,23 @@ footer {
   padding-bottom: 2rem;
   flex-wrap: wrap;
   gap: 2rem;
+  margin-bottom: 2rem;
 }
 
 .footer-logo {
   flex: 1;
-  min-width: 300px;
-}
-
-.footer-logo p {
-  margin-top: 10px;
-  font-size: clamp(0.9rem, 2vw, 1rem);
-  line-height: 1.4;
+  min-width: 250px;
 }
 
 .studylogo {
-  width: clamp(150px, 25vw, 250px);
+  width: clamp(150px, 40vw, 250px);
   height: auto;
+}
+
+.footer-logo p {
+  margin-top: 1rem;
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  line-height: 1.5;
 }
 
 .footer-links {
@@ -760,7 +759,7 @@ footer {
 
 .footer-links ul {
   list-style: none;
-  margin-top: 15px;
+  margin-top: 1rem;
   padding: 0;
 }
 
@@ -770,261 +769,72 @@ footer {
 
 .menu a {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 0.75rem;
   text-decoration: none;
   color: #f4f4f6;
-  font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
 }
 
 .footer-links h5 {
   font-weight: bold;
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-size: clamp(1rem, 2vw, 1.0625rem);
 }
 
 .social-handle-links {
-  margin-top: 2rem;
-  display: flex;
-  gap: 1rem;
+  margin-top: 1rem;
 }
 
 .social-handle-links a img {
-  width: clamp(25px, 4vw, 35px);
+  width: clamp(20px, 4vw, 30px);
   height: auto;
+  margin-right: 0.5rem;
 }
 
 .footer-hub {
   width: 100%;
-  max-width: 100%;
+  max-width: 1100px;
   height: auto;
-  margin-top: 3rem;
+  margin: 2rem auto 0;
   display: block;
 }
 
-/* Responsive breakpoints */
-
-/* Large Desktop and up (1440px+) */
-@media (min-width: 1440px) {
-  body,
-  html {
-    padding: 0% 8%;
-  }
-
-  .Features-container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .statistic-container {
-    max-width: 1200px;
-    margin: 2rem auto;
-  }
-}
-
-/* Desktop (1024px to 1439px) */
-@media (min-width: 1024px) and (max-width: 1439px) {
-  .Interactive {
-    max-width: 320px;
-  }
-
-  .transformed {
-    max-width: 280px;
-  }
-}
-
-/* Tablet (768px to 1023px) */
-@media (min-width: 768px) and (max-width: 1023px) {
+/* Tablet Styles */
+@media (max-width: 1024px) {
   body,
   html {
     padding: 0% 3%;
   }
 
-  .Hero-Section {
-    height: auto;
-    min-height: 100vh;
-  }
-
   .Features-container {
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
   }
 
   .Interactive {
-    max-width: 500px;
-    margin: 0 auto 1rem auto;
+    width: calc(50% - 1rem);
+    min-width: 280px;
   }
 
   .semi-content-section {
-    justify-content: space-around;
-  }
-
-  .content-list {
-    max-width: 280px;
-  }
-
-  .statistic-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .Image-display {
-    flex-direction: row;
     justify-content: center;
   }
 
-  .carousel-item-selected {
-    justify-content: space-around;
-  }
-
-  .transformed {
-    max-width: 280px;
-  }
-
-  .Start-journey-section {
-    justify-content: center;
-    text-align: center;
-  }
-
-  .footer-first-container {
-    flex-direction: column;
-  }
-
-  .footer-links {
-    justify-content: space-around;
-  }
-}
-
-/* Mobile Large (480px to 767px) */
-@media (min-width: 480px) and (max-width: 767px) {
-  .hamburger {
-    display: block;
-  }
-
-  .hamburger.active .bar:nth-child(2) {
-    opacity: 0;
-  }
-
-  .hamburger.active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-
-  .hamburger.active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
-
-  .nav-Menu {
-    height: 100vh;
-    width: 100%;
-    position: fixed;
-    left: -100%;
-    top: 0;
-    gap: 0;
-    flex-direction: column;
-    background-color: rgba(1, 96, 114, 0.95);
-    text-align: center;
-    transition: 0.3s;
-    z-index: 1000;
-    padding-top: 2rem;
-  }
-
-  .nav-items {
-    margin: 16px 0;
-    color: white;
-    font-size: 1.2rem;
-  }
-
-  .nav-Menu.active {
-    left: 0;
-  }
-
-  .nav-button {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 1rem;
-    align-items: center;
-  }
-
-  .Login-btn {
-    background-color: transparent;
-    border: 1px solid white;
-    color: white;
-  }
-
-  .Hero-Section {
-    height: auto;
-    min-height: 80vh;
-  }
-
-  .Subject-container {
-    height: 30vh;
-    gap: 0.5rem;
-  }
-
-  .Features-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .Interactive {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto 1rem auto;
-    rotate: 0deg !important;
-  }
-
-  .semi-content-section {
-    flex-direction: column;
-    align-items: center;
-  }
-
   .content-list {
-    width: 100%;
-    max-width: 350px;
-  }
-
-  .statistic-container {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .Image-display {
-    flex-direction: row;
-    gap: 1rem;
+    width: calc(50% - 1rem);
+    min-width: 280px;
   }
 
   .carousel-item-selected {
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
   }
 
   .transformed {
-    width: 100%;
-    max-width: 350px;
-    margin-bottom: 1rem;
-  }
-
-  .Start-journey-section {
-    flex-direction: column;
-    padding: 1.5rem;
-    text-align: center;
-  }
-
-  .footer-first-container {
-    flex-direction: column;
-  }
-
-  .footer-logo {
-    min-width: unset;
-  }
-
-  .footer-links {
-    flex-direction: column;
-    gap: 1rem;
+    width: calc(50% - 1rem);
   }
 }
 
-/* Mobile Small (up to 479px) */
-@media (max-width: 479px) {
+/* Mobile Styles */
+@media (max-width: 768px) {
   body,
   html {
     padding: 0% 2%;
@@ -1047,131 +857,176 @@ footer {
   }
 
   .nav-Menu {
-    height: 100vh;
-    width: 100%;
     position: fixed;
     left: -100%;
     top: 0;
-    gap: 0;
+    width: 100%;
+    height: 100vh;
     flex-direction: column;
-    background-color: rgba(1, 96, 114, 0.95);
+    background-color: rgba(185, 182, 182, 0.95);
     text-align: center;
     transition: 0.3s;
     z-index: 1000;
-    padding-top: 2rem;
-  }
-
-  .nav-items {
-    margin: 12px 0;
-    color: white;
-    font-size: 1.1rem;
+    justify-content: center;
+    gap: 2rem;
   }
 
   .nav-Menu.active {
     left: 0;
   }
 
+  .nav-items {
+    color: white;
+  }
+
   .nav-button {
-    display: flex;
-    flex-direction: column;
     width: 100%;
-    gap: 0.5rem;
-    align-items: center;
+    justify-content: center;
   }
 
   .Login-btn {
     background-color: transparent;
     border: 1px solid white;
     color: white;
-    width: 6rem;
-    font-size: 0.9rem;
-  }
-
-  .Getstarted-btn {
-    width: 6rem;
-    font-size: 0.9rem;
-  }
-
-  .Hero-Section {
-    height: auto;
-    min-height: 70vh;
-  }
-
-  .Subject-container {
-    height: 25vh;
-    gap: 0.25rem;
-    padding: 0 0.5rem;
-  }
-
-  .Features-section {
-    padding: 1rem 0;
   }
 
   .Features-container {
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
   }
 
   .Interactive {
     width: 100%;
-    max-width: 100%;
-    margin: 0 auto 1rem auto;
-    rotate: 0deg !important;
-    min-height: 200px;
-    padding: 0.8rem;
-  }
-
-  .Subject-links {
-    gap: 0.5rem;
-    justify-content: center;
-  }
-
-  .Subject-links li {
-    padding: 8px 12px;
+    max-width: 400px;
   }
 
   .semi-content-section {
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
   }
 
   .content-list {
     width: 100%;
-    max-width: 100%;
-    height: 280px;
-  }
-
-  .bg-image {
-    height: 180px;
-  }
-
-  .chart,
-  .graph,
-  .dice {
-    width: clamp(80px, 20vw, 120px);
-  }
-
-  .Switch img {
-    width: clamp(30px, 6vw, 50px);
+    max-width: 400px;
   }
 
   .statistic-container {
     flex-direction: column;
-    gap: 1rem;
-    padding: 1rem 0;
+    text-align: center;
+    gap: 2rem;
   }
 
   .Image-display {
     flex-direction: row;
-    gap: 0.5rem;
     justify-content: center;
   }
 
   .carousel-item-selected {
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+  }
+
+  .transformed {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  #Peterkome {
+    display: none;
+  }
+
+  .Start-journey-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-first-container {
+    flex-direction: column;
+  }
+
+  .footer-links {
+    justify-content: space-between;
+  }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+  .Subject-links li {
+    padding: 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  .Interactive {
+    min-height: 200px;
+  }
+
+  .Interactive h5 {
+    font-size: 0.875rem;
+  }
+
+  .Interactive p {
+    font-size: 0.75rem;
+  }
+
+  .transformed {
+    min-height: 250px;
+    padding: 1rem;
+  }
+
+  .Identity-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* Large Desktop Styles */
+@media (min-width: 1440px) {
+  body,
+  html {
+    padding: 0% 8%;
+  }
+
+  .Hero-Section {
+    min-height: 120vh;
+  }
+
+  .Features-section {
+    min-height: 120vh;
+  }
+
+  .Subject-section {
+    min-height: 120vh;
+  }
+
+  .Statistics-section {
+    min-height: 120vh;
+  }
+
+  .Testimonial-Section {
+    min-height: 120vh;
+  }
+
+  .FAQ-Section {
+    min-height: 120vh;
+  }
+}
+
+/* Ultra-wide Desktop Styles */
+@media (min-width: 1920px) {
+  body,
+  html {
+    padding: 0% 12%;
+  }
+
+  .Interactive {
+    max-width: 350px;
+  }
+
+  .content-list {
+    max-width: 450px;
+  }
+
+  .transformed {
+    max-width: 380px;
   }
 }
