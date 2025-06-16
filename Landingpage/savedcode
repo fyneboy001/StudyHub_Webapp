@@ -12,6 +12,7 @@ html {
 .Hero-Section {
   height: 150vh;
   width: 100%;
+  background-color: red;
 }
 .Header {
   height: 60px;
@@ -125,6 +126,7 @@ html {
 .Subject-container {
   height: 95vh;
   width: 100%;
+  background-color: #016072;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -490,7 +492,7 @@ html {
   border-radius: 50%;
 }
 .FAQ-Section {
-  height: 100vh;
+  height: auto;
   width: 100%;
 }
 .faq-container {
@@ -1013,7 +1015,7 @@ footer {
   }
   /* FAQ Section Styling */
   .FAQ-Section {
-    height: 80vh;
+    height: auto;
     padding-top: 10px;
   }
   /* Start your journey section Styling */
