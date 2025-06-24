@@ -86,7 +86,7 @@ select,
   color: white;
   font-weight: bold;
   cursor: pointer;
-  margin-top: 10rem;
+  /* margin-top: 10rem; */
 }
 
 .or {

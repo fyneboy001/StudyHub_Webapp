@@ -44,15 +44,6 @@
             <input type="text" id="lastName" placeholder="Last name" required />
           </div>
 
-          <select id="grade" required>
-            <option value="" disabled selected>Select Grade/class</option>
-            <option value="creche">Creche</option>
-            <option value="nursary">Nursary</option>
-            <option value="primary">Primary</option>
-            <option value="secondary">Secondary</option>
-            <option value="university">University</option>
-          </select>
-
           <input type="email" id="email" placeholder="Email" required />
           <input type="number" id="phone" placeholder="Phone number" required />
           <input
@@ -111,24 +102,30 @@
           return;
         }
 
-        // ✅ Save user object including the category
+        const category = categoryFromURL?.toLowerCase() || "unknown";
+
         const user = {
           firstName,
           lastName,
           email,
           phone,
           password,
-          category: categoryFromURL || "unknown",
+          category,
+          profileImage: "", // Optional for future use
         };
 
         localStorage.setItem("studyhub_user", JSON.stringify(user));
         localStorage.setItem("studyhub_loggedin", "true");
-        localStorage.setItem("studyhub_active_name", user.firstName);
-        localStorage.setItem("userCategory", user.category); // Optional
         localStorage.setItem("studyhub_origin", "signup");
 
-        // Redirect to dashboard
-        window.location.href = `../StudentDashboard/Studentdash.html`;
+        // ✅ Redirect based on category
+        if (category === "teacher") {
+          window.location.href = "../TeacherDashboard/teacherdash.html";
+        } else if (category === "parent") {
+          window.location.href = "../parentDashboard/studentdash.html";
+        } else {
+          window.location.href = "../admin/dashboard.html";
+        }
       });
     </script>
   </body>

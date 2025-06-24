@@ -103,3 +103,40 @@ document.addEventListener("click", (e) => {
     mobileSearchContainer.classList.remove("active");
   }
 });
+
+//Updating the user profile and the welcome message
+document.addEventListener("DOMContentLoaded", function () {
+  const user = JSON.parse(localStorage.getItem("studyhub_user"));
+  const origin = localStorage.getItem("studyhub_origin");
+
+  if (user) {
+    // Welcome Message (first name only)
+    const greeting = origin === "signup" ? "Welcome" : "Welcome back";
+    const welcomeEl = document.getElementById("welcome-message");
+    if (welcomeEl) {
+      welcomeEl.textContent = `${greeting}, ${user.firstName}!`;
+    }
+
+    // Full name
+    document.getElementById(
+      "user-name"
+    ).textContent = `${user.firstName} ${user.lastName}`;
+
+    // Category display
+    const category = user.category?.replace("_", " ") || "Not set";
+    document.getElementById("categoryDisplay").textContent = `${capitalize(
+      category
+    )}`;
+
+    // Profile Image
+    const profileImg = document.getElementById("user-profile-img");
+    profileImg.src =
+      user.profileImage || "../StudentDashboard/assets/Icons/Userprofile.png";
+  } else {
+    window.location.href = "../Loginpage.html";
+  }
+
+  function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+});

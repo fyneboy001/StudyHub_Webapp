@@ -57,8 +57,7 @@ main {
   padding-bottom: 5px;
 }
 
-.input,
-.submit {
+.category-btn {
   height: 40px;
   width: 100%;
   margin-bottom: 20px;
@@ -66,20 +65,32 @@ main {
   border: 1px solid #1a808d;
   text-align: center;
   cursor: pointer;
+  background-color: transparent;
+}
+.category-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.category-btn.selected {
+  background-color: #016072;
+  color: white;
+  border-color: #016072;
 }
 
 .submit {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
   background-color: #016072;
-  font-weight: bold;
-  margin-top: 10rem;
   color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
-#no-arrow {
-  appearance: none;
-  background-color: transparent;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+.submit:hover {
+  background-color: #034d5c;
 }
 
 /* Desktop (≥1024px) */

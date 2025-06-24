@@ -3,14 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>StudyHub.com/signup</title>
+    <title>StudyHub.com/login</title>
     <link rel="stylesheet" href="loginpage.css" />
     <link rel="icon" href="../assets/favicon.ico" type="image/x-icon" />
+    <style>
+      .error {
+        color: red;
+        margin-top: 10px;
+      }
+    </style>
   </head>
   <body>
     <main>
       <div class="first-main-container">
-        <!-- <img src="./assets/innovativeimg.png" alt="" width="250px" /> -->
         <img
           class="logo2"
           src="../assets/Logo2.png"
@@ -19,46 +24,44 @@
         />
         <h2>Innovative e-learning at your fingertips</h2>
       </div>
+
       <div class="second-main-container">
-        <img src="../assets/Icons/Backarrow.png" alt="" />
-        <form>
+        <img src="../assets/Icons/Backarrow.png" alt="Back Arrow" />
+        <form id="loginForm">
           <div class="welcome">
             <h3>Welcome to StudyHub</h3>
             <h2>Login to your Account</h2>
           </div>
-          <label for="title">Email Address</label>
+
+          <label for="email">Email Address</label>
           <div>
-            <img src="" alt="" />
             <input
               type="text"
-              name="email"
               id="email"
               placeholder="Enter your email"
+              required
             />
           </div>
+
           <div class="password-label">
             <label for="password">Password</label>
             <span><a href="#">Forgot password?</a></span>
           </div>
           <div>
-            <img src="" alt="" />
             <input
               type="password"
-              name="password"
               id="password"
               placeholder="Enter your password"
+              required
             />
           </div>
+
+          <div class="error" id="error"></div>
+
+          <button type="submit" class="submit">Login</button>
         </form>
-        <button
-          onclick="window.location.href='../StudentDashboard/Studentdash.html'"
-          class="submit"
-        >
-          Login
-        </button>
-        <div class="or">
-          <p>or</p>
-        </div>
+
+        <div class="or"><p>or</p></div>
 
         <div class="google-button input">
           <img
@@ -67,10 +70,42 @@
           />
           Login with Google
         </div>
+
         <p>
           Don't have an account yet? <a href="../Sign-Up/Signup.html">Signup</a>
         </p>
       </div>
     </main>
+
+    <script>
+      const form = document.getElementById("loginForm");
+      const errorDiv = document.getElementById("error");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value;
+
+        const storedUser = JSON.parse(localStorage.getItem("studyhub_user"));
+
+        if (!storedUser) {
+          errorDiv.textContent = "No user found. Please sign up first.";
+          return;
+        }
+
+        if (storedUser.email === email && storedUser.password === password) {
+          // Save current user session info
+          localStorage.setItem("studyhub_loggedin", "true");
+          localStorage.setItem("studyhub_active_name", storedUser.firstName);
+          localStorage.setItem("studyhub_origin", "login"); // 🔥 NEW LINE
+
+          // Redirect to dashboard
+          window.location.href = "../StudentDashboard/Studentdash.html";
+        } else {
+          errorDiv.textContent = "Invalid email or password.";
+        }
+      });
+    </script>
   </body>
 </html>

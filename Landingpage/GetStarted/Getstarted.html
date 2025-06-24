@@ -10,7 +10,6 @@
   <body>
     <main>
       <div class="first-main-container">
-        <!-- <img src="./assets/innovativeimg.png" alt="" width="250px" /> -->
         <img
           class="logo2"
           src="../assets/Logo2.png"
@@ -19,43 +18,90 @@
         />
         <h2>Innovative e-learning at your fingertips</h2>
       </div>
+
       <div class="second-main-container">
-        <img src="../assets/Icons/Backarrow.png" alt="" />
+        <img src="../assets/Icons/Backarrow.png" alt="Back Arrow" />
         <div class="form">
           <div class="welcome">
             <h3>Welcome to StudyHub</h3>
             <h2>Select Your Category</h2>
           </div>
-          <!-- Input Elements -->
-          <select class="input" name="text" id="no-arrow">
-            <option value="">Student</option>
-          </select>
-          <br />
-          <select class="input" name="text" id="no-arrow">
-            <option value="">Teacher</option>
-          </select>
-          <br />
-          <select class="input" name="text" id="no-arrow">
-            <option value="">Parent</option>
-          </select>
-          <br />
-          <select class="input" name="text" id="no-arrow">
-            <option value="">Mentor</option>
-          </select>
-          <br />
-          <select class="input" name="text" id="no-arrow">
-            <option value="">Social Administrator</option>
-          </select>
-          <br />
+
+          <!-- Category Buttons -->
           <button
-            action="submit"
-            class="submit"
-            onclick="window.location.href='../Sign-Up/Signup.html'"
+            class="category-btn"
+            onclick="selectCategory(this, 'student')"
           >
-            Continue
+            Student
           </button>
+          <button
+            class="category-btn"
+            onclick="selectCategory(this, 'teacher')"
+          >
+            Teacher
+          </button>
+          <button class="category-btn" onclick="selectCategory(this, 'parent')">
+            Parent
+          </button>
+          <button class="category-btn" onclick="selectCategory(this, 'mentor')">
+            Mentor
+          </button>
+          <button
+            class="category-btn"
+            onclick="selectCategory(this, 'social_admin')"
+          >
+            Social Administrator
+          </button>
+
+          <button class="submit" onclick="continueToSignup()">Continue</button>
         </div>
       </div>
     </main>
+
+    <script>
+      let selectedCategory = "";
+
+      function selectCategory(button, category) {
+        const buttons = document.querySelectorAll(".category-btn");
+        buttons.forEach((btn) => btn.classList.remove("selected"));
+        button.classList.add("selected");
+        selectedCategory = category;
+      }
+
+      function continueToSignup() {
+        if (!selectedCategory) {
+          alert("Please select a category before continuing.");
+          return;
+        }
+
+        // Save category to localStorage for use on dashboard
+        localStorage.setItem("userCategory", selectedCategory);
+
+        // Redirect based on category
+        switch (selectedCategory) {
+          case "student":
+            window.location.href = `../Sign-Up/signup.html?category=${encodeURIComponent(
+              selectedCategory
+            )}`;
+            break;
+          case "teacher":
+            window.location.href =
+              "../Sign-Up/teachersignup.html?category=teacher";
+            break;
+          case "parent":
+            window.location.href = "../Sign-Up/signup.html?category=parent";
+            break;
+          case "mentor":
+            window.location.href = "../Sign-Up/signup.html?category=mentor";
+            break;
+          case "social_admin":
+            window.location.href =
+              "../Sign-Up/signup.html?category=social_admin";
+            break;
+          default:
+            alert("Invalid category selected.");
+        }
+      }
+    </script>
   </body>
 </html>
