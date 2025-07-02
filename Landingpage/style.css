@@ -917,7 +917,8 @@ footer {
     height: 45vh;
   }
   .content-section {
-    height: auto;
+    height: 100vh;
+    background-color: black;
   }
 
   .Subject-section {
