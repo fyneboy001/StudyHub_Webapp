@@ -229,6 +229,7 @@ html {
 }
 
 .content-section {
+  height: 90vh;
   margin-top: 30px;
 }
 .bg-image {
@@ -244,6 +245,8 @@ html {
 }
 
 .content {
+  position: relative;
+  height: 100%;
   display: block;
 }
 
@@ -314,6 +317,9 @@ html {
 }
 
 .seemore-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   text-align: center;
   margin-top: 20px;
 }
@@ -404,7 +410,6 @@ html {
 }
 .Testimonial-Section {
   height: auto;
-  background-color: red;
   width: 100%;
 }
 .Testimonial,
@@ -428,9 +433,9 @@ html {
   position: relative;
 }
 .carousel-item {
+  position: relative;
   display: none;
   height: auto;
-  background-color: blue;
   padding: 1em;
 }
 .carousel-item-selected {
@@ -441,7 +446,6 @@ html {
   height: 50px;
   width: 100%;
   padding: 20px 0;
-  margin-bottom: auto;
   text-align: center;
 }
 .carousel-button {
@@ -705,6 +709,9 @@ footer {
   .content-list {
     height: 30vh;
   }
+  .content-section {
+    height: 70vh;
+  }
   .semi-content-section {
     height: auto;
   }
@@ -741,7 +748,7 @@ footer {
     width: 70px;
   }
   .transformed {
-    height: 45vh;
+    height: auto;
   }
   .identity-image {
     width: 50px;
@@ -905,7 +912,9 @@ footer {
   .semi-content-section {
     height: auto;
   }
-
+  .content-section {
+    height: 50vh;
+  }
   .Subject-section {
     height: auto;
   }
@@ -973,10 +982,7 @@ footer {
   .carousel {
     height: auto;
   }
-  .carousel-nav {
-    padding: 0px 0px;
-    transform: translateY(-3rem);
-  }
+
   #Peterkome {
     display: none;
   }
@@ -1116,6 +1122,9 @@ footer {
   .semi-content-section {
     gap: 10px;
     height: auto;
+  }
+  .content-section {
+    height: 30vh;
   }
   .seemore-container {
     margin-top: 20px;
