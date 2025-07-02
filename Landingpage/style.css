@@ -249,6 +249,7 @@ html {
 .content {
   position: relative;
   height: 100%;
+  background-color: blue;
   display: block;
 }
 
@@ -277,6 +278,7 @@ html {
 }
 /* end here */
 .content-list {
+  position: relative;
   border: 1px solid #eee;
   border-radius: 8px;
   margin-bottom: 20px;
@@ -917,9 +919,6 @@ footer {
   .content-section {
     height: auto;
   }
-  .seemore-container {
-    margin-top: 50px;
-  }
 
   .Subject-section {
     height: auto;
@@ -939,10 +938,6 @@ footer {
   }
   .Statistics-note h3 {
     font-size: 20px;
-  }
-  .content-list {
-    background-color: red;
-    margin-bottom: 100vh;
   }
   .BannerImage {
     /* height: 60px; */
