@@ -6,13 +6,10 @@
     <title>StudyHub.com/signup</title>
     <link rel="stylesheet" href="Signup.css" />
     <link rel="icon" href="../assets/favicon.ico" type="image/x-icon" />
-    <style>
-      .error {
-        color: red;
-        font-size: 14px;
-        margin-top: 10px;
-      }
-    </style>
+    <script
+      src="https://kit.fontawesome.com/a2d79d8df7.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <main>
@@ -45,19 +42,45 @@
           </div>
 
           <input type="email" id="email" placeholder="Email" required />
-          <input type="number" id="phone" placeholder="Phone number" required />
           <input
-            type="password"
-            id="password"
-            placeholder="Create password"
+            type="tel"
+            id="phone"
+            placeholder="Phone number"
+            maxlength="11"
             required
           />
-          <input
-            type="password"
-            id="confirmPassword"
-            placeholder="Confirm password"
-            required
-          />
+
+          <div class="password-wrapper">
+            <input
+              type="password"
+              id="password"
+              placeholder="Create password"
+              required
+            />
+
+            <div class="validation-box" id="passwordRules">
+              <span id="lengthRule" class="invalid">• 6–14 characters</span>
+              <span id="upperRule" class="invalid"
+                >• At least one uppercase letter</span
+              >
+              <span id="lowerRule" class="invalid"
+                >• At least one lowercase letter</span
+              >
+              <span id="numberRule" class="invalid">• At least one number</span>
+              <span id="specialRule" class="invalid"
+                >• At least one special character</span
+              >
+            </div>
+          </div>
+
+          <div class="password-wrapper">
+            <input
+              type="password"
+              id="confirmPassword"
+              placeholder="Confirm password"
+              required
+            />
+          </div>
 
           <div class="error" id="error"></div>
 
@@ -82,7 +105,48 @@
       const form = document.getElementById("signupForm");
       const errorDiv = document.getElementById("error");
 
-      // ✅ Get category from URL
+      const passwordInput = document.getElementById("password");
+      const confirmPasswordInput = document.getElementById("confirmPassword");
+
+      const emailInput = document.getElementById("email");
+      const phoneInput = document.getElementById("phone");
+
+      const lengthRule = document.getElementById("lengthRule");
+      const upperRule = document.getElementById("upperRule");
+      const lowerRule = document.getElementById("lowerRule");
+      const numberRule = document.getElementById("numberRule");
+      const specialRule = document.getElementById("specialRule");
+      const passwordRules = document.getElementById("passwordRules");
+
+      passwordInput.addEventListener("input", () => {
+        const val = passwordInput.value;
+
+        passwordRules.style.display = val.length > 0 ? "block" : "none";
+
+        lengthRule.className =
+          val.length >= 6 && val.length <= 14 ? "valid" : "invalid";
+        upperRule.className = /[A-Z]/.test(val) ? "valid" : "invalid";
+        lowerRule.className = /[a-z]/.test(val) ? "valid" : "invalid";
+        numberRule.className = /[0-9]/.test(val) ? "valid" : "invalid";
+        specialRule.className = /[^A-Za-z0-9]/.test(val) ? "valid" : "invalid";
+      });
+
+      passwordInput.addEventListener("blur", () => {
+        const val = passwordInput.value;
+
+        const allValid =
+          val.length >= 6 &&
+          val.length <= 14 &&
+          /[A-Z]/.test(val) &&
+          /[a-z]/.test(val) &&
+          /[0-9]/.test(val) &&
+          /[^A-Za-z0-9]/.test(val);
+
+        if (allValid) {
+          passwordRules.style.display = "none";
+        }
+      });
+
       const urlParams = new URLSearchParams(window.location.search);
       const categoryFromURL = urlParams.get("category");
 
@@ -91,14 +155,37 @@
 
         const firstName = document.getElementById("firstName").value.trim();
         const lastName = document.getElementById("lastName").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const phone = document.getElementById("phone").value.trim();
-        const password = document.getElementById("password").value;
-        const confirmPassword =
-          document.getElementById("confirmPassword").value;
+        const email = emailInput.value.trim();
+        const phone = phoneInput.value.trim();
+        const password = passwordInput.value;
+        const confirmPassword = confirmPasswordInput.value;
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          errorDiv.textContent = "Please enter a valid email address.";
+          return;
+        }
+
+        if (!/^\d{11}$/.test(phone)) {
+          errorDiv.textContent = "Phone number must be exactly 11 digits.";
+          return;
+        }
 
         if (password !== confirmPassword) {
           errorDiv.textContent = "Passwords do not match!";
+          return;
+        }
+
+        const isValid =
+          password.length >= 6 &&
+          password.length <= 14 &&
+          /[A-Z]/.test(password) &&
+          /[a-z]/.test(password) &&
+          /[0-9]/.test(password) &&
+          /[^A-Za-z0-9]/.test(password);
+
+        if (!isValid) {
+          errorDiv.textContent = "Password does not meet all requirements.";
           return;
         }
 
@@ -111,21 +198,21 @@
           phone,
           password,
           category,
-          profileImage: "", // Optional for future use
+          profileImage: "",
         };
 
         localStorage.setItem("studyhub_user", JSON.stringify(user));
         localStorage.setItem("studyhub_loggedin", "true");
         localStorage.setItem("studyhub_origin", "signup");
 
-        // ✅ Redirect based on category
         if (category === "teacher") {
           window.location.href = "../TeacherDashboard/teacherdash.html";
-        } else if (category === "parent") {
-          window.location.href = "../parentDashboard/studentdash.html";
-        } else {
-          window.location.href = "../admin/dashboard.html";
         }
+        // else if (category === "parent") {
+        //   window.location.href = "../parentDashboard/studentdash.html";
+        // } else {
+        //   window.location.href = "../admin/dashboard.html";
+        // }
       });
     </script>
   </body>

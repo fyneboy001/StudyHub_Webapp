@@ -147,3 +147,38 @@ document.addEventListener("DOMContentLoaded", function () {
     )}`;
   }
 });
+
+// Carousel Buttons Style
+const pageButtons = document.querySelectorAll(".page-button");
+const subjectPages = document.querySelectorAll(".subject-page");
+const moreButton = document.querySelector(".more-button");
+
+function switchToPage(target) {
+  subjectPages.forEach((page) => {
+    page.classList.remove("active-page");
+    if (page.dataset.page === target) {
+      page.classList.add("active-page");
+    }
+  });
+
+  pageButtons.forEach((btn) => {
+    btn.classList.remove("active");
+    if (btn.dataset.target === target) {
+      btn.classList.add("active");
+    }
+  });
+}
+
+pageButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const target = button.dataset.target;
+    switchToPage(target);
+  });
+});
+
+// Set default to page 1
+switchToPage("1");
+
+// Update more button with total page count
+const totalPages = subjectPages.length;
+moreButton.textContent = `+${totalPages}`;
