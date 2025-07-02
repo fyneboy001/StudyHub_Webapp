@@ -10,7 +10,7 @@ html {
   overflow-x: hidden;
 }
 .Hero-Section {
-  height: 150vh;
+  height: auto;
   width: 100%;
 }
 .Header {
@@ -133,7 +133,7 @@ html {
   width: 19%;
 }
 .Features-section {
-  height: 130vh;
+  height: auto;
   width: 100%;
   padding-top: 3rem;
 }
@@ -151,7 +151,7 @@ html {
   padding-top: 10px;
 }
 .Features-container {
-  height: 40vh;
+  height: auto;
   width: 100%;
   margin-bottom: 40px;
   display: flex;
@@ -237,7 +237,7 @@ html {
   margin-top: 3rem;
 }
 .semi-content-section {
-  height: 80vh;
+  height: auto;
   margin-top: 10px;
   display: flex;
   gap: 45px;
@@ -693,7 +693,7 @@ footer {
     height: auto;
   }
   .Features-container {
-    height: 35vh;
+    height: auto;
     justify-content: center;
     gap: 30px;
   }
@@ -704,7 +704,7 @@ footer {
     height: 30vh;
   }
   .semi-content-section {
-    height: 40vh;
+    height: auto;
   }
   .graph,
   .chart,
@@ -822,10 +822,10 @@ footer {
   }
   .Features-section {
     padding: 10px;
-    height: 75vh;
+    height: auto;
   }
   .Features-container {
-    height: 65vh;
+    height: auto;
     display: block;
     width: 100%;
   }
@@ -901,7 +901,7 @@ footer {
     width: 60px;
   }
   .semi-content-section {
-    height: 35vh;
+    height: auto;
   }
 
   .Subject-section {
@@ -1115,7 +1115,7 @@ footer {
   }
   .semi-content-section {
     gap: 10px;
-    height: 280px;
+    height: auto;
   }
   .fraction h5 {
     width: auto;
