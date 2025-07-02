@@ -88,6 +88,7 @@ html {
   cursor: pointer;
 }
 .Accessible-content {
+  padding-bottom: 20px;
   height: auto;
   width: 100%;
   text-align: center;
@@ -103,6 +104,7 @@ html {
   color: rgba(0, 28, 33, 0.6);
 }
 .button-container {
+  height: 100px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -349,13 +351,13 @@ html {
 }
 .BannerImage {
   /* height: 70px; */
-  width: 100vw;
-  transform: translateX(-6rem);
+  width: 100%;
+  /* transform: translateX(-6rem); */
   max-width: none;
 }
 .statistic-container {
   display: flex;
-  height: 100vh;
+  height: auto;
   width: 100%;
   align-items: center;
   justify-content: space-between;
@@ -391,7 +393,7 @@ html {
   translate: -13rem;
 }
 .Image-display {
-  height: 70vh;
+  height: auto;
   display: block;
 }
 .Image-display img {
@@ -555,7 +557,7 @@ html {
   align-items: center;
   justify-content: space-between;
   background-color: #016072;
-  padding: 0 30px;
+  padding: 30px;
   border-radius: 20px;
 }
 .journey-note {
@@ -913,7 +915,7 @@ footer {
     height: auto;
   }
   .content-section {
-    height: 50vh;
+    height: 60vh;
   }
   .Subject-section {
     height: auto;
@@ -936,8 +938,8 @@ footer {
 
   .BannerImage {
     /* height: 60px; */
-    width: 100vw;
-    transform: translateX(-17px);
+    width: 100%;
+    /* transform: translateX(-17px); */
     max-width: none;
   }
 
@@ -1035,7 +1037,7 @@ footer {
   /* Start your journey section Styling */
   .Start-journey-section {
     height: auto;
-    padding: 8px 10px;
+    padding: 10px;
   }
   .start {
     margin-top: 1.5rem;
