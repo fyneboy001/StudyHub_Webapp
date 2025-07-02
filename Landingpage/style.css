@@ -88,7 +88,7 @@ html {
   cursor: pointer;
 }
 .Accessible-content {
-  height: 40vh;
+  height: auto;
   width: 100%;
   text-align: center;
 }
@@ -123,7 +123,7 @@ html {
   cursor: pointer;
 }
 .Subject-container {
-  height: 95vh;
+  height: auto;
   width: 100%;
   display: flex;
   align-items: flex-end;
@@ -661,7 +661,7 @@ footer {
   }
 
   .Subject-container {
-    height: 70vh;
+    height: auto;
   }
   .Hero-Section {
     height: auto;
@@ -800,10 +800,10 @@ footer {
     font-size: 10px;
   }
   .Accessible-content {
-    height: 28vh;
+    height: auto;
   }
   .Subject-container {
-    height: 25vh;
+    height: auto;
     gap: 6px;
   }
   .Hero-Section {
