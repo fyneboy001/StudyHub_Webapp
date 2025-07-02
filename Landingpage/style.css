@@ -921,7 +921,8 @@ footer {
     height: auto;
   }
   .seemore-container {
-    margin-top: 1rem;
+    background-color: red;
+    margin-top: 3rem;
   }
   /* Statistics Section Styling */
   .Statistics-section {
