@@ -230,7 +230,6 @@ html {
 
 .content-section {
   margin-top: 30px;
-  height: 80vh;
 }
 .bg-image {
   width: 100%;
@@ -705,7 +704,7 @@ footer {
     height: 30vh;
   }
   .semi-content-section {
-    height: 90vh;
+    height: 40vh;
   }
   .graph,
   .chart,
@@ -897,9 +896,12 @@ footer {
     width: 180px;
   }
   .Switch img {
-    translate: 12rem;
-    transform: translateY(-16rem);
+    translate: 2.5rem;
+    transform: translateY(-9rem);
     width: 60px;
+  }
+  .semi-content-section {
+    height: 35vh;
   }
 
   .Subject-section {
@@ -921,6 +923,7 @@ footer {
   .Statistics-note h3 {
     font-size: 20px;
   }
+
   .BannerImage {
     height: 60px;
     width: 27rem;
