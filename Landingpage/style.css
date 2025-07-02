@@ -915,15 +915,15 @@ footer {
     height: auto;
   }
   .content-section {
-    height: 60vh;
+    height: 70vh;
   }
   .Subject-section {
     height: auto;
   }
-  .seemore-container {
+  /* .seemore-container {
     background-color: red;
     margin-top: 3rem;
-  }
+  } */
   /* Statistics Section Styling */
   .Statistics-section {
     height: auto;
