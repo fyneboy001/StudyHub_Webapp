@@ -334,7 +334,6 @@ html {
 .Statistics-section {
   height: auto;
   width: 100%;
-  margin-top: 5rem;
 }
 .Statistics-note {
   height: 90px;
@@ -343,8 +342,8 @@ html {
   margin-top: 50px;
 }
 .BannerImage {
-  height: 110px;
-  width: 112rem;
+  /* height: 70px; */
+  width: 100vw;
   transform: translateX(-6rem);
   max-width: none;
 }
@@ -404,7 +403,8 @@ html {
   font-weight: bold;
 }
 .Testimonial-Section {
-  height: 100vh;
+  height: auto;
+  background-color: red;
   width: 100%;
 }
 .Testimonial,
@@ -430,6 +430,7 @@ html {
 .carousel-item {
   display: none;
   height: auto;
+  background-color: blue;
   padding: 1em;
 }
 .carousel-item-selected {
@@ -440,6 +441,7 @@ html {
   height: 50px;
   width: 100%;
   padding: 20px 0;
+  margin-bottom: auto;
   text-align: center;
 }
 .carousel-button {
@@ -492,11 +494,11 @@ html {
   border-radius: 50%;
 }
 .FAQ-Section {
-  height: 100vh;
+  height: auto;
   width: 100%;
 }
 .faq-container {
-  height: 80vh;
+  height: auto;
   width: 100%;
 }
 /* The Accordion Styling */
@@ -543,7 +545,7 @@ html {
   font-weight: bold;
 }
 .Start-journey-section {
-  height: 50vh;
+  height: auto;
   width: 100%;
   display: flex;
   align-items: center;
@@ -553,7 +555,7 @@ html {
   border-radius: 20px;
 }
 .journey-note {
-  height: 40vh;
+  height: auto;
   width: 60%;
   align-content: center;
   text-align: center;
@@ -573,7 +575,7 @@ html {
   width: calc(100% + 10%);
   background-color: #001c21;
   padding: 4% 5%;
-  margin-top: 5rem;
+  margin-top: 2rem;
 }
 
 footer {
@@ -912,12 +914,11 @@ footer {
   }
   /* Statistics Section Styling */
   .Statistics-section {
-    height: 85vh;
+    height: auto;
     width: 100%;
-    margin-top: 6rem;
   }
   .statistic-container {
-    height: 40vh;
+    height: auto;
     margin-top: 15px;
   }
   .Statistics-note h3 {
@@ -925,9 +926,8 @@ footer {
   }
 
   .BannerImage {
-    height: 60px;
-    width: 27rem;
-    margin-top: 45px;
+    /* height: 60px; */
+    width: 100vw;
     transform: translateX(-17px);
     max-width: none;
   }
@@ -968,10 +968,10 @@ footer {
   }
   /* Testimonial Styling */
   .Testimonial-Section {
-    height: 60vh;
+    height: auto;
   }
   .carousel {
-    height: 30vh;
+    height: auto;
   }
   .carousel-nav {
     padding: 0px 0px;
@@ -988,7 +988,7 @@ footer {
     height: 40px;
   }
   .transformed {
-    height: 23vh;
+    height: auto;
     width: 49%;
     padding: 0 10px;
   }
@@ -999,7 +999,7 @@ footer {
     font-size: 10px;
   }
   .carousel-item {
-    height: 40vh;
+    height: auto;
   }
   .identity-image {
     height: 30px;
@@ -1023,12 +1023,12 @@ footer {
   }
   /* FAQ Section Styling */
   .FAQ-Section {
-    height: 80vh;
+    height: auto;
     padding-top: 10px;
   }
   /* Start your journey section Styling */
   .Start-journey-section {
-    height: 18vh;
+    height: auto;
     padding: 8px 10px;
   }
   .start {
@@ -1059,7 +1059,7 @@ footer {
     justify-self: center;
   }
   footer {
-    height: 32vh;
+    height: auto;
   }
   .footer-links h5 {
     font-size: 10px;
@@ -1106,7 +1106,7 @@ footer {
     height: 100px;
   }
   .content-list {
-    height: 150px;
+    height: 200px;
   }
   .Switch img {
     translate: 1.5rem;
@@ -1116,6 +1116,9 @@ footer {
   .semi-content-section {
     gap: 10px;
     height: auto;
+  }
+  .seemore-container {
+    margin-top: 20px;
   }
   .fraction h5 {
     width: auto;
