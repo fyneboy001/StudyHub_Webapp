@@ -912,11 +912,10 @@ footer {
     width: 60px;
   }
   .semi-content-section {
-    height: auto;
+    height: 45vh;
   }
   .content-section {
-    background-color: red;
-    height: 100vh;
+    height: auto;
   }
   .Subject-section {
     height: auto;
