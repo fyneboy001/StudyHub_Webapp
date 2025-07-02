@@ -6,13 +6,10 @@
     <title>StudyHub.com/signup</title>
     <link rel="stylesheet" href="Signup.css" />
     <link rel="icon" href="../assets/favicon.ico" type="image/x-icon" />
-    <style>
-      .error {
-        color: red;
-        font-size: 14px;
-        margin-top: 10px;
-      }
-    </style>
+    <script
+      src="https://kit.fontawesome.com/a2d79d8df7.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <main>
@@ -55,18 +52,44 @@
 
           <input type="email" id="email" placeholder="Email" required />
           <input type="number" id="phone" placeholder="Phone number" required />
-          <input
-            type="password"
-            id="password"
-            placeholder="Create password"
-            required
-          />
-          <input
-            type="password"
-            id="confirmPassword"
-            placeholder="Confirm password"
-            required
-          />
+
+          <div class="password-wrapper">
+            <input
+              type="password"
+              id="password"
+              placeholder="Create password"
+              required
+            />
+            <span class="toggle-password" id="togglePassword"
+              ><i class="fas fa-eye"></i
+            ></span>
+
+            <div class="validation-box" id="passwordRules">
+              <span id="lengthRule" class="invalid">• 6–14 characters</span>
+              <span id="upperRule" class="invalid"
+                >• At least one uppercase letter</span
+              >
+              <span id="lowerRule" class="invalid"
+                >• At least one lowercase letter</span
+              >
+              <span id="numberRule" class="invalid">• At least one number</span>
+              <span id="specialRule" class="invalid"
+                >• At least one special character</span
+              >
+            </div>
+          </div>
+
+          <div class="password-wrapper">
+            <input
+              type="password"
+              id="confirmPassword"
+              placeholder="Confirm password"
+              required
+            />
+            <span class="toggle-password" id="toggleConfirm"
+              ><i class="fas fa-eye"></i
+            ></span>
+          </div>
 
           <div class="error" id="error"></div>
 
@@ -91,7 +114,56 @@
       const form = document.getElementById("signupForm");
       const errorDiv = document.getElementById("error");
 
-      // ✅ Get category from URL
+      const passwordInput = document.getElementById("password");
+      const confirmPasswordInput = document.getElementById("confirmPassword");
+
+      const lengthRule = document.getElementById("lengthRule");
+      const upperRule = document.getElementById("upperRule");
+      const lowerRule = document.getElementById("lowerRule");
+      const numberRule = document.getElementById("numberRule");
+      const specialRule = document.getElementById("specialRule");
+      const passwordRules = document.getElementById("passwordRules");
+
+      const togglePassword = document.getElementById("togglePassword");
+      const toggleConfirm = document.getElementById("toggleConfirm");
+
+      togglePassword.addEventListener("click", () => {
+        const type = passwordInput.type === "password" ? "text" : "password";
+        passwordInput.type = type;
+        togglePassword.innerHTML =
+          type === "password"
+            ? '<i class="fas fa-eye"></i>'
+            : '<i class="fas fa-eye-slash"></i>';
+      });
+
+      toggleConfirm.addEventListener("click", () => {
+        const type =
+          confirmPasswordInput.type === "password" ? "text" : "password";
+        confirmPasswordInput.type = type;
+        toggleConfirm.innerHTML =
+          type === "password"
+            ? '<i class="fas fa-eye"></i>'
+            : '<i class="fas fa-eye-slash"></i>';
+      });
+
+      passwordInput.addEventListener("input", () => {
+        const val = passwordInput.value;
+
+        // Show rules if user starts typing
+        if (val.length > 0) {
+          passwordRules.style.display = "block";
+        } else {
+          passwordRules.style.display = "none";
+        }
+
+        lengthRule.className =
+          val.length >= 6 && val.length <= 14 ? "valid" : "invalid";
+        upperRule.className = /[A-Z]/.test(val) ? "valid" : "invalid";
+        lowerRule.className = /[a-z]/.test(val) ? "valid" : "invalid";
+        numberRule.className = /[0-9]/.test(val) ? "valid" : "invalid";
+        specialRule.className = /[^A-Za-z0-9]/.test(val) ? "valid" : "invalid";
+      });
+
       const urlParams = new URLSearchParams(window.location.search);
       const categoryFromURL = urlParams.get("category");
 
@@ -102,16 +174,27 @@
         const lastName = document.getElementById("lastName").value.trim();
         const email = document.getElementById("email").value.trim();
         const phone = document.getElementById("phone").value.trim();
-        const password = document.getElementById("password").value;
-        const confirmPassword =
-          document.getElementById("confirmPassword").value;
+        const password = passwordInput.value;
+        const confirmPassword = confirmPasswordInput.value;
 
         if (password !== confirmPassword) {
           errorDiv.textContent = "Passwords do not match!";
           return;
         }
 
-        // ✅ Save user object including the category
+        const isValid =
+          password.length >= 6 &&
+          password.length <= 14 &&
+          /[A-Z]/.test(password) &&
+          /[a-z]/.test(password) &&
+          /[0-9]/.test(password) &&
+          /[^A-Za-z0-9]/.test(password);
+
+        if (!isValid) {
+          errorDiv.textContent = "Password does not meet all requirements.";
+          return;
+        }
+
         const user = {
           firstName,
           lastName,
@@ -124,10 +207,9 @@
         localStorage.setItem("studyhub_user", JSON.stringify(user));
         localStorage.setItem("studyhub_loggedin", "true");
         localStorage.setItem("studyhub_active_name", user.firstName);
-        localStorage.setItem("userCategory", user.category); // Optional
+        localStorage.setItem("userCategory", user.category);
         localStorage.setItem("studyhub_origin", "signup");
 
-        // Redirect to dashboard
         window.location.href = `../StudentDashboard/Studentdash.html`;
       });
     </script>

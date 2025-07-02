@@ -1,3 +1,4 @@
+/* ---------- Global Styles ---------- */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -16,6 +17,7 @@ main {
   width: 100%;
 }
 
+/* ---------- Left Container ---------- */
 .first-main-container {
   width: 50%;
   background-image: url("../assets/innovativeimg.png");
@@ -34,6 +36,7 @@ main {
   margin-bottom: 40px;
 }
 
+/* ---------- Right Container ---------- */
 .second-main-container {
   width: 50%;
   padding: 3rem 6rem;
@@ -86,7 +89,6 @@ select,
   color: white;
   font-weight: bold;
   cursor: pointer;
-  /* margin-top: 10rem; */
 }
 
 .or {
@@ -119,8 +121,92 @@ select,
   font-weight: bold;
 }
 
-/* ---------- Responsive Styles ---------- */
+/* ---------- Password Toggle ---------- */
+.password-wrapper {
+  position: relative;
+  margin-bottom: 15px;
+}
 
+.password-wrapper input {
+  width: 100%;
+  padding-right: 40px;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+  color: #016072;
+}
+
+/* ---------- Password Validation Checklist ---------- */
+.validation-list {
+  font-size: 14px;
+  margin-top: 8px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.validation-list span {
+  display: block;
+}
+
+.valid {
+  color: green;
+}
+
+.invalid {
+  color: red;
+}
+
+/* ---------- Floating Password Validation ---------- */
+.validation-box {
+  display: none;
+  position: absolute;
+  top: -230%;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #016072;
+  padding: 10px 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper:focus-within .validation-box {
+  display: block;
+}
+
+.validation-box span {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.validation-box .valid {
+  color: green;
+}
+
+.validation-box .invalid {
+  color: red;
+}
+
+/* ---------- Error Message ---------- */
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* ---------- Responsive Styles ---------- */
 @media (max-width: 1024px) {
   .second-main-container {
     padding: 3rem 3rem;

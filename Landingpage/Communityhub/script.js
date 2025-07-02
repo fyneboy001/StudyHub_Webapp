@@ -1,4 +1,4 @@
-//Hamburger Menu Styling
+// Hamburger Menu Styling
 const hamburger = document.getElementById("hamburgerToggle");
 const sideNav = document.querySelector(".SideNav");
 
@@ -14,80 +14,81 @@ document.querySelectorAll(".Nav-links").forEach((n) =>
   })
 );
 
-// Post Section Styling
-const profileImage = document.querySelector("#ProfileImage");
-const userName = document.querySelector("#Username");
-const userIdentity = document.querySelector("#useridentity");
-
-const USER_NAME = userName.textContent.trim(); // "Emily Ikpe"
-const USER_IMAGE = profileImage.getAttribute("src"); // "../StudentDashboard/assets/Icons/Userprofile.png"
-const USER_CLASS = userIdentity.textContent.trim(); // "Student"
-
-function createPost() {
-  const text = document.getElementById("postText").value.trim();
-  if (!text) return;
-
-  const container = document.getElementById("postFeed");
-  const post = document.createElement("div");
-  post.className = "post-item";
+// Format Post Timestamp
+function formatTime(date) {
   const now = new Date();
-  post.innerHTML = renderPost(USER_NAME, USER_IMAGE, USER_CLASS, text, now);
-
-  container.prepend(post);
-  document.getElementById("postText").value = "";
+  const diff = Math.floor((now - date) / 1000);
+  if (diff < 60) return "Just now";
+  if (diff < 3600) return `${Math.floor(diff / 60)} min ago`;
+  if (diff < 86400) return `${Math.floor(diff / 3600)} hr ago`;
+  if (diff < 604800) return `${Math.floor(diff / 86400)} day ago`;
+  if (diff < 2419200) return `${Math.floor(diff / 604800)} week ago`;
+  return date.toDateString();
 }
 
+// Render Post Markup
 function renderPost(name, img, userClass, message, time) {
   const timeText = formatTime(time);
   return `
-        <div class="post-top">
-          <div class="post-meta">
-            <img src="${img}" alt="User" />
-            <div class="meta-info">
-              <div class="meta-header">
-                <span class="name">${name}</span>
-                <span class="time">• ${timeText}</span>
-              </div>
-              <span class="class">${userClass}</span>
-            </div>
+    <div class="post-top">
+      <div class="post-meta">
+        <img src="${img}" alt="User" />
+        <div class="meta-info">
+          <div class="meta-header">
+            <span class="name">${name}</span>
+            <span class="time">• ${timeText}</span>
           </div>
-          <div class="post-tags">
-            <span class="tag">Chemistry</span>
-            <span class="tag">Feedback</span>
-            <span class="kebab">⋮</span>
-          </div>
+          <span class="class">${userClass}</span>
         </div>
-        <div class="post-message">${message}</div>
-        <div class="post-actions">
-          <span onclick="likePost(this)"><img src="./assets/icons/like.png" alt="Like Icon" /> <span class="like-count">0</span></span>
-          <span onclick="toggleCommentBox(this)"><img src="./assets/icons/comment.png" alt="Comment Icon" /> <span class="comment-count">0</span></span>
-          <span><img src="./assets/icons/share.png" alt="Share Icon" /></span>
-        </div>
-        <div class="comment-box hidden">
-          <div class="create-header">
-            <img src="${USER_IMAGE}" alt="User">
-            <textarea class="comment-text" placeholder="Write a comment..."></textarea>
-          </div>
-          <div class="footer-bar">
-            <div></div>
-            <button class="post-button" onclick="submitComment(this)">Comment</button>
-          </div>
-        </div>
-        <div class="nested-comments"></div>
-      `;
+      </div>
+      <div class="post-tags">
+        <span class="tag">Chemistry</span>
+        <span class="tag">Feedback</span>
+        <span class="kebab">⋮</span>
+      </div>
+    </div>
+    <div class="post-message">${message}</div>
+    <div class="post-actions">
+      <span onclick="likePost(this)">
+        <img src="./assets/icons/like.png" alt="Like Icon" />
+        <span class="like-count">0</span>
+      </span>
+      <span onclick="toggleCommentBox(this)">
+        <img src="./assets/icons/comment.png" alt="Comment Icon" />
+        <span class="comment-count">0</span>
+      </span>
+      <span>
+        <img src="./assets/icons/share.png" alt="Share Icon" />
+      </span>
+    </div>
+    <div class="comment-box hidden">
+      <div class="create-header">
+        <img src="${window.USER_IMAGE}" alt="User">
+        <textarea class="comment-text" placeholder="Write a comment..."></textarea>
+      </div>
+      <div class="footer-bar">
+        <div></div>
+        <button class="post-button" onclick="submitComment(this)">Comment</button>
+      </div>
+    </div>
+    <div class="nested-comments"></div>
+  `;
 }
 
+// Like Post Handler
+function likePost(el) {
+  const count = el.querySelector(".like-count");
+  count.textContent = parseInt(count.textContent) + 1;
+}
+
+// Toggle Comment Box
 function toggleCommentBox(el) {
   const parent = el.closest(".post-item, .comment-item");
   const box = parent.querySelector(".comment-box");
   box.classList.toggle("hidden");
 }
 
-function likePost(el) {
-  const count = el.querySelector(".like-count");
-  count.textContent = parseInt(count.textContent) + 1;
-}
-
+// Submit Comment Handler
 function submitComment(button) {
   const commentBox = button.closest(".comment-box");
   const textarea = commentBox.querySelector(".comment-text");
@@ -99,9 +100,9 @@ function submitComment(button) {
   const comment = document.createElement("div");
   comment.className = "comment-item";
   comment.innerHTML = renderPost(
-    USER_NAME,
-    USER_IMAGE,
-    USER_CLASS,
+    window.USER_NAME,
+    window.USER_IMAGE,
+    window.USER_CLASS,
     text,
     new Date()
   );
@@ -115,19 +116,28 @@ function submitComment(button) {
   commentBox.classList.add("hidden");
 }
 
-function formatTime(date) {
+// Create New Post
+function createPost() {
+  const text = document.getElementById("postText").value.trim();
+  if (!text) return;
+
+  const container = document.getElementById("postFeed");
+  const post = document.createElement("div");
+  post.className = "post-item";
   const now = new Date();
-  const diff = Math.floor((now - date) / 1000);
-  if (diff < 60) return "Just now";
-  if (diff < 3600) return `${Math.floor(diff / 60)} min ago`;
-  if (diff < 86400) return `${Math.floor(diff / 3600)} hr ago`;
-  if (diff < 604800) return `${Math.floor(diff / 86400)} day ago`;
-  if (diff < 2419200) return `${Math.floor(diff / 604800)} week ago`;
-  return date.toDateString();
+  post.innerHTML = renderPost(
+    window.USER_NAME,
+    window.USER_IMAGE,
+    window.USER_CLASS,
+    text,
+    now
+  );
+
+  container.prepend(post);
+  document.getElementById("postText").value = "";
 }
 
-// Toggle Search Input styling
-// Search input toggle
+// Mobile Search Input Toggle
 document.addEventListener("DOMContentLoaded", function () {
   const mobileSearchToggle = document.getElementById("mobileSearchToggle");
   const mobileSearchContainer = document.querySelector(
@@ -148,4 +158,46 @@ document.addEventListener("DOMContentLoaded", function () {
       mobileSearchContainer.classList.remove("active");
     }
   });
+});
+
+// Load and Inject User Info
+document.addEventListener("DOMContentLoaded", function () {
+  const user = JSON.parse(localStorage.getItem("studyhub_user"));
+  console.log("Loaded user:", user);
+
+  if (user) {
+    // Set user name
+    const nameElement = document.getElementById("user-name");
+    if (nameElement && user.firstName && user.lastName) {
+      nameElement.textContent = `${user.firstName} ${user.lastName}`;
+    }
+
+    // Set category
+    const categoryElement = document.getElementById("categoryDisplay");
+    if (categoryElement && user.category) {
+      const formatted = capitalize(user.category.replace("_", " "));
+      categoryElement.textContent = ` ${formatted}`;
+    }
+
+    // Set profile image
+    const profileImg = document.getElementById("user-profile-img");
+    if (profileImg) {
+      if (user.profileImage && user.profileImage.trim() !== "") {
+        profileImg.src = user.profileImage;
+      } else {
+        profileImg.src = "./assets/Icons/Userprofile.png"; // fallback
+      }
+    }
+
+    // Set global variables for posts/comments
+    window.USER_NAME = `${user.firstName} ${user.lastName}`;
+    window.USER_IMAGE = profileImg?.src || "./assets/Icons/Userprofile.png";
+    window.USER_CLASS = capitalize(user.category || "Student");
+  } else {
+    console.warn("No user found in localStorage");
+  }
+
+  function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
 });

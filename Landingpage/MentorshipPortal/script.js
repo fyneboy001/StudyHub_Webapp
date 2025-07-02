@@ -233,3 +233,59 @@ document.addEventListener("click", (e) => {
     hamburgerBtn.classList.remove("active");
   }
 });
+
+// Get user data from localStorage
+document.addEventListener("DOMContentLoaded", function () {
+  const user = JSON.parse(localStorage.getItem("studyhub_user"));
+  const origin = localStorage.getItem("studyhub_origin");
+  const welcomeMessage = document.getElementById("welcome-message");
+
+  if (user && user.firstName) {
+    welcomeMessage.textContent = `Hello, ${user.firstName}`;
+  } else {
+    welcomeMessage.textContent = "Hello, Guest";
+  }
+  if (user) {
+    // Update profile name and category
+    // Set full name in the profile
+    document.getElementById(
+      "user-name"
+    ).textContent = `${user.firstName} ${user.lastName}`;
+
+    // Capitalize and format category nicely
+    const category = user.category
+      ? user.category.replace("_", " ")
+      : "Not set";
+    document.getElementById(
+      "categoryDisplay"
+    ).textContent = `Category: ${capitalize(category)}`;
+
+    // Profile image (fallback if not set)
+    const profileImg = document.getElementById("user-profile-img");
+    if (user.profileImage) {
+      profileImg.src = user.profileImage;
+    } else {
+      profileImg.src = "./assets/Icons/Userprofile.png";
+    }
+  }
+  // else {
+  //   // Redirect if not logged in
+  //   window.location.href = "../Loginpage.html";
+  // }
+
+  function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+
+  //Getting user category
+  // const user = JSON.parse(localStorage.getItem("studyhub_user"));
+
+  if (user) {
+    const category = user.category
+      ? user.category.replace("_", " ")
+      : "Not set";
+    document.getElementById("categoryDisplay").textContent = `${capitalize(
+      category
+    )}`;
+  }
+});
