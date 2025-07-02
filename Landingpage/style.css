@@ -921,7 +921,7 @@ footer {
     height: auto;
   }
   .seemore-container {
-    margin-top: 0rem;
+    margin-top: 1rem;
   }
   /* Statistics Section Styling */
   .Statistics-section {
@@ -1128,9 +1128,9 @@ footer {
   .content-section {
     height: 30vh;
   }
-  .seemore-container {
+  /* .seemore-container {
     margin-top: 20px;
-  }
+  } */
   .fraction h5 {
     width: auto;
     font-size: 11px;
