@@ -709,7 +709,8 @@ footer {
     height: 300px;
   }
   .content-list {
-    height: 30vh;
+    background-color: red;
+    height: 20vh;
   }
   .content-section {
     height: 70vh;

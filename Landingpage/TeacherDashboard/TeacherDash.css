@@ -121,7 +121,6 @@ img,
 .User-profile img {
   height: 50px;
   width: 50px;
-  border-radius: 50%;
 }
 .User-profile h5 {
   color: rgba(0, 28, 33, 0.6);
@@ -255,17 +254,16 @@ img,
   align-items: center;
   background-color: white;
   border-radius: 20px;
-  padding: 8px 20px;
+  padding: 10px 20px;
 }
-
 .cards h6 {
   color: rgba(0, 28, 33, 0.6);
-  font-size: 15px;
-  padding-bottom: 15px;
+  font-size: 13px;
+  padding-bottom: 5px;
 }
 .cards p {
   color: rgba(0, 28, 33, 0.6);
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bold;
 }
 .Progress-section {
@@ -274,11 +272,25 @@ img,
   padding: 0 20px;
 }
 .view {
-  height: 3vh;
+  height: 7vh;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.view-button {
+  height: 5vh;
+  width: 7rem;
+  background-color: #1a808d;
+  color: #f0fbff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 .learning-progress-cards-container {
   height: 60vh;
@@ -292,6 +304,32 @@ img,
   width: 32%;
   background-color: white;
   border-radius: 10px;
+}
+.progress-cards img {
+  border-radius: 10px 10px 0 0;
+}
+.progress-bar-container {
+  width: 100%;
+  background-color: #f0fbff;
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.progress-bar {
+  height: 100%;
+  background-color: #1a808d;
+  width: 0%;
+  transition: width 0.3s ease-in-out;
+}
+/* .progress-bar-2 {
+  height: 100%;
+  background-color: #1a808d;
+  width: 0%;
+  transition: width 0.3s ease-in-out;
+} */
+.readings {
+  display: flex;
+  justify-content: space-between;
 }
 .bio,
 .ss1 {
@@ -309,25 +347,16 @@ img,
   display: flex;
   justify-content: space-between;
 }
-.cell-bio h5 {
-  padding-top: 5px;
-}
-.paragraph {
-  margin-top: 15px;
-}
 .subject-class {
   display: flex;
   gap: 10px;
 }
 .progress-card-content {
   height: 22vh;
-  padding: 4px 15px;
+  padding: 4px 10px;
 }
 .percentage-container {
   padding: 8px 0;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 25px;
 }
 .continue {
   height: 30px;
@@ -382,6 +411,7 @@ img,
   display: flex;
   margin-top: 10px;
   justify-content: space-between;
+  width: 100%;
 }
 .learners {
   display: flex;
@@ -453,7 +483,7 @@ img,
   border-radius: 50%;
 }
 
-/* Liked Styling
+/* Liked Styling */
 .rating-container {
   display: flex;
   gap: 5px;
@@ -474,7 +504,7 @@ img,
 .info {
   margin-top: 5px;
   font-size: 15px;
-} */
+}
 /* Kebab Menu Styling */
 .dropdown-menu {
   display: none;
@@ -588,7 +618,7 @@ img,
     width: 40px;
   }
   .Welcome-section {
-    height: 35vh;
+    height: auto;
   }
   .Happening-cards {
     display: none;
@@ -607,23 +637,30 @@ img,
     width: 48%;
     padding: 20px 0px;
   }
+  .Vector {
+    padding-top: 5px;
+  }
+  .Daniel-Etim {
+    margin-top: 1rem;
+  }
   .cards h6,
   p {
     font-size: 15px;
   }
-  #periodic-table {
+  #Surds {
     display: none;
   }
   .progress-cards {
     width: 48%;
-    height: 30vh;
+    height: 33vh;
   }
   .Progress-section {
-    height: 35vh;
+    height: 40vh;
     padding: 0px;
   }
   .learning-progress-cards-container {
     height: 30vh;
+    margin-top: 15px;
   }
   .top-teachers,
   .top {
@@ -634,7 +671,8 @@ img,
   }
   .Lesson-container {
     width: 100%;
-    height: 50vh;
+    height: 55vh;
+    padding: 8px;
   }
   .Popular-lesson-section {
     padding: 0px;
@@ -642,14 +680,14 @@ img,
   }
   .learn-maths,
   .learners {
-    width: 35%;
+    width: 40%;
   }
-  p {
-    font-size: 12px;
+  .progress-card-content p {
+    font-size: 11px;
   }
   .lesson-card img {
-    height: 150px;
-    width: 150px;
+    height: 100px;
+    width: 100px;
   }
   .icon-container {
     width: 20%;
@@ -657,6 +695,37 @@ img,
   .icon-container img {
     height: 30px;
     width: 30px;
+  }
+  .cell-bio .support {
+    font-size: 11px;
+  }
+  .cell-bio .subject-class {
+    gap: 0px;
+  }
+  #subject {
+    margin-right: 10px;
+  }
+  .bio,
+  .ss1 {
+    width: 3rem;
+  }
+  .ss1 {
+    margin-left: 5px;
+  }
+  .learn-maths {
+    width: 50%;
+  }
+  /* #math {
+    margin-right: 15px;
+  } */
+  #trig-icon {
+    translate: -12px;
+  }
+  #math {
+    translate: -15px;
+  }
+  .lesson-card {
+    gap: 8px;
   }
 }
 
