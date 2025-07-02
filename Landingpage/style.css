@@ -917,6 +917,10 @@ footer {
   .content-section {
     height: auto;
   }
+  .seemore-container {
+    margin-top: 50px;
+  }
+
   .Subject-section {
     height: auto;
   }
