@@ -915,7 +915,8 @@ footer {
     height: auto;
   }
   .content-section {
-    height: 70vh;
+    background-color: red;
+    height: 100vh;
   }
   .Subject-section {
     height: auto;
