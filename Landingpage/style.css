@@ -140,7 +140,7 @@ html {
   padding-top: 3rem;
 }
 .Bridging-container {
-  height: 160px;
+  height: 80px;
   width: 100%;
   text-align: center;
 }
@@ -150,7 +150,6 @@ html {
 }
 .Bridging-container h3 {
   font-size: 40px;
-  padding-top: 10px;
 }
 .Features-container {
   height: auto;
@@ -212,6 +211,7 @@ html {
   flex-wrap: wrap;
   list-style: none;
   padding: 0;
+  margin-top: 0;
   gap: 15px;
   justify-content: center;
 }
@@ -232,6 +232,7 @@ html {
 
 .content-section {
   height: 90vh;
+  background-color: red;
   margin-top: 10px;
 }
 .bg-image {
@@ -845,9 +846,7 @@ footer {
     font-size: 20px;
     padding-right: 5px;
   }
-  .Bridging-container {
-    padding-top: 20px;
-  }
+
   .Interactive {
     height: 18vh;
     width: 95%;
@@ -915,13 +914,19 @@ footer {
   }
   .semi-content-section {
     height: 45vh;
+    background-color: blue;
   }
   .content-section {
-    height: auto;
+    height: 40;
   }
   .seemore-container {
     position: static !important;
     margin-top: 5vh !important;
+  }
+  .see-more {
+    padding: 5px 5px;
+    width: 7rem;
+    height: 30px;
   }
 
   .Subject-section {
