@@ -201,11 +201,11 @@ html {
   font-size: 16px;
 }
 
-.Bridging-container h3 {
+/* .Bridging-container h3 {
   font-size: 28px;
   margin-top: 10px;
   color: #222;
-}
+} */
 
 .Subject-links {
   display: flex;
@@ -806,6 +806,7 @@ footer {
 
   .Accessible-content h2 {
     font-size: 20px;
+    padding-top: 20px;
   }
   .Accessible-content p {
     font-size: 10px;
@@ -842,6 +843,7 @@ footer {
   }
   .Bridging-container h3 {
     font-size: 20px;
+    padding-right: 5px;
   }
   .Bridging-container {
     padding-top: 20px;
@@ -925,10 +927,6 @@ footer {
   .Subject-section {
     height: auto;
   }
-  /* .seemore-container {
-    background-color: red;
-    margin-top: 3rem;
-  } */
   /* Statistics Section Styling */
   .Statistics-section {
     height: auto;
@@ -943,9 +941,7 @@ footer {
   }
 
   .BannerImage {
-    /* height: 60px; */
     width: 100%;
-    /* transform: translateX(-17px); */
     max-width: none;
   }
 
