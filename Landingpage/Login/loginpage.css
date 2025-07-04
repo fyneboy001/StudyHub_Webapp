@@ -144,6 +144,11 @@ button {
   height: 18px;
   transform: translateY(5px);
 }
+.second-main-container a {
+  color: #016072;
+  text-decoration: none;
+  font-weight: bold;
+}
 
 /* ============= RESPONSIVE STYLES ============= */
 
