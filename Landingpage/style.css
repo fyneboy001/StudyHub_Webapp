@@ -232,7 +232,6 @@ html {
 
 .content-section {
   height: 90vh;
-  background-color: red;
   margin-top: 10px;
 }
 .bg-image {
@@ -914,14 +913,13 @@ footer {
   }
   .semi-content-section {
     height: 45vh;
-    background-color: blue;
   }
   .content-section {
-    height: 40;
+    height: auto;
   }
   .seemore-container {
     position: static !important;
-    margin-top: 5vh !important;
+    margin-top: 10px !important;
   }
   .see-more {
     padding: 5px 5px;
