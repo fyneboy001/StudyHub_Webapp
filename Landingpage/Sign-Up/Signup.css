@@ -99,15 +99,17 @@ select,
 .google-button {
   display: flex;
   align-items: center;
-  gap: 10px;
   justify-content: center;
+  gap: 10px;
+  padding-right: 6.5rem;
   cursor: pointer;
-  background-color: #fff;
 }
 
 .google-button img {
-  width: 18px;
-  height: 18px;
+  height: 20px; /* Keeps the logo well-proportioned */
+  width: auto;
+  display: block;
+  transform: translateY(9px);
 }
 
 .second-main-container p {
