@@ -712,6 +712,9 @@ img,
   .ss1 {
     margin-left: 5px;
   }
+  .cell-bio h5 {
+    font-size: 13px;
+  }
   .learn-maths {
     width: 50%;
   }

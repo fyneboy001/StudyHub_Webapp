@@ -919,7 +919,8 @@ footer {
     height: auto;
   }
   .seemore-container {
-    margin-top: 50px;
+    position: static !important;
+    margin-top: 30vh !important;
   }
 
   .Subject-section {
