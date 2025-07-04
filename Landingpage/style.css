@@ -709,7 +709,6 @@ footer {
     height: 300px;
   }
   .content-list {
-    background-color: red;
     height: 20vh;
   }
   .content-section {
@@ -920,7 +919,7 @@ footer {
   }
   .seemore-container {
     position: static !important;
-    margin-top: 30vh !important;
+    margin-top: 5vh !important;
   }
 
   .Subject-section {
