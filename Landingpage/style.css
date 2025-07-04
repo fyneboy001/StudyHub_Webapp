@@ -341,6 +341,7 @@ html {
 
 .Statistics-section {
   height: auto;
+  padding-top: 40px;
   width: 100%;
 }
 .Statistics-note {
