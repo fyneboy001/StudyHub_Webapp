@@ -1,4 +1,4 @@
-//Hamburger Menu Styling
+// 🔹 Hamburger Menu Styling
 const hamburger = document.getElementById("hamburgerToggle");
 const sideNav = document.querySelector(".SideNav");
 
@@ -14,12 +14,10 @@ document.querySelectorAll(".Nav-links").forEach((n) =>
   })
 );
 
-// Lesson Module checkbox functionality styling
-// Clear all progress except currentLesson if reloaded
+// 🔹 Lesson Module State Handling
 const navEntries = performance.getEntriesByType("navigation");
 const navType = navEntries.length > 0 ? navEntries[0].type : "navigate";
 
-// Clear storage on full reload, but keep currentLesson
 const contentTitles = [
   [
     "1. What is a Cell?",
@@ -30,22 +28,20 @@ const contentTitles = [
     "6. Plant Cells",
     "7. Animal Cells",
     "8. Difference between plant and Animal Cells",
-  ], // Lesson 1
-  ["Getting Started", "Deep Dive", "Case Study", "Live Demo", "Summary"], // Lesson 2
-  ["Warm-up", "Theory", "Examples", "Challenge", "Wrap-up"], // Lesson 3
-  ["Basics", "Intermediate", "Advanced", "Real-world Apps", "Assessment"], // Lesson 4
+  ],
+  ["Getting Started", "Deep Dive", "Case Study", "Live Demo", "Summary"],
+  ["Warm-up", "Theory", "Examples", "Challenge", "Wrap-up"],
+  ["Basics", "Intermediate", "Advanced", "Real-world Apps", "Assessment"],
 ];
 
+// On full reload, preserve only currentLesson
 if (navType === "reload") {
-  const current = localStorage.getItem("currentLesson");
-  localStorage.clear();
-  if (current !== null) {
-    localStorage.setItem("currentLesson", current);
+  if (sessionStorage.getItem("comments")) {
+    sessionStorage.removeItem("comments");
   }
 }
 
 const totalLessons = contentTitles.length;
-// const contentsPerLesson = 5;
 let currentLesson = 0;
 
 function isContentCompleted(lesson, content) {
@@ -60,15 +56,9 @@ function renderLessons() {
     const lessonDiv = document.createElement("div");
     lessonDiv.className = "lesson" + (i === currentLesson ? " active" : "");
 
-    // Optional: Remove lesson headers
-    // const heading = document.createElement("h2");
-    // heading.textContent = `Lesson ${i + 1}`;
-    // lessonDiv.appendChild(heading);
-
-    const contents = contentTitles[i]; // Get dynamic list of content titles
+    const contents = contentTitles[i];
     for (let j = 0; j < contents.length; j++) {
       const isCompleted = isContentCompleted(i, j);
-
       const contentDiv = document.createElement("div");
       contentDiv.className = "content";
       contentDiv.onclick = () => {
@@ -115,40 +105,55 @@ function prevLesson() {
   }
 }
 
-// Helper to initialize the page with proper lesson and content states
 function initializeLessonPage() {
   const storedLesson = localStorage.getItem("currentLesson");
   currentLesson = storedLesson !== null ? parseInt(storedLesson, 10) : 0;
   renderLessons();
 }
 
-// Handle full load and cached back/forward navigation
-window.addEventListener("load", initializeLessonPage);
-window.addEventListener("pageshow", initializeLessonPage);
+// 🔹 DOMContentLoaded ensures all DOM is ready before running
+document.addEventListener("DOMContentLoaded", function () {
+  const user = JSON.parse(localStorage.getItem("studyhub_user"));
+  const realName = user?.firstName
+    ? `${user.firstName} ${user.lastName}`
+    : "Guest User";
+  const profileImage = user?.profileImage || "./assets/Icons/Userprofile.png";
 
-// Comment Section Functionality Styling
-// Simulated logged-in user
-const currentUser = {
-  username: "derin_audu",
-  realName: "Derin Audu",
-  profileImage: "../StudentDashboard/assets/Icons/Userprofile.png",
-};
+  // Set sidebar profile
+  document.getElementById("user-name").textContent = realName;
+  const category = user?.category ? user.category.replace("_", " ") : "Not set";
+  document.getElementById("categoryDisplay").textContent = `${capitalize(
+    category
+  )}`;
+  document.getElementById("user-profile-img").src = profileImage;
 
-sessionStorage.setItem("currentUser", JSON.stringify(currentUser));
+  // Set up sessionStorage for comment section
+  const currentUser = {
+    username: realName.toLowerCase().replace(/\s+/g, "_"),
+    realName,
+    profileImage,
+  };
+  sessionStorage.setItem("currentUser", JSON.stringify(currentUser));
 
-window.onload = function () {
-  const user = JSON.parse(sessionStorage.getItem("currentUser"));
-  document.getElementById("userRealName").textContent = user.realName;
-  document.getElementById("userProfileImage").src = user.profileImage;
+  // Update comment UI
+  const sessionUser = JSON.parse(sessionStorage.getItem("currentUser"));
+  document.getElementById("userRealName").textContent = sessionUser.realName;
+  document.getElementById("userProfileImage").src = sessionUser.profileImage;
+
   displayComments();
-};
+  initializeLessonPage();
 
+  function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+});
+
+// 🔹 Post Comment
 function postComment() {
   const commentText = document.getElementById("commentText").value.trim();
   if (!commentText) return;
 
   const user = JSON.parse(sessionStorage.getItem("currentUser"));
-
   const comment = {
     id: Date.now(),
     realName: user.realName,
@@ -162,42 +167,41 @@ function postComment() {
   let comments = JSON.parse(sessionStorage.getItem("comments")) || [];
   comments.unshift(comment);
   sessionStorage.setItem("comments", JSON.stringify(comments));
-
   document.getElementById("commentText").value = "";
   displayComments();
 }
 
+// 🔹 Display Comments
 function displayComments() {
   const container = document.getElementById("commentsContainer");
   container.innerHTML = "";
   const comments = JSON.parse(sessionStorage.getItem("comments")) || [];
-
   comments.forEach((comment) => {
     const div = createCommentElement(comment);
     container.appendChild(div);
   });
 }
 
+// 🔹 Build Comment Element (including replies)
 function createCommentElement(comment, parentId = null) {
   const div = document.createElement("div");
   div.className = "comment";
   div.innerHTML = `
-      <div class="profile">
-        <img src="${comment.profileImage}" alt="User profile photo for ${comment.realName}, smiling and facing forward, in a digital classroom environment" />
-        <strong>${comment.realName}</strong> <small>${comment.timestamp}</small>
-      </div>
-      <p>${comment.text}</p>
-      <div style="display: flex; gap: 10px; align-items: center; margin-top: 8px;">
-        <button onclick="showReplyInput(${comment.id}, ${parentId})" style="background: transparent; border: none; outline: none; cursor: pointer;">Reply</button>
-        <button onclick="likeComment(${comment.id}, ${parentId})" style="background: transparent; border: none; outline: none; cursor: pointer;">
-          <img src="./assets/Icons/thumbsup.png" alt="Thumbs up icon for liking this comment" style="width: 16px; height: 16px; vertical-align: middle;" />
-          <span id="like-${comment.id}">${comment.likes}</span>
-        </button>
-      </div>
-      <div id="reply-input-${comment.id}" style="margin-top: 10px;"></div>
-    `;
+    <div class="profile">
+      <img src="${comment.profileImage}" alt="User profile image" />
+      <strong>${comment.realName}</strong> <small>${comment.timestamp}</small>
+    </div>
+    <p>${comment.text}</p>
+    <div style="display: flex; gap: 10px; align-items: center; margin-top: 8px;">
+      <button onclick="showReplyInput(${comment.id}, ${parentId})">Reply</button>
+      <button onclick="likeComment(${comment.id}, ${parentId})">
+        <img src="./assets/Icons/thumbsup.png" alt="Like" style="width: 16px; height: 16px;" />
+        <span id="like-${comment.id}">${comment.likes}</span>
+      </button>
+    </div>
+    <div id="reply-input-${comment.id}" style="margin-top: 10px;"></div>
+  `;
 
-  // Render replies
   if (comment.replies && comment.replies.length > 0) {
     const repliesDiv = document.createElement("div");
     repliesDiv.style.marginLeft = "2rem";
@@ -210,8 +214,10 @@ function createCommentElement(comment, parentId = null) {
   return div;
 }
 
+// 🔹 Like Comment or Reply
 function likeComment(id, parentId = null) {
   let comments = JSON.parse(sessionStorage.getItem("comments")) || [];
+
   if (parentId) {
     const parent = comments.find((c) => c.id === parentId);
     const reply = parent.replies.find((r) => r.id === id);
@@ -220,18 +226,21 @@ function likeComment(id, parentId = null) {
     const comment = comments.find((c) => c.id === id);
     comment.likes++;
   }
+
   sessionStorage.setItem("comments", JSON.stringify(comments));
   displayComments();
 }
 
+// 🔹 Show Reply Input Box
 function showReplyInput(id, parentId = null) {
   const container = document.getElementById(`reply-input-${id}`);
   container.innerHTML = `
-      <textarea id="reply-text-${id}" rows="2" placeholder="Write a reply..." style="width: 100%; margin-top: 5px;"></textarea>
-      <button onclick="postReply(${id}, ${parentId})" style="margin-top: 5px; background: #1A808D; color: #F0FBFF; height: 30px; width: 80px; border-radius: 8px; border: none; outline: none;">Post Reply</button>
-    `;
+    <textarea id="reply-text-${id}" rows="2" placeholder="Write a reply..." style="width: 100%; margin-top: 5px;"></textarea>
+    <button onclick="postReply(${id}, ${parentId})" style="margin-top: 5px;">Post Reply</button>
+  `;
 }
 
+// 🔹 Post a Reply
 function postReply(id, parentId = null) {
   const textArea = document.getElementById(`reply-text-${id}`);
   const replyText = textArea.value.trim();
@@ -249,13 +258,13 @@ function postReply(id, parentId = null) {
   };
 
   let comments = JSON.parse(sessionStorage.getItem("comments")) || [];
-  const comment = comments.find((c) => c.id === id || c.id === parentId);
   if (parentId) {
     const parent = comments.find((c) => c.id === parentId);
     const replyTo = parent.replies.find((r) => r.id === id);
     replyTo.replies = replyTo.replies || [];
     replyTo.replies.unshift(reply);
   } else {
+    const comment = comments.find((c) => c.id === id);
     comment.replies = comment.replies || [];
     comment.replies.unshift(reply);
   }
@@ -264,6 +273,7 @@ function postReply(id, parentId = null) {
   displayComments();
 }
 
+// 🔹 Comment Collapse/Expand Toggle
 const toggleBtn = document.getElementById("toggleButton");
 const commentContent = document.getElementById("commentContent");
 const toggleIcon = document.getElementById("toggleIcon");
@@ -274,23 +284,17 @@ toggleBtn.addEventListener("click", () => {
   commentContent.classList.toggle("expanded", !isCollapsed);
 
   if (isCollapsed) {
-    toggleIcon.innerHTML = `
-        <div class="bar"></div>
-        <div class="bar"></div>
-      `;
+    toggleIcon.innerHTML = `<div class="bar"></div><div class="bar"></div>`;
     toggleText.textContent = "Open";
     toggleBtn.setAttribute("aria-expanded", "false");
-    toggleBtn.setAttribute("aria-label", "Open comment section");
   } else {
     toggleIcon.innerHTML = `<div style="font-size: 1.5rem;">ⓧ</div>`;
     toggleText.textContent = "Close";
     toggleBtn.setAttribute("aria-expanded", "true");
-    toggleBtn.setAttribute("aria-label", "Close comment section");
   }
 });
 
-// Toggle Search Input styling
-// Search input toggle
+// 🔹 Mobile Search Toggle
 const mobileSearchToggle = document.getElementById("mobileSearchToggle");
 const mobileSearchContainer = document.querySelector(
   ".dashboard-search.mobile-only"
@@ -300,9 +304,7 @@ mobileSearchToggle?.addEventListener("click", (e) => {
   e.stopPropagation();
   mobileSearchContainer.classList.toggle("active");
   const input = document.getElementById("mobileSearchInput");
-  if (mobileSearchContainer.classList.contains("active")) {
-    input.focus();
-  }
+  if (mobileSearchContainer.classList.contains("active")) input.focus();
 });
 
 document.addEventListener("click", (e) => {
