@@ -142,7 +142,7 @@ button {
 .google-button img {
   width: 18px;
   height: 18px;
-  t
+  transform: translateY(5px);
 }
 
 /* ============= RESPONSIVE STYLES ============= */
