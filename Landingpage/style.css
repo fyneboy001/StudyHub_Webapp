@@ -140,7 +140,7 @@ html {
   padding-top: 3rem;
 }
 .Bridging-container {
-  height: 80px;
+  height: 150px;
   width: 100%;
   text-align: center;
 }
@@ -200,11 +200,11 @@ html {
   font-size: 16px;
 }
 
-/* .Bridging-container h3 {
+.Bridging-container h3 {
   font-size: 28px;
   margin-top: 10px;
   color: #222;
-} */
+}
 
 .Subject-links {
   display: flex;
@@ -414,6 +414,7 @@ html {
 .Testimonial-Section {
   height: auto;
   width: 100%;
+  padding-top: 30px;
 }
 .Testimonial,
 .Statistics-note {
@@ -503,6 +504,7 @@ html {
 .FAQ-Section {
   height: auto;
   width: 100%;
+  padding-top: 30px;
 }
 .faq-container {
   height: auto;

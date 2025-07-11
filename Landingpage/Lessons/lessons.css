@@ -571,14 +571,9 @@ p,
 .subject-page.active-page {
   display: block;
 }
-
-.page-button.active {
-  background-color: #0056b3;
-  color: #fff;
-}
 .button-carousel {
   display: flex;
-  width: 50%;
+  width: 30%;
   align-items: center;
   gap: 10px;
   margin-top: 20px;
@@ -596,14 +591,14 @@ p,
 
 .page-button {
   padding: 6px 12px;
-  border: 1px solid #ccc;
-  background-color: white;
+  border: none;
+  background-color: #f0fbff;
   cursor: pointer;
   border-radius: 4px;
 }
 
 .page-button.active {
-  background-color: #0056b3;
+  background-color: #1a808d;
   color: white;
 }
 
