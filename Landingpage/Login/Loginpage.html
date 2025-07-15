@@ -88,22 +88,29 @@
         const email = document.getElementById("email").value.trim();
         const password = document.getElementById("password").value;
 
-        const storedUser = JSON.parse(localStorage.getItem("studyhub_user"));
+        // 🔄 Get the list of registered users
+        const storedUsers =
+          JSON.parse(localStorage.getItem("studyhub_users")) || [];
 
-        if (!storedUser) {
-          errorDiv.textContent = "No user found. Please sign up first.";
-          return;
-        }
+        // 🔍 Find a user with matching email and password
+        const matchingUser = storedUsers.find(
+          (user) => user.email === email && user.password === password
+        );
 
-        if (storedUser.email === email && storedUser.password === password) {
-          // Save current user session info
+        if (matchingUser) {
+          // ✅ Login success
           localStorage.setItem("studyhub_loggedin", "true");
-          localStorage.setItem("studyhub_active_name", storedUser.firstName);
-          localStorage.setItem("studyhub_origin", "login"); // 🔥 NEW LINE
+          localStorage.setItem("studyhub_active_name", matchingUser.firstName);
+          localStorage.setItem("userCategory", matchingUser.category);
+          localStorage.setItem(
+            "studyhub_current_user_email",
+            matchingUser.email
+          );
+          localStorage.setItem("studyhub_origin", "login");
 
-          // Redirect to dashboard
           window.location.href = "../StudentDashboard/Studentdash.html";
         } else {
+          // ❌ No matching credentials
           errorDiv.textContent = "Invalid email or password.";
         }
       });

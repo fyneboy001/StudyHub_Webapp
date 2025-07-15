@@ -101,7 +101,9 @@
           Sign Up with Google
         </div>
 
-        <p>Already have an Account? <a href="../Login/Loginpage.html">Login</a></p>
+        <p>
+          Already have an Account? <a href="../Login/Loginpage.html">Login</a>
+        </p>
       </div>
     </main>
 
@@ -121,6 +123,7 @@
       const specialRule = document.getElementById("specialRule");
       const passwordRules = document.getElementById("passwordRules");
 
+      // Password strength check
       passwordInput.addEventListener("input", () => {
         const val = passwordInput.value;
         passwordRules.style.display = val.length > 0 ? "block" : "none";
@@ -161,6 +164,7 @@
         const password = passwordInput.value;
         const confirmPassword = confirmPasswordInput.value;
 
+        // Validation
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
           errorDiv.textContent = "Please enter a valid email address.";
@@ -190,7 +194,18 @@
           return;
         }
 
-        const user = {
+        // Get existing users from localStorage
+        let users = JSON.parse(localStorage.getItem("studyhub_users")) || [];
+
+        // Check if email already exists
+        const existingUser = users.find((user) => user.email === email);
+        if (existingUser) {
+          errorDiv.textContent = "User already exists. Please login instead.";
+          return;
+        }
+
+        // Save new user
+        const newUser = {
           firstName,
           lastName,
           email,
@@ -199,13 +214,16 @@
           category: categoryFromURL || "unknown",
         };
 
-        localStorage.setItem("studyhub_user", JSON.stringify(user));
-        localStorage.setItem("studyhub_loggedin", "true");
-        localStorage.setItem("studyhub_active_name", user.firstName);
-        localStorage.setItem("userCategory", user.category);
-        localStorage.setItem("studyhub_origin", "signup");
+        users.push(newUser);
+        localStorage.setItem("studyhub_users", JSON.stringify(users));
 
-        window.location.href = `../StudentDashboard/Studentdash.html`;
+        // Optional info for welcome screen
+        localStorage.setItem("studyhub_active_name", newUser.firstName);
+        localStorage.setItem("userCategory", newUser.category);
+        localStorage.setItem("studyhub_origin", "signup");
+        localStorage.setItem("studyhub_current_user_email", newUser.email);
+
+        window.location.href = "../StudentDashboard/Studentdash.html";
       });
     </script>
   </body>
