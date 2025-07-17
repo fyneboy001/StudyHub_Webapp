@@ -1,5 +1,5 @@
 {
   "builds": [],
   "routes": [],
-  "outputDirectory": "Landingpage"
+  "outputDirectory": "public"
 }
