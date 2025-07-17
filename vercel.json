@@ -1,5 +1,17 @@
 {
-  "builds": [],
-  "routes": [],
-  "outputDirectory": "public"
+  "outputDirectory": "public",
+  "rewrites": [
+    { "source": "/", "destination": "/login.html" },
+    { "source": "/login", "destination": "/login.html" },
+    { "source": "/signup", "destination": "/GetStarted/Getstarted.html" },
+    { "source": "/getstarted", "destination": "/GetStarted/Getstarted.html" },
+    {
+      "source": "/dashboard",
+      "destination": "/StudentDashboard/Studentdash.html"
+    },
+    {
+      "source": "/studentdash",
+      "destination": "/StudentDashboard/Studentdash.html"
+    }
+  ]
 }
