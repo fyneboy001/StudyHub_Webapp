@@ -128,9 +128,9 @@ if (user) {
 
   // Update category/grade
   const category = user.grade ? user.grade.replace("_", " ") : "Not set";
-  document.getElementById(
-    "categoryDisplay"
-  ).textContent = `Category: ${capitalize(category)}`;
+  document.getElementById("categoryDisplay").textContent = `${capitalize(
+    category
+  )}`;
 
   // Update profile image (optional)
   const profileImg = document.getElementById("user-profile-img");
@@ -148,3 +148,16 @@ if (user) {
 function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
+
+//code to handle the progress section when a user signup or login
+document.addEventListener("DOMContentLoaded", function () {
+  const origin = localStorage.getItem("studyhub_origin");
+
+  const progressSection = document.getElementById("Progress-section");
+
+  if (origin === "signup") {
+    progressSection.style.display = "none";
+  } else {
+    progressSection.style.display = "block"; // optional, if you want to ensure it's shown on login
+  }
+});

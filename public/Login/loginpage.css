@@ -21,15 +21,14 @@ main {
 
 .first-main-container {
   width: 50%;
-  height: 100%;
   background-image: url("../assets/innovativeimg.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 2rem;
+  padding: 20px 40px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .first-main-container h2 {
