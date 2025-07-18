@@ -1,8 +1,8 @@
-//Hamburger Menu Styling
+// Hamburger Menu Styling
 const hamburger = document.getElementById("hamburgerToggle");
 const sideNav = document.querySelector(".SideNav");
 
-hamburger.addEventListener("click", () => {
+hamburger?.addEventListener("click", () => {
   hamburger.classList.toggle("active");
   sideNav.classList.toggle("active");
 });
@@ -23,36 +23,30 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
 
   carousel.insertAdjacentHTML(
     "beforeend",
-    `
-    <div class="carousel-nav">
-    ${buttonsHTML.join("")}
-    </div>`
+    `<div class="carousel-nav">${buttonsHTML.join("")}</div>`
   );
 
   const buttons = carousel.querySelectorAll(".carousel-button");
 
   buttons.forEach((button, index) => {
     button.addEventListener("click", () => {
-      // Unselect all items and buttons
       items.forEach((item) => item.classList.remove("carousel-item-selected"));
       buttons.forEach((btn) =>
         btn.classList.remove("carousel-button-selected")
       );
 
-      // Select the clicked one
       items[index].classList.add("carousel-item-selected");
       button.classList.add("carousel-button-selected");
     });
   });
 
-  // Set default selected item and button
   items[0].classList.add("carousel-item-selected");
   buttons[0].classList.add("carousel-button-selected");
 });
 
 // Kebab Menu Styling
 function toggleMenu(event) {
-  event.stopPropagation(); // Prevent triggering window.onclick
+  event.stopPropagation();
   const menuWrapper = event.currentTarget.closest(".menu-wrapper");
   const dropdown = menuWrapper.querySelector(".dropdown-menu");
   dropdown.classList.toggle("show");
@@ -68,8 +62,7 @@ window.onclick = function (event) {
   }
 };
 
-// Toggle Search Input styling
-// Search input toggle
+// Toggle Search Input (Mobile)
 document.addEventListener("DOMContentLoaded", function () {
   const mobileSearchToggle = document.getElementById("mobileSearchToggle");
   const mobileSearchContainer = document.querySelector(
@@ -92,63 +85,53 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Get user data from localStorage
+// ============================
+// ✅ USER PROFILE DATA SECTION
+// ============================
 document.addEventListener("DOMContentLoaded", function () {
-  const user = JSON.parse(localStorage.getItem("studyhub_users"));
+  const email = localStorage.getItem("studyhub_current_user_email");
   const origin = localStorage.getItem("studyhub_origin");
-  const welcomeMessage = document.getElementById("welcome-message");
+  const users = JSON.parse(localStorage.getItem("studyhub_users")) || [];
 
-  if (user && user.firstName) {
-    welcomeMessage.textContent = `Hello, ${user.firstName}`;
-  } else {
-    welcomeMessage.textContent = "Hello, Guest";
-  }
+  const user = users.find((u) => u.email === email);
+
   if (user) {
-    // Update profile name and category
-    // Set full name in the profile
+    const greeting = origin === "signup" ? "Welcome" : "Welcome back";
+
+    const welcomeMessage = document.getElementById("welcome-message");
+    welcomeMessage.textContent = `${greeting}, ${user.firstName}!`;
+
     document.getElementById(
       "user-name"
     ).textContent = `${user.firstName} ${user.lastName}`;
 
-    // Capitalize and format category nicely
-    const category = user.category
-      ? user.category.replace("_", " ")
-      : "Not set";
-    document.getElementById(
-      "categoryDisplay"
-    ).textContent = `Category: ${capitalize(category)}`;
+    const category = user.category || user.grade || "Not set";
+    document.getElementById("categoryDisplay").textContent = `${capitalize(
+      category.replace("_", " ")
+    )}`;
 
-    // Profile image (fallback if not set)
     const profileImg = document.getElementById("user-profile-img");
-    if (user.profileImage) {
-      profileImg.src = user.profileImage;
-    } else {
-      profileImg.src = "./assets/Icons/Userprofile.png";
-    }
+    profileImg.src =
+      user.profileImage?.trim() || "./assets/Icons/Userprofile.png";
+
+    // Global variables (if used elsewhere)
+    window.USER_NAME = `${user.firstName} ${user.lastName}`;
+    window.USER_IMAGE =
+      user.profileImage?.trim() || "./assets/Icons/Userprofile.png";
+    window.USER_CLASS = capitalize(user.category || user.grade || "Student");
+  } else {
+    // Redirect to login if no user found
+    window.location.href = "../Loginpage.html";
   }
-  // else {
-  //   // Redirect if not logged in
-  //   window.location.href = "../Loginpage.html";
-  // }
 
   function capitalize(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
   }
-
-  //Getting user category
-  // const user = JSON.parse(localStorage.getItem("studyhub_user"));
-
-  if (user) {
-    const category = user.category
-      ? user.category.replace("_", " ")
-      : "Not set";
-    document.getElementById("categoryDisplay").textContent = `${capitalize(
-      category
-    )}`;
-  }
 });
 
-// Carousel Buttons Style
+// ===========================
+// Subject Pagination Buttons
+// ===========================
 const pageButtons = document.querySelectorAll(".page-button");
 const subjectPages = document.querySelectorAll(".subject-page");
 const moreButton = document.querySelector(".more-button");
@@ -176,9 +159,9 @@ pageButtons.forEach((button) => {
   });
 });
 
-// Set default to page 1
+// Default to page 1
 switchToPage("1");
 
-// Update more button with total page count
+// Update more button count
 const totalPages = subjectPages.length;
 moreButton.textContent = `+${totalPages}`;

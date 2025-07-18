@@ -160,41 +160,52 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Load and Inject User Info
 document.addEventListener("DOMContentLoaded", function () {
-  const user = JSON.parse(localStorage.getItem("studyhub_users"));
-  console.log("Loaded user:", user);
+  const email = localStorage.getItem("studyhub_current_user_email");
+  const origin = localStorage.getItem("studyhub_origin"); // signup or login
+
+  const users = JSON.parse(localStorage.getItem("studyhub_users")) || [];
+
+  // Find user by email
+  const user = users.find((u) => u.email === email);
 
   if (user) {
-    // Set user name
+    const greeting = origin === "signup" ? "Welcome" : "Welcome back";
+
+    // Set welcome message
+    const welcomeMessage = document.getElementById("welcome-message");
+    if (welcomeMessage) {
+      welcomeMessage.textContent = `${greeting}, ${user.firstName}!`;
+    }
+
+    // Set name
     const nameElement = document.getElementById("user-name");
-    if (nameElement && user.firstName && user.lastName) {
+    if (nameElement) {
       nameElement.textContent = `${user.firstName} ${user.lastName}`;
     }
 
-    // Set category
+    // Set category/class
     const categoryElement = document.getElementById("categoryDisplay");
-    if (categoryElement && user.category) {
-      const formatted = capitalize(user.category.replace("_", " "));
-      categoryElement.textContent = ` ${formatted}`;
+    if (categoryElement) {
+      const formatted = capitalize(user.grade || user.category || "Student");
+      categoryElement.textContent = ` ${formatted.replace("_", " ")}`;
     }
 
     // Set profile image
     const profileImg = document.getElementById("user-profile-img");
     if (profileImg) {
-      if (user.profileImage && user.profileImage.trim() !== "") {
-        profileImg.src = user.profileImage;
-      } else {
-        profileImg.src = "./assets/Icons/Userprofile.png"; // fallback
-      }
+      profileImg.src =
+        user.profileImage?.trim() || "./assets/Icons/Userprofile.png";
     }
 
-    // Set global variables for posts/comments
+    // Set global vars for posts/comments
     window.USER_NAME = `${user.firstName} ${user.lastName}`;
-    window.USER_IMAGE = profileImg?.src || "./assets/Icons/Userprofile.png";
-    window.USER_CLASS = capitalize(user.category || "Student");
+    window.USER_IMAGE =
+      user.profileImage?.trim() || "./assets/Icons/Userprofile.png";
+    window.USER_CLASS = capitalize(user.grade || user.category || "Student");
   } else {
-    console.warn("No user found in localStorage");
+    console.warn("User not found. Redirecting to login...");
+    window.location.href = "../Loginpage.html";
   }
 
   function capitalize(str) {
