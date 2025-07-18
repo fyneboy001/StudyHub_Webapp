@@ -259,7 +259,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const categoryEl = document.getElementById("categoryDisplay");
     if (categoryEl) {
       const formatted = capitalize(category.replace("_", " "));
-      categoryEl.textContent = `Category: ${formatted}`;
+      categoryEl.textContent = `${formatted}`;
     }
 
     // Profile image
