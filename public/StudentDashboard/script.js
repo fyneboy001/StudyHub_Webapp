@@ -128,21 +128,22 @@ if (user) {
 
   // Update category/grade
   const category = user.grade ? user.grade.replace("_", " ") : "Not set";
-  document.getElementById("categoryDisplay").textContent = `${capitalize(
-    category
-  )}`;
+  document.getElementById(
+    "categoryDisplay"
+  ).textContent = `Category: ${capitalize(category)}`;
 
-  // Update profile image (if exists)
+  // Update profile image (optional)
   const profileImg = document.getElementById("user-profile-img");
   if (user.profileImage) {
     profileImg.src = user.profileImage;
   } else {
     profileImg.src = "./assets/Icons/Userprofile.png";
   }
-} else {
-  // Redirect if user not found
-  window.location.href = "../Loginpage.html";
 }
+//  else {
+//   // Redirect if user not found
+//   window.location.href = "../Login/Loginpage.html";
+// }
 
 function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
