@@ -111,23 +111,43 @@ function initializeLessonPage() {
   renderLessons();
 }
 
-// 🔹 DOMContentLoaded ensures all DOM is ready before running
+// 🔹 On DOM load, get and display logged-in or signed-up user details
 document.addEventListener("DOMContentLoaded", function () {
-  const user = JSON.parse(localStorage.getItem("studyhub_user"));
-  const realName = user?.firstName
-    ? `${user.firstName} ${user.lastName}`
-    : "Guest User";
-  const profileImage = user?.profileImage || "./assets/Icons/Userprofile.png";
+  const email = localStorage.getItem("studyhub_current_user_email");
+  const origin = localStorage.getItem("studyhub_origin"); // signup or login
+  const users = JSON.parse(localStorage.getItem("studyhub_users")) || [];
 
-  // Set sidebar profile
-  document.getElementById("user-name").textContent = realName;
-  const category = user?.category ? user.category.replace("_", " ") : "Not set";
-  document.getElementById("categoryDisplay").textContent = `${capitalize(
-    category
-  )}`;
-  document.getElementById("user-profile-img").src = profileImage;
+  // Find user by email
+  const user = users.find((u) => u.email === email);
 
-  // Set up sessionStorage for comment section
+  if (!user) {
+    console.warn("User not found. Redirecting to login...");
+    window.location.href = "../Loginpage.html";
+    return;
+  }
+
+  const greeting = origin === "signup" ? "Welcome" : "Welcome back";
+
+  const realName = `${user.firstName} ${user.lastName}`;
+  const profileImage =
+    user.profileImage?.trim() || "./assets/Icons/Userprofile.png";
+  const category = capitalize(user.grade || user.category || "Student");
+
+  // Sidebar
+  const nameEl = document.getElementById("user-name");
+  const categoryEl = document.getElementById("categoryDisplay");
+  const profileImgEl = document.getElementById("user-profile-img");
+  if (nameEl) nameEl.textContent = realName;
+  if (categoryEl) categoryEl.textContent = category.replace("_", " ");
+  if (profileImgEl) profileImgEl.src = profileImage;
+
+  // Comment Box Display
+  const userRealNameEl = document.getElementById("userRealName");
+  const userProfileImgEl = document.getElementById("userProfileImage");
+  if (userRealNameEl) userRealNameEl.textContent = realName;
+  if (userProfileImgEl) userProfileImgEl.src = profileImage;
+
+  // Set up session for commenting system
   const currentUser = {
     username: realName.toLowerCase().replace(/\s+/g, "_"),
     realName,
@@ -135,10 +155,10 @@ document.addEventListener("DOMContentLoaded", function () {
   };
   sessionStorage.setItem("currentUser", JSON.stringify(currentUser));
 
-  // Update comment UI
-  const sessionUser = JSON.parse(sessionStorage.getItem("currentUser"));
-  document.getElementById("userRealName").textContent = sessionUser.realName;
-  document.getElementById("userProfileImage").src = sessionUser.profileImage;
+  // Set global vars for later access
+  window.USER_NAME = realName;
+  window.USER_IMAGE = profileImage;
+  window.USER_CLASS = category;
 
   displayComments();
   initializeLessonPage();
@@ -147,40 +167,6 @@ document.addEventListener("DOMContentLoaded", function () {
     return str.charAt(0).toUpperCase() + str.slice(1);
   }
 });
-
-// 🔹 Post Comment
-function postComment() {
-  const commentText = document.getElementById("commentText").value.trim();
-  if (!commentText) return;
-
-  const user = JSON.parse(sessionStorage.getItem("currentUser"));
-  const comment = {
-    id: Date.now(),
-    realName: user.realName,
-    profileImage: user.profileImage,
-    text: commentText,
-    timestamp: new Date().toLocaleString(),
-    likes: 0,
-    replies: [],
-  };
-
-  let comments = JSON.parse(sessionStorage.getItem("comments")) || [];
-  comments.unshift(comment);
-  sessionStorage.setItem("comments", JSON.stringify(comments));
-  document.getElementById("commentText").value = "";
-  displayComments();
-}
-
-// 🔹 Display Comments
-function displayComments() {
-  const container = document.getElementById("commentsContainer");
-  container.innerHTML = "";
-  const comments = JSON.parse(sessionStorage.getItem("comments")) || [];
-  comments.forEach((comment) => {
-    const div = createCommentElement(comment);
-    container.appendChild(div);
-  });
-}
 
 // 🔹 Build Comment Element (including replies)
 function createCommentElement(comment, parentId = null) {

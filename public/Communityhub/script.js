@@ -160,6 +160,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+//user signup
 document.addEventListener("DOMContentLoaded", function () {
   const email = localStorage.getItem("studyhub_current_user_email");
   const origin = localStorage.getItem("studyhub_origin"); // signup or login
