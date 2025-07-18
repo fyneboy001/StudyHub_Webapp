@@ -1,3 +1,4 @@
+from the below code where does vercel redirect the user to after signing up
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -106,111 +107,123 @@
         </p>
       </div>
     </main>
+
     <script>
-      const signupForm = document.getElementById("signupForm");
+      const form = document.getElementById("signupForm");
+      const errorDiv = document.getElementById("error");
+
       const passwordInput = document.getElementById("password");
       const confirmPasswordInput = document.getElementById("confirmPassword");
-      const phoneInput = document.getElementById("phone");
       const emailInput = document.getElementById("email");
-      const passwordRules = document.getElementById("passwordRules");
-      const errorDiv = document.getElementById("error");
+      const phoneInput = document.getElementById("phone");
 
       const lengthRule = document.getElementById("lengthRule");
       const upperRule = document.getElementById("upperRule");
       const lowerRule = document.getElementById("lowerRule");
       const numberRule = document.getElementById("numberRule");
       const specialRule = document.getElementById("specialRule");
+      const passwordRules = document.getElementById("passwordRules");
 
-      // Show/hide password rules box
-      passwordInput.addEventListener("focus", () => {
-        passwordRules.style.display = "block";
-      });
-
-      // Hide rules on blur if not password input
-      document.addEventListener("click", (e) => {
-        if (e.target !== passwordInput && !passwordRules.contains(e.target)) {
-          passwordRules.style.display = "none";
-        }
-      });
-
-      // Validate password input live
+      // Password strength check
       passwordInput.addEventListener("input", () => {
-        const value = passwordInput.value;
-        const validations = {
-          length: value.length >= 6 && value.length <= 14,
-          upper: /[A-Z]/.test(value),
-          lower: /[a-z]/.test(value),
-          number: /[0-9]/.test(value),
-          special: /[^A-Za-z0-9]/.test(value),
-        };
+        const val = passwordInput.value;
+        passwordRules.style.display = val.length > 0 ? "block" : "none";
 
-        lengthRule.className = validations.length ? "valid" : "invalid";
-        upperRule.className = validations.upper ? "valid" : "invalid";
-        lowerRule.className = validations.lower ? "valid" : "invalid";
-        numberRule.className = validations.number ? "valid" : "invalid";
-        specialRule.className = validations.special ? "valid" : "invalid";
+        lengthRule.className =
+          val.length >= 6 && val.length <= 14 ? "valid" : "invalid";
+        upperRule.className = /[A-Z]/.test(val) ? "valid" : "invalid";
+        lowerRule.className = /[a-z]/.test(val) ? "valid" : "invalid";
+        numberRule.className = /[0-9]/.test(val) ? "valid" : "invalid";
+        specialRule.className = /[^A-Za-z0-9]/.test(val) ? "valid" : "invalid";
+      });
 
-        // Hide rules if all passed
-        const allPassed = Object.values(validations).every((v) => v === true);
-        if (allPassed) {
+      passwordInput.addEventListener("blur", () => {
+        const val = passwordInput.value;
+        const allValid =
+          val.length >= 6 &&
+          val.length <= 14 &&
+          /[A-Z]/.test(val) &&
+          /[a-z]/.test(val) &&
+          /[0-9]/.test(val) &&
+          /[^A-Za-z0-9]/.test(val);
+
+        if (allValid) {
           passwordRules.style.display = "none";
         }
       });
 
-      // Main form validation
-      signupForm.addEventListener("submit", function (e) {
+      const urlParams = new URLSearchParams(window.location.search);
+      const categoryFromURL = urlParams.get("category");
+
+      form.addEventListener("submit", function (e) {
         e.preventDefault();
-        errorDiv.textContent = "";
 
         const firstName = document.getElementById("firstName").value.trim();
         const lastName = document.getElementById("lastName").value.trim();
-        const grade = document.getElementById("grade").value;
         const email = emailInput.value.trim();
         const phone = phoneInput.value.trim();
         const password = passwordInput.value;
         const confirmPassword = confirmPasswordInput.value;
 
-        // Check phone length
-        if (phone.length !== 11 || !/^\d{11}$/.test(phone)) {
+        // Validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          errorDiv.textContent = "Please enter a valid email address.";
+          return;
+        }
+
+        if (!/^\d{11}$/.test(phone)) {
           errorDiv.textContent = "Phone number must be exactly 11 digits.";
           return;
         }
 
-        // Check password rules
-        const validations = {
-          length: password.length >= 6 && password.length <= 14,
-          upper: /[A-Z]/.test(password),
-          lower: /[a-z]/.test(password),
-          number: /[0-9]/.test(password),
-          special: /[^A-Za-z0-9]/.test(password),
+        if (password !== confirmPassword) {
+          errorDiv.textContent = "Passwords do not match!";
+          return;
+        }
+
+        const isValid =
+          password.length >= 6 &&
+          password.length <= 14 &&
+          /[A-Z]/.test(password) &&
+          /[a-z]/.test(password) &&
+          /[0-9]/.test(password) &&
+          /[^A-Za-z0-9]/.test(password);
+
+        if (!isValid) {
+          errorDiv.textContent = "Password does not meet all requirements.";
+          return;
+        }
+
+        // Get existing users from localStorage
+        let users = JSON.parse(localStorage.getItem("studyhub_users")) || [];
+
+        // Check if email already exists
+        const existingUser = users.find((user) => user.email === email);
+        if (existingUser) {
+          errorDiv.textContent = "User already exists. Please login instead.";
+          return;
+        }
+
+        // Save new user
+        const newUser = {
+          firstName,
+          lastName,
+          email,
+          phone,
+          password,
+          category: categoryFromURL || "unknown",
         };
 
-        const allValid = Object.values(validations).every(Boolean);
-        if (!allValid) {
-          errorDiv.textContent =
-            "Password does not meet all the required criteria.";
-          return;
-        }
-
-        if (password !== confirmPassword) {
-          errorDiv.textContent = "Passwords do not match.";
-          return;
-        }
-
-        // Check for existing user
-        const users = JSON.parse(localStorage.getItem("users")) || [];
-        const emailExists = users.some((user) => user.email === email);
-        if (emailExists) {
-          errorDiv.textContent = "Email already exists. Please login instead.";
-          return;
-        }
-
-        // Save user
-        const newUser = { firstName, lastName, grade, email, phone, password };
         users.push(newUser);
-        localStorage.setItem("users", JSON.stringify(users));
+        localStorage.setItem("studyhub_users", JSON.stringify(users));
 
-        // Redirect
+        // Optional info for welcome screen
+        localStorage.setItem("studyhub_active_name", newUser.firstName);
+        localStorage.setItem("userCategory", newUser.category);
+        localStorage.setItem("studyhub_origin", "signup");
+        localStorage.setItem("studyhub_current_user_email", newUser.email);
+
         window.location.href = "../StudentDashboard/Studentdash.html";
       });
     </script>
