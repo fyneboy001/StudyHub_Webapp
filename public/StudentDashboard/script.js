@@ -128,9 +128,9 @@ if (user) {
 
   // Update category/grade
   const category = user.grade ? user.grade.replace("_", " ") : "Not set";
-  document.getElementById(
-    "categoryDisplay"
-  ).textContent = `Category: ${capitalize(category)}`;
+  document.getElementById("categoryDisplay").textContent = `${capitalize(
+    category
+  )}`;
 
   // Update profile image (if exists)
   const profileImg = document.getElementById("user-profile-img");
