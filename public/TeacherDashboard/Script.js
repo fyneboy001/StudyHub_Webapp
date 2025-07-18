@@ -132,9 +132,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const profileImg = document.getElementById("user-profile-img");
     profileImg.src =
       user.profileImage || "../StudentDashboard/assets/Icons/Userprofile.png";
-  } else {
-    window.location.href = "../Loginpage.html";
   }
+  // else {
+  //   window.location.href = "../Loginpage.html";
+  // }
 
   function capitalize(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);

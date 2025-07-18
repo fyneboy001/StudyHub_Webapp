@@ -134,10 +134,11 @@ if (user) {
   } else {
     profileImg.src = "./assets/Icons/Userprofile.png";
   }
-} else {
-  // Redirect if not logged in
-  window.location.href = "../Loginpage.html";
 }
+// else {
+//   // Redirect if not logged in
+//   window.location.href = "../Loginpage.html";
+// }
 
 function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
