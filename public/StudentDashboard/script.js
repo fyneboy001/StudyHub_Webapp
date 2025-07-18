@@ -104,9 +104,15 @@ document.addEventListener("click", (e) => {
   }
 });
 
-// Get user data from localStorage
-const user = JSON.parse(localStorage.getItem("studyhub_user"));
+// Get logged-in email and origin
+const email = localStorage.getItem("studyhub_current_user_email");
 const origin = localStorage.getItem("studyhub_origin");
+
+// Get all users
+const allUsers = JSON.parse(localStorage.getItem("studyhub_users")) || [];
+
+// Find matching user
+const user = allUsers.find((u) => u.email === email);
 
 if (user) {
   // Update welcome message
@@ -115,41 +121,29 @@ if (user) {
     "welcome-message"
   ).textContent = `${greeting}, ${user.firstName}!`;
 
-  // Update profile name and category
-  // Set full name in the profile
+  // Update profile name
   document.getElementById(
     "user-name"
   ).textContent = `${user.firstName} ${user.lastName}`;
 
-  // Capitalize and format category nicely
-  const category = user.category ? user.category.replace("_", " ") : "Not set";
+  // Update category/grade
+  const category = user.grade ? user.grade.replace("_", " ") : "Not set";
   document.getElementById(
     "categoryDisplay"
   ).textContent = `Category: ${capitalize(category)}`;
 
-  // Profile image (fallback if not set)
+  // Update profile image (if exists)
   const profileImg = document.getElementById("user-profile-img");
   if (user.profileImage) {
     profileImg.src = user.profileImage;
   } else {
     profileImg.src = "./assets/Icons/Userprofile.png";
   }
+} else {
+  // Redirect if user not found
+  window.location.href = "../Loginpage.html";
 }
-// else {
-//   // Redirect if not logged in
-//   window.location.href = "../Loginpage.html";
-// }
 
 function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
-}
-
-//Getting user category
-// const user = JSON.parse(localStorage.getItem("studyhub_user"));
-
-if (user) {
-  const category = user.category ? user.category.replace("_", " ") : "Not set";
-  document.getElementById("categoryDisplay").textContent = `${capitalize(
-    category
-  )}`;
 }
