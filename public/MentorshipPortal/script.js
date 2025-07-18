@@ -255,12 +255,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Capitalize and format category
-    const category = user.category
-      ? user.category.replace("_", " ")
-      : "Not set";
+    const category = user.grade || user.category || "Student";
     const categoryEl = document.getElementById("categoryDisplay");
     if (categoryEl) {
-      categoryEl.textContent = `Category: ${capitalize(category)}`;
+      const formatted = capitalize(category.replace("_", " "));
+      categoryEl.textContent = `Category: ${formatted}`;
     }
 
     // Profile image
