@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Load and Inject User Info
 document.addEventListener("DOMContentLoaded", function () {
-  const user = JSON.parse(localStorage.getItem("studyhub_user"));
+  const user = JSON.parse(localStorage.getItem("studyhub_users"));
   console.log("Loaded user:", user);
 
   if (user) {

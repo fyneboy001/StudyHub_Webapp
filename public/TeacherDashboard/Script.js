@@ -106,7 +106,7 @@ document.addEventListener("click", (e) => {
 
 //Updating the user profile and the welcome message
 document.addEventListener("DOMContentLoaded", function () {
-  const user = JSON.parse(localStorage.getItem("studyhub_user"));
+  const user = JSON.parse(localStorage.getItem("studyhub_users"));
   const origin = localStorage.getItem("studyhub_origin");
 
   if (user) {

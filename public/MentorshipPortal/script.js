@@ -236,7 +236,7 @@ document.addEventListener("click", (e) => {
 
 // Get user data from localStorage
 document.addEventListener("DOMContentLoaded", function () {
-  const user = JSON.parse(localStorage.getItem("studyhub_user"));
+  const user = JSON.parse(localStorage.getItem("studyhub_users"));
   const origin = localStorage.getItem("studyhub_origin");
   const welcomeMessage = document.getElementById("welcome-message");
 
